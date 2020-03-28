@@ -32,14 +32,14 @@ const filterSet = {
     MetadataFilter.fixTrackSuffix,
     MetadataFilter.removeLive,
   ],
-}
+};
 ```
 
 Then, construct a MetadataFilter using this filter set.
 ```javascript
 const filter = new MetadataFilter(filterSet);
-console.log(filter.filterText('album', 'Nevermind (Remastered)')) // Nevermind
-console.log(filter.filterText('track', 'In Bloom - Nevermind Version')) // In Bloom
+console.log(filter.filterField('album', 'Nevermind (Remastered)')) // Nevermind
+console.log(filter.filterField('track', 'In Bloom - Nevermind Version')) // In Bloom
 ```
 
 ### Pre-defined Filter Sets
@@ -54,8 +54,8 @@ Finally, you can take existing filter sets and expand them with more functions:
 
 ```javascript
 let filter = MetadataFilter.getSpotifyFilter();
-filter = filter.extend(getAmazonFilter());
-console.log(filter.filterText('track', 'Seasons in the Abyss (Album Version)')); // Seasons in the Abyss
+filter = filter.extend(MetadataFilter.getAmazonFilter());
+console.log(filter.filterField('track', 'Seasons in the Abyss (Album Version)')); // Seasons in the Abyss
 
 ```
 
