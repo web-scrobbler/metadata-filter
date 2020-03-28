@@ -1,6 +1,6 @@
 # Contributing
 
-First of all, thanks for taking the time to contribute to Web Scrobbler!
+First of all, thanks for taking the time to contribute to metadata-filter!
 
 ## Submitting issues
 
