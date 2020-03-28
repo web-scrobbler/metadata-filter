@@ -17,7 +17,7 @@ console.log(MetadataFilter.removeVersion('Daft Punk - Get Lucky (Album Version)'
 ```
 
 ### Multiple Filters
-You can also to use multiple filters on a string at once by creating a `MetadataFilter` object which combines multiple functions from above, or by using one of the pre-existing [filter objects]().
+You can also to use multiple filters on a string at once by creating a `MetadataFilter` object which combines multiple functions from above, or by using one of the pre-existing [filter objects](#pre-defined-filter-sets).
 
 First, create a filter set. This is a set of rules for artists, albums, tracks, and albumArtists.
 ```javascript
@@ -42,13 +42,15 @@ console.log(filter.filterText('album', 'Nevermind (Remastered)')) // Nevermind
 console.log(filter.filterText('track', 'In Bloom - Nevermind Version')) // In Bloom
 ```
 
+### Pre-defined Filter Sets
 There are also pre-defined filter sets available for easy access. For example, the above filter set can be acquired using `getSpotifyFilter()`:
 
 ```javascript
 const filter = MetadataFilter.getSpotifyFilter();
 ```
 
-Finally, you can take existing filters and expand them with more functions:
+### Expanding Filter Sets
+Finally, you can take existing filter sets and expand them with more functions:
 
 ```javascript
 let filter = MetadataFilter.getSpotifyFilter();
