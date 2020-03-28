@@ -1,0 +1,22 @@
+name: Test
+on:
+  push:
+    branches: [master]
+  pull_request:
+    types: [opened, synchronize]
+jobs:
+  test:
+    name: Run linters and tests
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.0.0'
+    - run: npm install
+    - name: Run linters
+      run: |
+        npx eslint **/*.js
+    - name: Run tests
+      run: |
+        npm test
