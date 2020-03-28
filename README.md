@@ -55,8 +55,8 @@ Finally, you can take existing MetadataFilter objects and expand them with more 
 ```javascript
 let filter = MetadataFilter.getSpotifyFilter();
 
-// This would also work: filter.extend(new MetadataFilter(filterSet));
 filter = filter.extend(MetadataFilter.getAmazonFilter());
+// This would also work: filter.extend(new MetadataFilter(filterSet));
 
 console.log(filter.filterField('track', 'Seasons in the Abyss (Album Version)')); // Seasons in the Abyss
 
