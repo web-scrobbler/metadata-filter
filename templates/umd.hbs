@@ -1,0 +1,16 @@
+(function (root, factory) {
+	if (root === undefined && window !== undefined) root = window;
+	if (typeof define === "function" && define.amd) {
+		define("{{amdModuleId}}", ["module"], factory);
+	} else if (typeof exports !== "undefined") {
+		factory(module);
+	} else {
+		var mod = {
+			exports: {}
+		};
+		factory(mod);
+		root['{{{objectToExport}}}'] = mod.exports
+	}
+})(this, function (module) {
+{{{code}}}
+});

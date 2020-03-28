@@ -591,3 +591,5 @@ class MetadataFilter {
 		});
 	}
 }
+
+module.exports = MetadataFilter;

@@ -10,6 +10,8 @@ const testDir = 'test';
 
 const moduleName = 'metadata-filter';
 const mainFile = 'filter.js';
+const mainObject = 'MetadataFilter';
+const umdTemplateFile = 'templates/umd.hbs';
 
 const jsFiles = ['*.js', srcDir, testDir];
 
@@ -27,8 +29,9 @@ module.exports = (grunt) => {
 					src: path.join(srcDir, mainFile),
 					dest: path.join(distDir, mainFile),
 
-					objectToExport: 'MetadataFilter',
+					template: umdTemplateFile,
 					amdModuleId: moduleName,
+					objectToExport: mainObject,
 				}
 			}
 		}
