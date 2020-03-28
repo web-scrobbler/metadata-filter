@@ -2,14 +2,25 @@
 
 const path = require('path');
 
+const isCi = process.env.CI === 'true';
+
 const srcDir = 'src';
 const distDir = 'dist';
+const testDir = 'test';
 
 const moduleName = 'metadata-filter';
 const mainFile = 'filter.js';
 
+const jsFiles = ['*.js', srcDir, testDir];
+
 module.exports = (grunt) => {
 	grunt.initConfig({
+		eslint: {
+			target: jsFiles,
+			options: {
+				fix: !isCi
+			},
+		},
 		umd: {
 			all: {
 				options: {
