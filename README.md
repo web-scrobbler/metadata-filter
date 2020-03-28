@@ -50,7 +50,7 @@ const filter = MetadataFilter.getSpotifyFilter();
 ```
 
 ### Expanding Filter Sets
-Finally, you can take existing filter sets and expand them with more functions:
+Finally, you can take existing MetadataFilter objects and expand them with more functions:
 
 ```javascript
 let filter = MetadataFilter.getSpotifyFilter();
