@@ -2,6 +2,11 @@
 
 A module for cleaning up artist, album, and song names.
 
+## Installation
+```
+npm i metadata-filter
+```
+
 ## Usage
 
 ### Single Filters
