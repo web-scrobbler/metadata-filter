@@ -50,11 +50,14 @@ const filter = MetadataFilter.getSpotifyFilter();
 ```
 
 ### Expanding Filter Sets
-Finally, you can take existing MetadataFilter objects and expand them with more functions:
+Finally, you can take existing MetadataFilter objects and expand them with more functions. This is done by providing the `.extend()` function with another MetadataFilter object.
 
 ```javascript
 let filter = MetadataFilter.getSpotifyFilter();
+
+// This would also work: filter.extend(new MetadataFilter(filterSet));
 filter = filter.extend(MetadataFilter.getAmazonFilter());
+
 console.log(filter.filterField('track', 'Seasons in the Abyss (Album Version)')); // Seasons in the Abyss
 
 ```
