@@ -1,4 +1,4 @@
-# Metadata Filter ![Test][WorkflowBadge] ![NPM][NpmBadge]
+# Metadata Filter ![Test][WorkflowBadge] ![NPM][NpmBadge] [![Codacy Badge][CodacyBadge]][Codacy] [![Codacy Coverage Badge][CodacyCoverageBadge]][Codacy]
 
 A module for cleaning up artist, album, and song names.
 
@@ -69,3 +69,5 @@ console.log(filter.filterField('track', 'Seasons in the Abyss (Album Version)'))
 
 [WorkflowBadge]: https://github.com/web-scrobbler/metadata-filter/workflows/Test/badge.svg
 [NpmBadge]: https://img.shields.io/npm/v/metadata-filter
+[CodacyBadge]: https://api.codacy.com/project/badge/Grade/100b50dc21664ce6bc591c28b73d6892
+[CodacyCoverageBadge]: https://api.codacy.com/project/badge/Coverage/100b50dc21664ce6bc591c28b73d6892
