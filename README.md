@@ -1,4 +1,4 @@
-# Metadata Filter ![Test][WorkflowBadge]
+# Metadata Filter ![Test][WorkflowBadge] ![NPM][NpmBadge]
 
 A module for cleaning up artist, album, and song names.
 
@@ -58,3 +58,4 @@ console.log(filter.filterText('track', 'Seasons in the Abyss (Album Version)'));
 ```
 
 [WorkflowBadge]: https://github.com/web-scrobbler/metadata-filter/workflows/Test/badge.svg
+[NpmBadge]: https://img.shields.io/npm/v/metadata-filter
