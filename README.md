@@ -54,6 +54,8 @@ There are also predefined filter sets available for easy access. For example, th
 const filter = MetadataFilter.getSpotifyFilter();
 ```
 
+These are all documented in the [API Reference](#filter-functions) below.
+
 ### Expanding Filters
 Finally, you can take existing MetadataFilter objects and expand them with more functions. This is done by providing the `.extend()` function with another MetadataFilter object.
 
