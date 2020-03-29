@@ -1,4 +1,4 @@
-# Metadata Filter ![Test][WorkflowBadge] ![NPM][NpmBadge] [![Codacy Badge][CodacyBadge]][Codacy] [![Codacy Coverage Badge][CodacyCoverageBadge]][Codacy]
+# Metadata Filter [![Test][WorkflowBadge]][Workflow] [![NPM][NpmBadge]][Npm] [![Codacy][CodacyBadge]][Codacy] [![Coverage][CodacyCovBadge]][Codacy]
 
 A module for cleaning up artist, album, and song names.
 
@@ -103,7 +103,9 @@ See the [License file](LICENSE.md).
 [WorkflowBadge]: https://github.com/web-scrobbler/metadata-filter/workflows/Test/badge.svg
 [NpmBadge]: https://img.shields.io/npm/v/metadata-filter
 [CodacyBadge]: https://api.codacy.com/project/badge/Grade/100b50dc21664ce6bc591c28b73d6892
-[CodacyCoverageBadge]: https://api.codacy.com/project/badge/Coverage/100b50dc21664ce6bc591c28b73d6892
+[CodacyCovBadge]: https://api.codacy.com/project/badge/Coverage/100b50dc21664ce6bc591c28b73d6892
 
 <!-- Related pages -->
 [Codacy]: https://app.codacy.com/gh/web-scrobbler/metadata-filter/dashboard
+[Npm]: https://www.npmjs.com/package/metadata-filter
+[Workflow]: https://github.com/web-scrobbler/metadata-filter/actions?query=workflow%3ATest
