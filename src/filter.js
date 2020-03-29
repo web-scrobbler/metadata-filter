@@ -7,6 +7,8 @@ const escapeHtmlEntityMap = {
 	'"': /&quot;/g,
 };
 
+const allField = 'all';
+
 /**
  * Base filter object that filters metadata fields by given filter set.
  * A filter set is an object containing 'artist', 'track', 'album', 'albumArtist', or 'all'
@@ -92,14 +94,17 @@ class MetadataFilter {
 	 * @return {Array} Array of filter funcions
 	 */
 	createFilters(filters) {
-		if (typeof filters === 'function') {
-			const filterFunction = filters;
-			return [filterFunction];
-		} else if (Array.isArray(filters)) {
+		if (Array.isArray(filters)) {
+			for (const filterFn of filters) {
+				MetadataFilter.assertFilterFunctionIsValid(filterFn);
+			}
 			return filters;
 		}
 
-		throw new Error(`Invalid filter type: ${typeof filters}`);
+		const filterFn = filters;
+		MetadataFilter.assertFilterFunctionIsValid(filterFn);
+
+		return [filterFn];
 	}
 
 	/**
@@ -107,6 +112,16 @@ class MetadataFilter {
      * @param {Object} filterSet Set of filters
 	 */
 	appendFilters(filterSet) {
+		for (const field in filterSet) {
+			if (field === allField) {
+				continue;
+			}
+
+			if (!MetadataFilter.ALL_FIELDS.includes(field)) {
+				throw new Error(`Invalid filter field: ${field}`);
+			}
+		}
+
 		for (const field of MetadataFilter.ALL_FIELDS) {
 			if (this.mergedFilterSet[field] === undefined) {
 				this.mergedFilterSet[field] = [];
@@ -117,15 +132,21 @@ class MetadataFilter {
 					.concat(this.createFilters(filterSet[field]));
 			}
 
-			if (filterSet.all) {
+			if (filterSet[allField]) {
 				this.mergedFilterSet[field] = this.mergedFilterSet[field]
-					.concat(this.createFilters(filterSet.all));
+					.concat(this.createFilters(filterSet[allField]));
 			}
 		}
 	}
 
 	static get ALL_FIELDS() {
 		return ['artist', 'track', 'album', 'albumArtist'];
+	}
+
+	static assertFilterFunctionIsValid(fn) {
+		if (typeof fn !== 'function') {
+			throw new Error(`Invalid filter function: expected 'function', got '${typeof fn}'`);
+		}
 	}
 
 	/**
