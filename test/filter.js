@@ -7,7 +7,7 @@
 const chai = require('chai');
 const spies = require('chai-spies');
 const expect = chai.expect;
-const MetadataFilter = require('./../filter');
+const MetadataFilter = require('./../src/filter');
 
 chai.use(spies);
 

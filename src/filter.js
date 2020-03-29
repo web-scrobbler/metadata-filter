@@ -592,9 +592,4 @@ class MetadataFilter {
 	}
 }
 
-/**
- * Export MetadataFilter constructor if script is run in Node.js context.
- */
-if (typeof module !== 'undefined') {
-	module.exports = MetadataFilter;
-}
+module.exports = MetadataFilter;
