@@ -751,28 +751,20 @@ function testFilter(filter, fields, testData) {
 }
 
 /**
- * Test extended filter.
+ * Test extended filter object.
+ * @param  {Object} filter MetadataFilter instance
+ * @param  {Array} fn Spy functions should be called
  */
-function testExtendedFilter() {
-	const func1 = chai.spy();
-	const func2 = chai.spy();
-
-	const filter1 = new MetadataFilter({ all: func1 });
-	const filter2 = new MetadataFilter({ all: func2 });
-
-	const filter = filter1.extend(filter2);
-
+function testMultipleFilters(filter, ...fn) {
 	for (const field of MetadataFilter.ALL_FIELDS) {
 		describe(`${field} field`, () => {
 			filter.filterField(field, 'Test');
 
-			it('should call filter function of filter 1', () => {
-				expect(func1).to.have.been.called();
-			});
-
-			it('should call filter function of filter 2', () => {
-				expect(func2).to.have.been.called();
-			});
+			for (const f of fn) {
+				it('should call filter function', () => {
+					expect(f).to.have.been.called();
+				});
+			}
 		});
 	}
 }
@@ -780,28 +772,31 @@ function testExtendedFilter() {
 /**
  * Test extended filter.
  */
-function testAppendFilterSet() {
-	const func1 = chai.spy();
-	const func2 = chai.spy();
+function testExtendedFilter() {
+	const fn1 = chai.spy();
+	const fn2 = chai.spy();
 
-	const filter1 = new MetadataFilter({ all: func1 });
-	const filterSet2 = { all: func2 };
+	const filter1 = new MetadataFilter({ all: fn1 });
+	const filter2 = new MetadataFilter({ all: fn2 });
+
+	const filter = filter1.extend(filter2);
+
+	testMultipleFilters(filter, fn1, fn2);
+}
+
+/**
+ * Test extended filter.
+ */
+function testAppendFilterSet() {
+	const fn1 = chai.spy();
+	const fn2 = chai.spy();
+
+	const filter1 = new MetadataFilter({ all: fn1 });
+	const filterSet2 = { all: fn2 };
 
 	const filter = filter1.append(filterSet2);
 
-	for (const field of MetadataFilter.ALL_FIELDS) {
-		describe(`${field} field`, () => {
-			filter.filterField(field, 'Test');
-
-			it('should call filter function of filter 1', () => {
-				expect(func1).to.have.been.called();
-			});
-
-			it('should call filter function of filter 2', () => {
-				expect(func2).to.have.been.called();
-			});
-		});
-	}
+	testMultipleFilters(filter, fn1, fn2);
 }
 
 /**
