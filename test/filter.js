@@ -833,6 +833,14 @@ function testInvalidFilter() {
 	it('should throw error if filter set is invalid', () => {
 		expect(() => new MetadataFilter({ all: 1 })).to.throw();
 	});
+
+	it('should throw error if filter set as array is invalid', () => {
+		expect(() => new MetadataFilter({ all: [1, 2] })).to.throw();
+	});
+
+	it('should throw error if filter set constains invalid field', () => {
+		expect(() => new MetadataFilter({ foo: () => 'bar' })).to.throw();
+	});
 }
 
 /**
