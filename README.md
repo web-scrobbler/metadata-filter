@@ -106,4 +106,4 @@ See the [License file](LICENSE.md).
 [CodacyCoverageBadge]: https://api.codacy.com/project/badge/Coverage/100b50dc21664ce6bc591c28b73d6892
 
 <!-- Related pages -->
-[Codacy]: https://app.codacy.com/project/web-scrobbler/metadata-filter/dashboard
+[Codacy]: https://app.codacy.com/gh/web-scrobbler/metadata-filter/dashboard
