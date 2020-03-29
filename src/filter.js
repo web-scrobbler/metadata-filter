@@ -46,7 +46,7 @@ class MetadataFilter {
 	}
 
 	/**
-	 * Append new filter set to existing filters.
+	 * Append a new filter set.
 	 * @param  {Object} filterSet Set of filters
 	 * @return {MetadataFilter} Current instance
 	 */
@@ -56,13 +56,20 @@ class MetadataFilter {
 	}
 
 	/**
-	 * Extend filter set by filter set from given filter.
+	 * Extend the filter by a filter set from a given filter.
 	 * @param  {Object} filter Filter object
 	 * @return {MetadataFilter} Current instance
 	 */
 	extend(filter) {
 		this.appendFilters(filter.mergedFilterSet);
 		return this;
+	}
+
+	/**
+	 * Return a list of supported fields.
+	 */
+	static get ALL_FIELDS() {
+		return ['artist', 'track', 'album', 'albumArtist'];
 	}
 
 	/**
@@ -137,10 +144,6 @@ class MetadataFilter {
 					.concat(this.createFilters(filterSet[allField]));
 			}
 		}
-	}
-
-	static get ALL_FIELDS() {
-		return ['artist', 'track', 'album', 'albumArtist'];
 	}
 
 	static assertFilterFunctionIsValid(fn) {
@@ -305,7 +308,7 @@ class MetadataFilter {
 	}
 
 	/**
-	 * Replace text according to given filter set rules.
+	 * Replace text according to given filter rules.
 	 * @param  {String} text String to be filtered
 	 * @param  {Object} set  Array of replace rules
 	 * @return {String} Filtered string
@@ -329,7 +332,7 @@ class MetadataFilter {
 	 */
 
 	/**
-	 * Predefined regex-based filter rules for Youtube-based connectors.
+	 * Filter rules to remove YouTube suffixes and prefixes from a text.
 	 * @type {Array}
 	 */
 	static get YOUTUBE_TRACK_FILTER_RULES() {
@@ -504,7 +507,11 @@ class MetadataFilter {
 	}
 
 	/**
-	 * Get filter object used by default in a Connector object.
+	 * Predefined filters.
+	 */
+
+	/**
+	 * Get a filter that performs a basic cleanup (trim and replace NBSPs).
 	 * @return {MetadataFilter} Filter object
 	 */
 	/* istanbul ignore next */
@@ -515,7 +522,7 @@ class MetadataFilter {
 	}
 
 	/**
-	 * Get predefined filter object for Youtube-based connectors.
+	 * Get a filter with YouTube-related filter functions.
 	 * @return {MetadataFilter} Filter object
 	 */
 	/* istanbul ignore next */
@@ -526,7 +533,7 @@ class MetadataFilter {
 	}
 
 	/**
-	 * Get predefined filter object that uses 'removeRemastered' function.
+	 * Get a filter that removes "Remastered"-like suffixes.
 	 * @return {MetadataFilter} Filter object
 	 */
 	/* istanbul ignore next */
@@ -538,7 +545,7 @@ class MetadataFilter {
 	}
 
 	/**
-	 * Get predefined filter for Spotify-related connectors.
+	 * Get a filter with Spotify-related filter functions.
 	 * @return {MetadataFilter} Filter object
 	 */
 	/* istanbul ignore next */
@@ -558,7 +565,7 @@ class MetadataFilter {
 	}
 
 	/**
-	 * Get predefined filter for Amazon-related connectors.
+	 * Get a filter with Amazon-related filter functions.
 	 * @return {MetadataFilter} Filter object
 	 */
 	/* istanbul ignore next */
@@ -591,7 +598,7 @@ class MetadataFilter {
 	}
 
 	/**
-	 * Get predefined filter for Tidal-related connectors.
+	 * Get a filter with Tidal-related filter functions.
 	 * @return {MetadataFilter} Filter object
 	 */
 	/* istanbul ignore next */
