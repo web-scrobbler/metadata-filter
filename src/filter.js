@@ -145,7 +145,7 @@ class MetadataFilter {
 
 	static assertFilterFunctionIsValid(fn) {
 		if (typeof fn !== 'function') {
-			throw new Error(`Invalid filter function: ${fn}`);
+			throw new Error(`Invalid filter function: expected 'function', got '${typeof fn}'`);
 		}
 	}
 
