@@ -263,7 +263,7 @@ class MetadataFilter {
 	}
 
 	/**
-	 * Generates Album Artist from Artist when "feat. Artist B" is present
+	 * Generate Album Artist from Artist when "feat. Artist B" is present.
 	 * @param  {String} text String to be filtered
 	 * @return {String} Transformed string
 	 */
@@ -275,7 +275,7 @@ class MetadataFilter {
 	}
 
 	/**
-	 * Generates normalized "feat. Artist B" text from [feat. Artist B] style
+	 * Generate normalized "feat. Artist B" text from [feat. Artist B] style.
 	 * @param  {String} text String to be filtered
 	 * @return {String} Transformed string
 	 */
