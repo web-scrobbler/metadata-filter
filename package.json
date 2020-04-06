@@ -1,6 +1,6 @@
 {
   "name": "metadata-filter",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Alexey <alex.esprit@gmail.com>",
   "description": "A module for cleaning up artist, album, and song names.",
   "main": "dist/filter.js",
@@ -12,7 +12,8 @@
     "url": "https://github.com/web-scrobbler/metadata-filter.git"
   },
   "keywords": [
-    "filters", "metadata"
+    "filters",
+    "metadata"
   ],
   "devDependencies": {
     "chai": "4.2.0",
