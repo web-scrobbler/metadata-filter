@@ -417,7 +417,8 @@ class MetadataFilter {
 			// Dancing Days (2012 Remaster)
 			{ source: /\(\d+(\s-)?\sRemaster\)$/, target: '' },
 			// Outside The Wall - 2011 - Remaster
-			{ source: /-\s\d+\s-\sRemaster$/, target: '' },
+			// China Grove - 2006 Remaster
+			{ source: /-\s\d+(\s-)?\sRemaster$/, target: '' },
 			// Learning To Fly - 2001 Digital Remaster
 			{ source: /-\s\d+\s.+?\sRemaster$/, target: '' },
 			// Your Possible Pasts - 2011 Remastered Version
