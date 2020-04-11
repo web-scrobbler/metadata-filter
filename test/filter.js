@@ -363,6 +363,10 @@ const REMASTERED_FILTER_RULES_TEST_DATA = [{
 	source: 'Track Title - 2011 - Remaster',
 	expected: 'Track Title '
 }, {
+	description: 'should remove "- YYYY Remaster" string',
+	source: 'Track Title - 2006 Remaster',
+	expected: 'Track Title '
+}, {
 	description: 'should remove "- YYYY Digital Remaster" string',
 	source: 'Track Title - 2001 Digital Remaster',
 	expected: 'Track Title '
