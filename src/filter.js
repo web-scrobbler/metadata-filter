@@ -515,7 +515,6 @@ class MetadataFilter {
 	 * Get a filter that performs a basic cleanup (trim and replace NBSPs).
 	 * @return {MetadataFilter} Filter object
 	 */
-	/* istanbul ignore next */
 	static getDefaultFilter() {
 		return new MetadataFilter({
 			all: [MetadataFilter.trim, MetadataFilter.replaceNbsp],
@@ -526,7 +525,6 @@ class MetadataFilter {
 	 * Get a filter with YouTube-related filter functions.
 	 * @return {MetadataFilter} Filter object
 	 */
-	/* istanbul ignore next */
 	static getYoutubeFilter() {
 		return new MetadataFilter({
 			track: MetadataFilter.youtube
@@ -537,7 +535,6 @@ class MetadataFilter {
 	 * Get a filter that removes "Remastered"-like suffixes.
 	 * @return {MetadataFilter} Filter object
 	 */
-	/* istanbul ignore next */
 	static getRemasteredFilter() {
 		return new MetadataFilter({
 			track: MetadataFilter.removeRemastered,
@@ -549,7 +546,6 @@ class MetadataFilter {
 	 * Get a filter with Spotify-related filter functions.
 	 * @return {MetadataFilter} Filter object
 	 */
-	/* istanbul ignore next */
 	static getSpotifyFilter() {
 		return new MetadataFilter({
 			track: [
@@ -569,7 +565,6 @@ class MetadataFilter {
 	 * Get a filter with Amazon-related filter functions.
 	 * @return {MetadataFilter} Filter object
 	 */
-	/* istanbul ignore next */
 	static getAmazonFilter() {
 		return new MetadataFilter({
 			artist: [
@@ -602,7 +597,6 @@ class MetadataFilter {
 	 * Get a filter with Tidal-related filter functions.
 	 * @return {MetadataFilter} Filter object
 	 */
-	/* istanbul ignore next */
 	static getTidalFilter() {
 		return new MetadataFilter({
 			track: [

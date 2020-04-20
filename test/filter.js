@@ -847,6 +847,25 @@ function testInvalidFilter() {
 	});
 }
 
+function testPredefinedFilters() {
+	const predefinedFilters = {
+		Amazon: MetadataFilter.getAmazonFilter(),
+		Default: MetadataFilter.getDefaultFilter(),
+		Remastered: MetadataFilter.getRemasteredFilter(),
+		Spotify: MetadataFilter.getSpotifyFilter(),
+		Tidal: MetadataFilter.getTidalFilter(),
+		YouTube: MetadataFilter.getYoutubeFilter(),
+	};
+
+	for (const name in predefinedFilters) {
+		const filter = predefinedFilters[name];
+
+		it(`should have ${name} filter available`, () => {
+			expect(filter).instanceof(MetadataFilter);
+		});
+	}
+}
+
 /**
  * Run all tests.
  */
@@ -856,6 +875,7 @@ function runTests() {
 	describe('Invalid filter', testInvalidFilter);
 	describe('Extended filter', testExtendedFilter);
 	describe('Append filter set', testAppendFilterSet);
+	describe('Predefined filters', testPredefinedFilters);
 }
 
 function createFilterFromFunc(fields, filterFunc) {
