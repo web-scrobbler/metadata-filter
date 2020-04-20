@@ -853,17 +853,9 @@ function testInvalidFilter() {
 function runTests() {
 	testFilters();
 
-	describe('Extended filter', () => {
-		testExtendedFilter();
-	});
-
-	describe('Append filter set', () => {
-		testAppendFilterSet();
-	});
-
-	describe('Invalid filter', () => {
-		testInvalidFilter();
-	});
+	describe('Invalid filter', testInvalidFilter);
+	describe('Extended filter', testExtendedFilter);
+	describe('Append filter set', testAppendFilterSet);
 }
 
 function createFilterFromFunc(fields, filterFunc) {
