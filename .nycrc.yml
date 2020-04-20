@@ -1,0 +1,3 @@
+reporter: [lcovonly, text]
+cache-dir: coverage/cache
+temp-dir: coverage/temp

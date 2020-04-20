@@ -36,7 +36,7 @@
     "lint": "grunt lint",
     "test": "mocha",
     "prepare": "grunt dist",
-    "test-with-coverage": "nyc --reporter=lcov npm run test",
+    "test-with-coverage": "nyc npm test",
     "upload-coverage": "cat ./coverage/lcov.info | codacy-coverage",
     "clean-coverage": "rm -rf ./coverage"
   }
