@@ -58,7 +58,7 @@ console.log(filter.filterField('track', 'In Bloom - Nevermind Version')) // In B
 ```
 
 ### Predefined Filters
-There are also predefined filter sets available for easy access. For example,
+There are also predefined filters available for easy access. For example,
 the above filter set can be acquired using `getSpotifyFilter()`:
 
 ```javascript
@@ -67,17 +67,31 @@ const filter = MetadataFilter.getSpotifyFilter();
 
 These are all documented in the [API Reference](#filter-functions) below.
 
-### Expanding Filters
-Finally, you can take existing MetadataFilter objects and expand them with more functions.
-This is done by providing the `.extend()` function with another MetadataFilter object.
+### Extending Filters
+Finally, you can take existing MetadataFilter objects and extend them with another filter.
+This is done by providing the `.extend()` method with another MetadataFilter object.
 
 ```javascript
 let filter = MetadataFilter.getSpotifyFilter();
 
-filter = filter.extend(MetadataFilter.getAmazonFilter());
+filter.extend(MetadataFilter.getAmazonFilter());
 // This would also work: filter.extend(new MetadataFilter(filterSet));
 
 console.log(filter.filterField('track', 'Seasons in the Abyss (Album Version)')); // Seasons in the Abyss
+```
+
+As an alternative, you can use the `.append()` method to apply a filter set to
+the existing MetadataFilter.
+```javascript
+let filter = new MetadataFilter({ track: filterTrack });
+
+filter.append({ artist: filterArtist });
+```
+
+Since these methods return a MetadataFilter instance, you can chain method calls.
+```javascript
+
+let filter = new MetadataFilter({ track: filterTrack }).append({ artist: filterArtist });
 ```
 
 ## API Reference
