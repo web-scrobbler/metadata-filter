@@ -768,17 +768,15 @@ function testFilter(filter, fields, testData) {
  * @param  {Array} fn Spy functions should be called
  */
 function testMultipleFilters(filter, ...fn) {
-	for (const field of MetadataFilter.ALL_FIELDS) {
-		describe(`${field} field`, () => {
+	it('should call all filter functions', () => {
+		for (const field of MetadataFilter.ALL_FIELDS) {
 			filter.filterField(field, 'Test');
+		}
 
-			for (const f of fn) {
-				it('should call filter function', () => {
-					expect(f).to.have.been.called();
-				});
-			}
-		});
-	}
+		for (const f of fn) {
+			expect(f).to.have.been.called();
+		}
+	});
 }
 
 /**
