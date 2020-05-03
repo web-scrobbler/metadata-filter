@@ -342,7 +342,7 @@ class MetadataFilter {
 			// **NEW**
 			{ source: /\*+\s?\S+\s?\*+$/, target: '' },
 			// [whatever]
-			{ source: /\[[^\]]+\]$/, target: '' },
+			{ source: /\[[^\]]+\]/, target: '' },
 			// (whatever version)
 			{ source: /\([^)]*version\)$/i, target: '' },
 			// video extensions

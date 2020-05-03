@@ -129,6 +129,14 @@ const YOUTUBE_FILTER_RULES_TEST_DATA = [{
 	source: 'Track Title [Official Video]',
 	expected: 'Track Title'
 }, {
+	description: 'should remove "[whatever] + (whatever)" string',
+	source: 'Track Title [Official Video] (Official Video)',
+	expected: 'Track Title'
+}, {
+	description: 'should remove "(whatever) + [whatever]" string',
+	source: 'Track Title (Official Video) [Official Video]',
+	expected: 'Track Title'
+}, {
 	description: 'should remove "Video" string',
 	source: 'Track Title (Video)',
 	expected: 'Track Title'
