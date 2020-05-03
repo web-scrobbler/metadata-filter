@@ -812,6 +812,22 @@ function testAppendFilterSet() {
 }
 
 /**
+ * Test extended filter.
+ */
+function testMethodChaining() {
+	const fn1 = chai.spy();
+	const fn2 = chai.spy();
+	const fn3 = chai.spy();
+
+	const filter = new MetadataFilter({ artist: fn1 }).extend(
+		new MetadataFilter({ track: fn2 })
+	).append({ album: fn3 });
+
+	testMultipleFilters(filter, fn1, fn2, fn3);
+}
+
+
+/**
  * Function that should not be called.
  * @throws {Error} if is called
  */
@@ -881,6 +897,7 @@ function runTests() {
 	testFilters();
 
 	describe('Invalid filter', testInvalidFilter);
+	describe('Method chaining', testMethodChaining);
 	describe('Extended filter', testExtendedFilter);
 	describe('Append filter set', testAppendFilterSet);
 	describe('Predefined filters', testPredefinedFilters);
