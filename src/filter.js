@@ -375,8 +375,6 @@ class MetadataFilter {
 			{ source: /\sclip/i, target: '' },
 			// Full Album
 			{ source: /full\s*album/i, target: '' },
-			// live
-			{ source: /\s+live.*?$/i, target: '' },
 			// (live)
 			{ source: /\(live.*?\)$/i, target: '' },
 			// | something

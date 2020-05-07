@@ -265,14 +265,6 @@ const YOUTUBE_FILTER_RULES_TEST_DATA = [{
 	source: 'Track Title (Stream)',
 	expected: 'Track Title'
 }, {
-	description: 'should remove live suffix',
-	source: 'Track Title Live',
-	expected: 'Track Title'
-}, {
-	description: 'should not remove "live" from string',
-	source: 'Fully Alive',
-	expected: 'Fully Alive'
-}, {
 	description: 'should remove (live) suffix',
 	source: 'Track Title (Live)',
 	expected: 'Track Title'
@@ -328,6 +320,18 @@ const YOUTUBE_FILTER_RULES_TEST_DATA = [{
 	description: 'should remove "(whatever 2/12/18)" string',
 	source: 'Track Title (whatever 2/12/18)',
 	expected: 'Track Title'
+}, {
+	description: 'should not remove trailing "Live" word',
+	source: 'Track Title Live',
+	expected: 'Track Title Live'
+}, {
+	description: 'should not remove "Live" word',
+	source: 'Track Live Title',
+	expected: 'Track Live Title'
+}, {
+	description: 'should not remove "live" as a part of a word from string',
+	source: 'Fully Alive',
+	expected: 'Fully Alive'
 }];
 
 /**
