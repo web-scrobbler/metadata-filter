@@ -391,7 +391,7 @@ class MetadataFilter {
 			// trim starting white chars and dash
 			{ source: /^[/,:;~-\s"]+/, target: '' },
 			// trim trailing white chars and dash
-			{ source: /[/,:;~-\s"$]+$/, target: '' },
+			{ source: /[/,:;~-\s"]+$/, target: '' },
 		];
 	}
 
