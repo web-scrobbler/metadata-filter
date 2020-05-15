@@ -28,7 +28,7 @@ class MetadataFilter {
      */
 	constructor(filterSet) {
 		if (!filterSet) {
-			throw new Error('No filter set is specified!');
+			throw new TypeError('No filter set is specified!');
 		}
 
 		this.mergedFilterSet = {};
@@ -125,7 +125,7 @@ class MetadataFilter {
 			}
 
 			if (!MetadataFilter.ALL_FIELDS.includes(field)) {
-				throw new Error(`Invalid filter field: ${field}`);
+				throw new TypeError(`Invalid filter field: ${field}`);
 			}
 		}
 
@@ -148,7 +148,7 @@ class MetadataFilter {
 
 	static assertFilterFunctionIsValid(fn) {
 		if (typeof fn !== 'function') {
-			throw new Error(`Invalid filter function: expected 'function', got '${typeof fn}'`);
+			throw new TypeError(`Invalid filter function: expected 'function', got '${typeof fn}'`);
 		}
 	}
 
