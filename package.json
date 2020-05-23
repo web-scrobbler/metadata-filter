@@ -21,7 +21,7 @@
     "codacy-coverage": "^3.4.0",
     "eslint-config-web-scrobbler": "^0.1.0",
     "grunt": "1.1.0",
-    "grunt-eslint": "22.0.0",
+    "grunt-eslint": "23.0.0",
     "grunt-umd": "^3.0.0",
     "load-grunt-tasks": "5.1.0",
     "mocha": "7.1.2",
