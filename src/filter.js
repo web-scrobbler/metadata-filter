@@ -135,13 +135,11 @@ class MetadataFilter {
 			}
 
 			if (filterSet[field]) {
-				this.mergedFilterSet[field] = this.mergedFilterSet[field]
-					.concat(this.createFilters(filterSet[field]));
+				this.mergedFilterSet[field].push(...this.createFilters(filterSet[field]));
 			}
 
 			if (filterSet[allField]) {
-				this.mergedFilterSet[field] = this.mergedFilterSet[field]
-					.concat(this.createFilters(filterSet[allField]));
+				this.mergedFilterSet[field].push(...this.createFilters(filterSet[allField]));
 			}
 		}
 	}
