@@ -20,7 +20,7 @@ module.exports = (grunt) => {
 		eslint: {
 			target: jsFiles,
 			options: {
-				fix: !isCi
+				fix: !isCi,
 			},
 		},
 		umd: {
@@ -32,9 +32,9 @@ module.exports = (grunt) => {
 					template: umdTemplateFile,
 					amdModuleId: moduleName,
 					objectToExport: mainObject,
-				}
-			}
-		}
+				},
+			},
+		},
 	});
 
 	require('load-grunt-tasks')(grunt);

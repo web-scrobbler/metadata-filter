@@ -523,7 +523,7 @@ class MetadataFilter {
 	 */
 	static getYoutubeFilter() {
 		return new MetadataFilter({
-			track: MetadataFilter.youtube
+			track: MetadataFilter.youtube,
 		});
 	}
 
