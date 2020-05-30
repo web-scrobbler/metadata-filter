@@ -1,3 +1,0 @@
-extends: 'web-scrobbler'
-parserOptions:
-  ecmaVersion: 8

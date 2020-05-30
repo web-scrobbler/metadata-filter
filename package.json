@@ -39,5 +39,8 @@
     "test-with-coverage": "nyc npm test",
     "upload-coverage": "cat ./coverage/lcov.info | codacy-coverage",
     "clean-coverage": "rm -rf ./coverage"
+  },
+  "eslintConfig": {
+    "extends": "web-scrobbler"
   }
 }
