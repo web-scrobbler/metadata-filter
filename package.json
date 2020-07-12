@@ -19,7 +19,7 @@
     "chai": "4.2.0",
     "chai-spies": "1.0.0",
     "eslint-config-web-scrobbler": "0.6.1",
-    "grunt": "1.2.0",
+    "grunt": "1.2.1",
     "grunt-eslint": "23.0.0",
     "grunt-umd": "3.0.0",
     "load-grunt-tasks": "5.1.0",
