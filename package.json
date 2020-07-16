@@ -18,28 +18,34 @@
   "devDependencies": {
     "chai": "4.2.0",
     "chai-spies": "1.0.0",
+    "eslint": "^7.4.0",
     "eslint-config-web-scrobbler": "0.6.1",
-    "grunt": "1.2.1",
-    "grunt-eslint": "23.0.0",
-    "grunt-umd": "3.0.0",
-    "load-grunt-tasks": "5.1.0",
+    "esm": "^3.2.25",
     "mocha": "8.0.1",
     "mocha-lcov-reporter": "1.3.0",
-    "nyc": "15.1.0"
+    "nyc": "15.1.0",
+    "prettier": "2.0.5",
+    "prettier-config-web-scrobbler": "0.1.0",
+    "rollup": "^2.21.0"
   },
   "engines": {
     "node": ">=10.0.0"
   },
   "license": "MIT",
   "scripts": {
-    "lint": "grunt lint",
-    "test": "mocha",
-    "prepare": "grunt dist",
-    "test-with-coverage": "nyc mocha",
+    "lint": "eslint",
+    "test": "mocha --recursive --require esm",
+    "build": "rollup ./src/index.js --file ./dist/filter.js --format umd --name MetadataFilter",
+    "prepare": "build",
+    "test-with-coverage": "nyc npm test",
     "upload-coverage": "curl -Ls https://coverage.codacy.com/get.sh | bash -s report -r ./coverage/lcov.info",
     "clean-coverage": "rm -rf ./coverage"
   },
   "eslintConfig": {
-    "extends": "web-scrobbler"
-  }
+    "extends": "web-scrobbler",
+    "parserOptions": {
+      "sourceType": "module"
+    }
+  },
+  "prettier": "prettier-config-web-scrobbler"
 }
