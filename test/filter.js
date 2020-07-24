@@ -28,27 +28,55 @@ describe('Test `getFields` method', () => {
 });
 
 describe('Test appending filter set', () => {
-	const fn1 = chai.spy();
-	const fn2 = chai.spy();
+	it('should append filter set with different fields', () => {
+		const fn1 = chai.spy();
+		const fn2 = chai.spy();
 
-	const filter1 = createFilter({ foo: fn1 });
-	const filterSet2 = { bar: fn2 };
+		const filter1 = createFilter({ foo: fn1 });
+		const filterSet2 = { bar: fn2 };
 
-	const filter = filter1.append(filterSet2);
+		const filter = filter1.append(filterSet2);
 
-	testExtendedFilter(filter, fn1, fn2);
+		testExtendedFilter(filter, fn1, fn2);
+	});
+
+	it('should append filter set with the same field', () => {
+		const fn1 = chai.spy();
+		const fn2 = chai.spy();
+
+		const filter1 = createFilter({ foo: fn1 });
+		const filterSet2 = { foo: fn2 };
+
+		const filter = filter1.append(filterSet2);
+
+		testExtendedFilter(filter, fn1, fn2);
+	});
 });
 
 describe('Test extending filter', () => {
-	const fn1 = chai.spy();
-	const fn2 = chai.spy();
+	it('should merge two filters with different fields', () => {
+		const fn1 = chai.spy();
+		const fn2 = chai.spy();
 
-	const filter1 = createFilter({ foo: fn1 });
-	const filter2 = createFilter({ bar: fn2 });
+		const filter1 = createFilter({ foo: fn1 });
+		const filter2 = createFilter({ bar: fn2 });
 
-	const filter = filter1.extend(filter2);
+		const filter = filter1.extend(filter2);
 
-	testExtendedFilter(filter, fn1, fn2);
+		testExtendedFilter(filter, fn1, fn2);
+	});
+
+	it('should merge two filters with the same field', () => {
+		const fn1 = chai.spy();
+		const fn2 = chai.spy();
+
+		const filter1 = createFilter({ foo: fn1 });
+		const filter2 = createFilter({ foo: fn2 });
+
+		const filter = filter1.extend(filter2);
+
+		testExtendedFilter(filter, fn1, fn2);
+	});
 });
 
 describe('Test filtering empty strings', () => {
