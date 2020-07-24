@@ -40,21 +40,21 @@ export class MetadataFilter {
 	}
 
 	/**
-	 * Filter field using filters for given field.
+	 * Filter the field value using filters for the given field.
 	 *
 	 * @param {String} field Metadata field
-	 * @param {String} text String to be filtered
+	 * @param {String} fieldValue Field value to be filtered
 	 *
 	 * @return {String} Filtered string
 	 *
 	 * @throws {TypeError} Throw an error if an invalid field is specified
 	 */
-	filterField(field, text) {
+	filterField(field, fieldValue) {
 		if (!(field in this.mergedFilterSet)) {
 			throw new TypeError(`Invalid filter field: ${field}`);
 		}
 
-		return this.filterText(text, this.mergedFilterSet[field]);
+		return this.filterText(fieldValue, this.mergedFilterSet[field]);
 	}
 
 	/**
