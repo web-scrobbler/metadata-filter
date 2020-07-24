@@ -17,8 +17,6 @@ such as an artist, album, or track.
 However, it is possible (not officially supported) to use some of these on
 combined fields ("Artist - Song", "Artist - Album"), as in the third example below.
 
-These functions are all described in the [API Reference](#api-reference).
-
 ```javascript
 const MetadataFilter = require('metadata-filter');
 
@@ -26,6 +24,8 @@ console.log(MetadataFilter.removeRemastered('Jane Doe (Remastered)')); // Jane D
 console.log(MetadataFilter.removeVersion('Get Lucky (Album Version)')); // Get Lucky
 console.log(MetadataFilter.youtube('Car Bomb - Scattered Sprites (Official Music Video)')); // Car Bomb - Scattered Sprites
 ```
+
+See [src/functions.js](src/functions.js) for more details.
 
 ### Multiple Filters
 You can also to use multiple filters on a string at once by creating a
@@ -52,7 +52,7 @@ const filterSet = {
 
 Then, construct a MetadataFilter using this filter set.
 ```javascript
-const filter = new MetadataFilter(filterSet);
+const filter = MetadataFilter.createFilter(filterSet);
 console.log(filter.filterField('album', 'Nevermind (Remastered)')) // Nevermind
 console.log(filter.filterField('track', 'In Bloom - Nevermind Version')) // In Bloom
 ```
@@ -65,7 +65,7 @@ the above filter set can be acquired using `getSpotifyFilter()`:
 const filter = MetadataFilter.getSpotifyFilter();
 ```
 
-These are all documented in the [API Reference](#filter-functions) below.
+See [src/filters.js](src/filters.js) for more details.
 
 ### Extending Filters
 Finally, you can take existing MetadataFilter objects and extend them with another filter.
@@ -75,7 +75,7 @@ This is done by providing the `.extend()` method with another MetadataFilter obj
 let filter = MetadataFilter.getSpotifyFilter();
 
 filter.extend(MetadataFilter.getAmazonFilter());
-// This would also work: filter.extend(new MetadataFilter(filterSet));
+// This would also work: filter.extend(MetadataFilter.createFilter(filterSet));
 
 console.log(filter.filterField('track', 'Seasons in the Abyss (Album Version)')); // Seasons in the Abyss
 ```
@@ -83,7 +83,7 @@ console.log(filter.filterField('track', 'Seasons in the Abyss (Album Version)'))
 As an alternative, you can use the `.append()` method to apply a filter set to
 the existing MetadataFilter.
 ```javascript
-let filter = new MetadataFilter({ track: filterTrack });
+let filter = MetadataFilter.createFilter({ track: filterTrack });
 
 filter.append({ artist: filterArtist });
 ```
@@ -91,32 +91,7 @@ filter.append({ artist: filterArtist });
 Since these methods return a MetadataFilter instance, you can chain method calls.
 ```javascript
 
-let filter = new MetadataFilter({ track: filterTrack }).append({ artist: filterArtist });
-```
-
-## API Reference
-
-### Filter Functions
-```
-albumArtistFromArtist: Generate Album Artist from Artist when "feat. Artist B" is present.
-fixTrackSuffix: Replace "Title - X Remix" suffix with "Title (X Remix) and similar".
-normalizeFeature: Generate normalized "feat. Artist B" text from [feat. Artist B] style.
-removeCleanExplicit: Remove "Explicit" and "Clean"-like strings from the text.
-removeFeature: Remove "feat"-like strings from the text.
-removeLive: Remove "Live..."-like strings from the text.
-removeRemastered: Remove "Remastered..."-like strings from the text.
-removeVersion: Remove "(Single|Album|Mono version}"-like strings from the text.
-youtube: Remove Youtube-related garbage from the text (e.g. "HD", "Official Video").
-```
-
-### Predefined Filters
-```
-getAmazonFilter: Get a filter with Amazon-related filter functions.
-getDefaultFilter: Get a filter that performs a basic cleanup (trim and remove NBSPs).
-getRemasteredFilter: Get a filter that removes "Remastered"-like suffixes.
-getSpotifyFilter: Get a filter with Spotify-related filter functions.
-getTidalFilter: Get a filter with Tidal-related filter functions.
-getYoutubeFilter: Get a filter with Spotify-related filter functions.
+let filter = MetadataFilter.createFilter({ track: filterTrack }).append({ artist: filterArtist });
 ```
 
 ## License
