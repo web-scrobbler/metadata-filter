@@ -56,7 +56,7 @@ export function testExtendedFilter(filter, ...filterFunctions) {
 export function testFilterFunction(filterFunction, testData) {
 	const functionName = filterFunction.name;
 
-	describe(`test '${functionName}' filter function`, () => {
+	describe(`Test '${functionName}' filter function`, () => {
 		for (const data of testData) {
 			const { description, source, expected } = data;
 
