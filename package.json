@@ -37,7 +37,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "lint": "eslint",
+    "lint": "eslint **/*.js",
     "test": "mocha --recursive --require esm",
     "gen-types": "tsc -p .",
     "build": "rollup -c",
