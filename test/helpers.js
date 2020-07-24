@@ -7,7 +7,7 @@ import { MetadataFilter, createFilter } from './../src/filter';
  * The filter function is applied to the given list of fields.
  *
  * @param {Function} filterFunc Filter function
- * @param {Array} fields List of fields
+ * @param {String[]} fields List of fields
  *
  * @return {MetadataFilter} MetadataFilter instance
  */
@@ -26,7 +26,7 @@ export function createFilterFromFunction(filterFunc, fields) {
  * The test if passed if all filter functions are called.
  *
  * @param {Object} filter MetadataFilter instance
- * @param {Array} filterFunctions Filter functions that should be called
+ * @param {Function[]} filterFunctions Filter functions that should be called
  */
 export function testExtendedFilter(filter, ...filterFunctions) {
 	it('should call all filter functions', () => {
@@ -51,7 +51,7 @@ export function testExtendedFilter(filter, ...filterFunctions) {
  *  - `expected`: an expected result
  *
  * @param {Function} filterFunction Filter function reference
- * @param {Array} testData Test data
+ * @param {Object[]} testData Test data
  */
 export function testFilterFunction(filterFunction, testData) {
 	const functionName = filterFunction.name;

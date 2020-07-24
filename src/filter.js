@@ -95,7 +95,7 @@ export class MetadataFilter {
 	/**
 	 * Return a list of fields that the filter can filter.
 	 *
-	 * @return {Array} List of fields
+	 * @return {String[]} List of fields
 	 */
 	getFields() {
 		return Object.keys(this.mergedFilterSet);
@@ -109,7 +109,7 @@ export class MetadataFilter {
 	 * Filter text using given filters.
 	 *
 	 * @param {String} text String to be filtered
-	 * @param {Array} filters Array of filter functions
+	 * @param {Function[]} filters Array of filter functions
 	 *
 	 * @return {String} Filtered string
 	 */
@@ -129,9 +129,9 @@ export class MetadataFilter {
 	/**
 	 * Convert given filters into array of filters.
 	 *
-	 * @param {Object} filters Array of filter functions or filter function
+	 * @param {Function[]|Function} filters Array of filter functions or filter function
 	 *
-	 * @return {Array} Array of filter funcions
+	 * @return {Function[]} Array of filter funcions
 	 */
 	createFilters(filters) {
 		if (Array.isArray(filters)) {

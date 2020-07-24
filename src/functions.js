@@ -62,7 +62,7 @@ export function decodeHtmlEntities(text) {
  * Replace text according to given filter rules.
  *
  * @param {String} text String to be filtered
- * @param {Object} set Array of replace rules
+ * @param {Object[]} set Array of replace rules
  *
  * @return {String} Filtered string
  */
@@ -89,7 +89,9 @@ export function fixTrackSuffix(text) {
 
 /**
  * Generate normalized "feat. Artist B" text from [feat. Artist B] style.
+ *
  * @param {String} text String to be filtered
+ *
  * @return {String} Transformed string
  */
 export function normalizeFeature(text) {

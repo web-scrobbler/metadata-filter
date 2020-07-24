@@ -69,8 +69,6 @@ export const YOUTUBE_TRACK_FILTER_RULES = [
 
 /**
  * Filter rules to remove "Remastered..."-like strings from a text.
- *
- * @type {Array}
  */
 export const REMASTERED_FILTER_RULES = [
 	// Here Comes The Sun - Remastered
