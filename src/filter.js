@@ -35,6 +35,7 @@ export class MetadataFilter {
 			throw new TypeError('No filter set is specified!');
 		}
 
+		/** @private */
 		this.mergedFilterSet = {};
 		this.appendFilters(filterSet);
 	}
@@ -102,16 +103,14 @@ export class MetadataFilter {
 	}
 
 	/**
-	 * Internal.
-	 */
-
-	/**
 	 * Filter text using given filters.
 	 *
 	 * @param {String} text String to be filtered
 	 * @param {Function[]} filters Array of filter functions
 	 *
 	 * @return {String} Filtered string
+	 *
+	 * @private
 	 */
 	filterText(text, filters) {
 		if (!text) {
@@ -132,6 +131,8 @@ export class MetadataFilter {
 	 * @param {Function[]|Function} filters Array of filter functions or filter function
 	 *
 	 * @return {Function[]} Array of filter funcions
+	 *
+	 * @private
 	 */
 	createFilters(filters) {
 		if (Array.isArray(filters)) {
@@ -154,6 +155,8 @@ export class MetadataFilter {
 	 *
 	 * @throws {TypeError} Throw an error if a field of filter set is invalid
 	 * @throws {TypeError} Throw an error if a filter function is not a function
+	 *
+	 * @private
 	 */
 	appendFilters(filterSet) {
 		for (const field in filterSet) {
@@ -167,6 +170,15 @@ export class MetadataFilter {
 		}
 	}
 
+	/**
+	 * Throw an error if the given filter function is not a valid function.
+	 *
+	 * @param  {Object} fn Object to check
+	 *
+	 * @throws {TypeError} Throw an error if the given argument is not a function
+	 *
+	 * @private
+	 */
 	static assertFilterFunctionIsValid(fn) {
 		if (typeof fn !== 'function') {
 			throw new TypeError(`Invalid filter function: expected 'function', got '${typeof fn}'`);
