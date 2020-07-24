@@ -48,8 +48,14 @@ export class MetadataFilter {
 	 * @param {String} text String to be filtered
 	 *
 	 * @return {String} Filtered string
+	 *
+	 * @throws {TypeError} Throw an error if an invalid field is specified
 	 */
 	filterField(field, text) {
+		if (!(field in this.mergedFilterSet)) {
+			throw new TypeError(`Invalid filter field: ${field}`);
+		}
+
 		return this.filterText(text, this.mergedFilterSet[field]);
 	}
 

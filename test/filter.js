@@ -58,6 +58,14 @@ describe('Test filtering empty strings', () => {
 	});
 });
 
+describe('Test filtering invalid filter field', () => {
+	it('should throw error if invalid field is filtered', () => {
+		const filter = createFilter({ all: (text) => text });
+
+		expect(() => filter.filterField('unknown', 'Field value')).to.throw();
+	});
+});
+
 describe('Test invalid filter', () => {
 	it('should throw error if the filter set is not specified', () => {
 		expect(() => createFilter(null)).to.throw();
