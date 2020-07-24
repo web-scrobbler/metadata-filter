@@ -9,22 +9,12 @@ import {
 	removeLive,
 	removeRemastered,
 	removeVersion,
-	replaceNbsp,
-	trim,
 	youtube,
 } from './functions';
 
 /**
  * Predefined filters.
  */
-
-/**
- * Get a filter that performs a basic cleanup (trim and replace NBSPs).
- * @return {MetadataFilter} Filter object
- */
-export function getDefaultFilter() {
-	return new MetadataFilter({ all: [trim, replaceNbsp] });
-}
 
 /**
  * Get a filter with YouTube-related filter functions.

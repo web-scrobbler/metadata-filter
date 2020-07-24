@@ -174,18 +174,6 @@ export function removeFeature(text) {
 }
 
 /**
- * Trim a given string.
- *
- * @param {String} text String to be trimmed
- *
- * @return {String}	Trimmed string
- */
-/* istanbul ignore next */
-export function trim(text) {
-	return text.trim();
-}
-
-/**
  * Remove Youtube-related garbage from the text.
  *
  * @param {String} text String to be filtered
