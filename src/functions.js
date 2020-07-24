@@ -108,14 +108,14 @@ export function removeZeroWidth(text) {
 }
 
 /**
- * Replace non-breaking space symbol with space symbol.
+ * Replace all non-breaking space symbols with a space symbol.
  *
  * @param {String} text String to be filtered
  *
  * @return {String}	Filtered string
  */
 export function replaceNbsp(text) {
-	return text.replace('\u00a0', '\u0020');
+	return text.replace(/\u00a0/g, '\u0020');
 }
 
 /**
