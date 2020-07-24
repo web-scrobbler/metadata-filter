@@ -1,9 +1,9 @@
 import { expect } from 'chai';
 
-import { MetadataFilter } from './../src/filter';
+import { MetadataFilter, createFilter } from './../src/filter';
 
 /**
- * Return a new MetadataFilter instance using the given filter function.
+ * Return a createFilter instance using the given filter function.
  * The filter function is applied to the given list of fields.
  *
  * @param {Function} filterFunc Filter function
@@ -12,7 +12,7 @@ import { MetadataFilter } from './../src/filter';
  * @return {MetadataFilter} MetadataFilter instance
  */
 export function createFilterFromFunction(filterFunc, fields) {
-	return new MetadataFilter(
+	return createFilter(
 		fields.reduce((filterSet, field) => {
 			filterSet[field] = filterFunc;
 			return filterSet;
