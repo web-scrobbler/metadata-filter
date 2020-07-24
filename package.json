@@ -4,6 +4,7 @@
   "author": "Alexey <alex.esprit@gmail.com>",
   "description": "A module for cleaning up artist, album, and song names.",
   "main": "dist/filter.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -26,7 +27,9 @@
     "nyc": "15.1.0",
     "prettier": "2.0.5",
     "prettier-config-web-scrobbler": "0.1.0",
-    "rollup": "^2.21.0"
+    "rollup": "2.21.0",
+    "rollup-plugin-banner": "0.2.1",
+    "rollup-plugin-terser": "6.1.0"
   },
   "engines": {
     "node": ">=10.0.0"
@@ -35,7 +38,7 @@
   "scripts": {
     "lint": "eslint",
     "test": "mocha --recursive --require esm",
-    "build": "rollup ./src/index.js --file ./dist/filter.js --format umd --name MetadataFilter",
+    "build": "rollup -c",
     "prepare": "npm run build",
     "test-with-coverage": "nyc npm test",
     "upload-coverage": "curl -Ls https://coverage.codacy.com/get.sh | bash -s report -r ./coverage/lcov.info",
