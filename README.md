@@ -94,6 +94,25 @@ Since these methods return a MetadataFilter instance, you can chain method calls
 let filter = MetadataFilter.createFilter({ track: filterTrack }).append({ artist: filterArtist });
 ```
 
+## Development
+
+```sh
+# Install dev dependencies
+> npm install
+
+# Build the dist file
+> npm run build
+
+# Lint source files
+> npm run lint
+
+# Run tests
+> npm test
+
+# Run tests with a coverage report
+> npm run test-with-coverage
+```
+
 ## License
 Licensed under the [MIT License](LICENSE.md).
 
