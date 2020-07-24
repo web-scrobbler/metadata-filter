@@ -28,8 +28,8 @@ export class MetadataFilter {
 	/**
 	 * @constructor
 	 *
-     * @param {Object} filterSet Set of filters
-     */
+	 * @param {Object} filterSet Set of filters
+	 */
 	constructor(filterSet) {
 		if (!filterSet) {
 			throw new TypeError('No filter set is specified!');
@@ -131,7 +131,7 @@ export class MetadataFilter {
 	/**
 	 * Add given filters to current ones.
 	 *
-     * @param {Object} filterSet Set of filters
+	 * @param {Object} filterSet Set of filters
 	 */
 	appendFilters(filterSet) {
 		for (const field in filterSet) {
