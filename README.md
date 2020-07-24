@@ -95,7 +95,7 @@ let filter = MetadataFilter.createFilter({ track: filterTrack }).append({ artist
 ```
 
 ## License
-See the [License file](LICENSE.md).
+Licensed under the [MIT License](LICENSE.md).
 
 <!-- Badges -->
 [WorkflowBadge]: https://github.com/web-scrobbler/metadata-filter/workflows/Test/badge.svg
