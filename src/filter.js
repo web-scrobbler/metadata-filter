@@ -29,6 +29,8 @@ export class MetadataFilter {
 	 * @constructor
 	 *
 	 * @param {Object} filterSet Set of filters
+	 *
+	 * @throws {TypeError} Throw an error if no filter set is specified
 	 */
 	constructor(filterSet) {
 		if (!filterSet) {
@@ -132,6 +134,9 @@ export class MetadataFilter {
 	 * Add given filters to current ones.
 	 *
 	 * @param {Object} filterSet Set of filters
+	 *
+	 * @throws {TypeError} Throw an error if a field of filter set is invalid
+	 * @throws {TypeError} Throw an error if a filter function is not a function
 	 */
 	appendFilters(filterSet) {
 		for (const field in filterSet) {
