@@ -30,7 +30,7 @@ export function createFilterFromFunction(filterFunc, fields) {
  */
 export function testExtendedFilter(filter, ...filterFunctions) {
 	it('should call all filter functions', () => {
-		for (const field of MetadataFilter.ALL_FIELDS) {
+		for (const field of filter.getFields()) {
 			filter.filterField(field, 'Test');
 		}
 
@@ -66,4 +66,15 @@ export function testFilterFunction(filterFunction, testData) {
 			});
 		}
 	});
+}
+
+/**
+ * A dummy filter function that returns an input.
+ *
+ * @param  {String} text String to be filtered
+ *
+ * @return {String} Unmodified input
+ */
+export function dummyFn(text) {
+	return text;
 }

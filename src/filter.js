@@ -1,5 +1,3 @@
-const allField = 'all';
-
 /**
  * Create a new MetadataFilter instance from a given filter set.
  *
@@ -14,15 +12,15 @@ export function createFilter(filterSet) {
 /**
  * Base filter object that filters metadata fields by given filter set.
  *
- * A filter set is an object containing `artist`, `track`, `album`,
- * `albumArtist`, or `all` properties. Each property can be defined either as
- * a filter function or as an array of filter functions. These properties
- * are used to define filter functions to filter the respective metadata fields.
- * The 'all' property can be used to define common filter functions for all
- * metadata fields.
+ * The filter set is an object containing properties (fields) with filter
+ * functions. Each field can contain a single filter function, or an array of
+ * filter functions.
  *
- * The filter function is a function which takes non-null string argument
- * and returns modified string.
+ * The filter function is a pure function which takes a non-empty string and
+ * returns a modified string.
+ *
+ * These filter functions will be applied to a field value passed in
+ * `MetadataFilter.filterField` method.
  */
 export class MetadataFilter {
 	/**
@@ -84,10 +82,23 @@ export class MetadataFilter {
 	}
 
 	/**
-	 * Return a list of supported fields.
+	 * Check if the filter contains filter functions for a given field.
+	 *
+	 * @param {String} field Field to check
+	 *
+	 * @return {Boolean} Check result
 	 */
-	static get ALL_FIELDS() {
-		return ['artist', 'track', 'album', 'albumArtist'];
+	canFilterField(field) {
+		return field in this.mergedFilterSet;
+	}
+
+	/**
+	 * Return a list of fields that the filter can filter.
+	 *
+	 * @return {Array} List of fields
+	 */
+	getFields() {
+		return Object.keys(this.mergedFilterSet);
 	}
 
 	/**
@@ -146,27 +157,13 @@ export class MetadataFilter {
 	 */
 	appendFilters(filterSet) {
 		for (const field in filterSet) {
-			if (field === allField) {
-				continue;
-			}
-
-			if (!MetadataFilter.ALL_FIELDS.includes(field)) {
-				throw new TypeError(`Invalid filter field: ${field}`);
-			}
-		}
-
-		for (const field of MetadataFilter.ALL_FIELDS) {
-			if (this.mergedFilterSet[field] === undefined) {
+			if (!(field in this.mergedFilterSet)) {
 				this.mergedFilterSet[field] = [];
 			}
 
-			if (filterSet[field]) {
-				this.mergedFilterSet[field].push(...this.createFilters(filterSet[field]));
-			}
-
-			if (filterSet[allField]) {
-				this.mergedFilterSet[field].push(...this.createFilters(filterSet[allField]));
-			}
+			this.mergedFilterSet[field].push(
+				...this.createFilters(filterSet[field])
+			);
 		}
 	}
 
