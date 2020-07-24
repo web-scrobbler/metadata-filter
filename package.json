@@ -36,7 +36,7 @@
     "lint": "eslint",
     "test": "mocha --recursive --require esm",
     "build": "rollup ./src/index.js --file ./dist/filter.js --format umd --name MetadataFilter",
-    "prepare": "build",
+    "prepare": "npm run build",
     "test-with-coverage": "nyc npm test",
     "upload-coverage": "curl -Ls https://coverage.codacy.com/get.sh | bash -s report -r ./coverage/lcov.info",
     "clean-coverage": "rm -rf ./coverage"
