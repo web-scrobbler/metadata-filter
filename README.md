@@ -1,15 +1,17 @@
-# Metadata Filter [![Test][WorkflowBadge]][Workflow] [![NPM][NpmBadge]][Npm] [![Codacy][CodacyBadge]][Codacy] [![Coverage][CodacyCovBadge]][Codacy]
+# metadata-filter [![Test][WorkflowBadge]][Workflow] [![NPM][NpmBadge]][Npm] [![Codacy][CodacyBadge]][Codacy] [![Coverage][CodacyCovBadge]][Codacy]
 
 A module for cleaning up artist, album, and song names.
 
 ## Installation
+
 ```
 npm i metadata-filter
 ```
 
 ## Usage
 
-### Single Filter Functions
+### Single filter functions
+
 You can call MetadataFilter's static filter functions for basic, one-line filter
 functionality. These filter functions are intended to be used on a single field,
 such as an artist, album, or track.
@@ -27,7 +29,8 @@ console.log(MetadataFilter.youtube('Car Bomb - Scattered Sprites (Official Music
 
 See [src/functions.js](src/functions.js) for more details.
 
-### Multiple Filters
+### Multiple filters
+
 You can also to use multiple filters on a string at once by creating a
 `MetadataFilter` object which combines multiple functions from above,
 or by using one of the pre-existing [filter objects](#predefined-filters).
@@ -51,13 +54,15 @@ const filterSet = {
 ```
 
 Then, construct a MetadataFilter using this filter set.
+
 ```javascript
 const filter = MetadataFilter.createFilter(filterSet);
 console.log(filter.filterField('album', 'Nevermind (Remastered)')) // Nevermind
 console.log(filter.filterField('track', 'In Bloom - Nevermind Version')) // In Bloom
 ```
 
-### Predefined Filters
+### Predefined filters
+
 There are also predefined filters available for easy access. For example,
 the above filter set can be acquired using `getSpotifyFilter()`:
 
@@ -67,7 +72,8 @@ const filter = MetadataFilter.getSpotifyFilter();
 
 See [src/filters.js](src/filters.js) for more details.
 
-### Extending Filters
+### Extending filters
+
 Finally, you can take existing MetadataFilter objects and extend them with another filter.
 This is done by providing the `.extend()` method with another MetadataFilter object.
 
@@ -114,6 +120,7 @@ let filter = MetadataFilter.createFilter({ track: filterTrack }).append({ artist
 ```
 
 ## License
+
 Licensed under the [MIT License](LICENSE.md).
 
 <!-- Badges -->
