@@ -12,9 +12,9 @@ npm i metadata-filter
 
 ### Single filter functions
 
-You can call MetadataFilter's static filter functions for basic, one-line filter
-functionality. These filter functions are intended to be used on a single field,
-such as an artist, album, or track.
+You can call filter functions for basic, one-line filter functionality.
+These filter functions are intended to be used on a single field, such as
+an artist, album, or track.
 
 However, it is possible (not officially supported) to use some of these on
 combined fields ("Artist - Song", "Artist - Album"), as in the third example below.
