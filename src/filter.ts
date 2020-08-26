@@ -126,25 +126,20 @@ export class MetadataFilter {
 	}
 
 	/**
-	 * Convert given filters into array of filters.
+	 * Wrap given filters into array of filters, if needed.
 	 *
 	 * @param filters Array of filter functions or filter function
 	 *
 	 * @return Array of filter funcions
 	 */
-	private createFilters(
+	private wrapFiltersIntoArray(
 		filters: FilterFuncion | FilterFuncion[]
 	): FilterFuncion[] {
 		if (Array.isArray(filters)) {
-			for (const filterFn of filters) {
-				MetadataFilter.assertFilterFunctionIsValid(filterFn);
-			}
 			return filters;
 		}
 
 		const filterFn = filters;
-		MetadataFilter.assertFilterFunctionIsValid(filterFn);
-
 		return [filterFn];
 	}
 
@@ -153,7 +148,6 @@ export class MetadataFilter {
 	 *
 	 * @param filterSet Set of filters
 	 *
-	 * @throws Throw an error if a field of filter set is invalid
 	 * @throws Throw an error if a filter function is not a function
 	 */
 	private appendFilters(filterSet: FilterSet): void {
@@ -162,23 +156,28 @@ export class MetadataFilter {
 				this.mergedFilterSet[field] = [];
 			}
 
-			this.mergedFilterSet[field].push(
-				...this.createFilters(filterSet[field])
-			);
+			const filterFunctions = this.wrapFiltersIntoArray(filterSet[field]);
+			MetadataFilter.validateFilters(filterFunctions);
+
+			this.mergedFilterSet[field].push(...filterFunctions);
 		}
 	}
 
 	/**
-	 * Throw an error if the given filter function is not a valid function.
+	 * Assert every function in the given array of objects is a filter function.
 	 *
-	 * @param  fn Object to check
+	 * @param filters Array of filter functions
 	 *
-	 * @throws Throw an error if the given argument is not a function
+	 * @throws Throw an error if the assertion is failed
 	 */
-	private static assertFilterFunctionIsValid(fn: unknown): void {
-		if (typeof fn !== 'function') {
+	private static validateFilters(filters: unknown[]) {
+		for (const filterFn of filters) {
+			if (typeof filterFn === 'function') {
+				continue;
+			}
+
 			throw new TypeError(
-				`Invalid filter function: expected 'function', got '${typeof fn}'`
+				`Invalid filter function: expected 'function', got '${typeof filterFn}'`
 			);
 		}
 	}
