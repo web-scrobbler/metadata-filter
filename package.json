@@ -48,7 +48,8 @@
     "lint": "eslint **/*.js **/*.ts",
     "test": "mocha --recursive --require ts-node/register test/**/*.spec.ts",
     "build": "rollup -c",
-    "prepare": "npm run build",
+    "clean": "rm -rf dist types",
+    "prepare": "npm run clean && npm run build",
     "test-with-coverage": "nyc npm test",
     "upload-coverage": "curl -Ls https://coverage.codacy.com/get.sh | bash -s report -r ./coverage/lcov.info",
     "clean-coverage": "rm -rf ./coverage"
