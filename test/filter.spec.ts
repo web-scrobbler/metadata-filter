@@ -80,6 +80,16 @@ describe('Test extending filter', () => {
 	});
 });
 
+describe('Test filtering strings', () => {
+	it('should filter string', () => {
+		const filter = createFilter({
+			artist: [(text) => `${text}1`, (text) => `${text}2`],
+		});
+
+		expect(filter.filterField('artist', 'Text')).to.be.equal('Text12');
+	});
+});
+
 describe('Test filtering empty strings', () => {
 	/**
 	 * Function that should not be called.
