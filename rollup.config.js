@@ -23,7 +23,6 @@ function output(distFileName, format) {
 		plugins,
 		file: `dist/${distFileName}.js`,
 		name: 'MetadataFilter',
-		sourcemap: true,
 	};
 }
 
