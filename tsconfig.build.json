@@ -2,6 +2,7 @@
 {
   "compilerOptions": {
     "declaration": true,
+    "declarationDir": "types",
     "outDir": "dist"
   },
   // Skip `test` directory to prevent generating declaration files for tests

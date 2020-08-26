@@ -5,7 +5,7 @@
   "description": "A module for cleaning up artist, album, and song names.",
   "main": "dist/filter.js",
   "module": "dist/filter.esm.js",
-  "types": "dist/index.d.ts",
+  "types": "types/index.d.ts",
   "files": [
     "dist"
   ],

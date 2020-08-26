@@ -38,6 +38,7 @@ export default {
 		banner(() => bannerText),
 		typescript({
 			tsconfig: 'tsconfig.build.json',
+			useTsconfigDeclarationDir: true,
 		}),
 	],
 };
