@@ -167,4 +167,6 @@ export const Spanish = [
 	{ source: /\s[([]Videoclip Of+icial[)\]]/i, target: '' },
 	// (Video Oficial) or [Video Oficial]
 	{ source: /\s[([]Video Of+icial[)\]]/i, target: '' },
+	// Sub Español
+	{ source: /\sSub Español\/i, target: '' },
 ];
