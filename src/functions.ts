@@ -5,6 +5,7 @@ import {
 	NORMALIZE_FEATURE_FILTER_RULES,
 	REMASTERED_FILTER_RULES,
 	SUFFIX_FILTER_RULES,
+	TRIM_SYMBOLS_FILTER_RULES,
 	VERSION_FILTER_RULES,
 	YOUTUBE_TRACK_FILTER_RULES,
 	FilterRule,
@@ -185,5 +186,8 @@ export function removeFeature(text: string): string {
  * @return Filtered string
  */
 export function youtube(text: string): string {
-	return filterWithFilterRules(text, YOUTUBE_TRACK_FILTER_RULES);
+	return filterWithFilterRules(text, [
+		...YOUTUBE_TRACK_FILTER_RULES,
+		...TRIM_SYMBOLS_FILTER_RULES,
+	]);
 }

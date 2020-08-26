@@ -65,7 +65,13 @@ export const YOUTUBE_TRACK_FILTER_RULES: FilterRule[] = [
 	{ source: /^(|.*\s)'(.{5,})'(\s.*|)$/, target: '$2' },
 	// (*01/01/1999*)
 	{ source: /\(.*[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{2,4}.*\)/i, target: '' },
+];
 
+/**
+ * Special filter rules to remove leftoves after filtering text using
+ * `YOUTUBE_TRACK_FILTER_RULES` filter rules.
+ */
+export const TRIM_SYMBOLS_FILTER_RULES: FilterRule[] = [
 	// trim starting white chars and dash
 	{ source: /^[/,:;~-\s"]+/, target: '' },
 	// trim trailing white chars and dash
