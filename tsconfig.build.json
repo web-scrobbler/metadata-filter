@@ -1,0 +1,9 @@
+// This config is used for build only
+{
+  "compilerOptions": {
+    "declaration": true,
+    "outDir": "dist"
+  },
+  // Skip `test` directory to prevent generating declaration files for tests
+  "include": ["src/**/*"]
+}

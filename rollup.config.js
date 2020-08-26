@@ -35,5 +35,10 @@ export default {
 		output('filter.esm', 'esm'),
 		output('filter.esm.min', 'esm'),
 	],
-	plugins: [banner(() => bannerText), typescript()],
+	plugins: [
+		banner(() => bannerText),
+		typescript({
+			tsconfig: 'tsconfig.build.json',
+		}),
+	],
 };
