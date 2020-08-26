@@ -1,26 +1,26 @@
 import { removeCleanExplicit } from '../../src/functions';
 
-import { testFilterFunction } from '../helpers';
+import { testFilterFunction } from '../helper/test-function';
 
 testFilterFunction(removeCleanExplicit, [
 	{
 		description: 'should remove [Explicit] suffix',
-		source: 'Track [Explicit]',
-		expected: 'Track',
+		funcParameter: 'Track [Explicit]',
+		expectedValue: 'Track',
 	},
 	{
 		description: 'should remove (Explicit) suffix',
-		source: 'Track (Explicit)',
-		expected: 'Track',
+		funcParameter: 'Track (Explicit)',
+		expectedValue: 'Track',
 	},
 	{
 		description: 'should remove [Clean] suffix',
-		source: 'Track [Clean]',
-		expected: 'Track',
+		funcParameter: 'Track [Clean]',
+		expectedValue: 'Track',
 	},
 	{
 		description: 'should remove (Clean) suffix',
-		source: 'Track (Clean)',
-		expected: 'Track',
+		funcParameter: 'Track (Clean)',
+		expectedValue: 'Track',
 	},
 ]);

@@ -1,21 +1,21 @@
 import { normalizeFeature } from '../../src/functions';
 
-import { testFilterFunction } from '../helpers';
+import { testFilterFunction } from '../helper/test-function';
 
 testFilterFunction(normalizeFeature, [
 	{
 		description: 'should transform [feat. Artist B] to feat. Artist B',
-		source: 'Artist A [feat. Artist B]',
-		expected: 'Artist A feat. Artist B',
+		funcParameter: 'Artist A [feat. Artist B]',
+		expectedValue: 'Artist A feat. Artist B',
 	},
 	{
 		description: 'should not transform if no match for [feat. Artist B]',
-		source: 'Artist A',
-		expected: 'Artist A',
+		funcParameter: 'Artist A',
+		expectedValue: 'Artist A',
 	},
 	{
 		description: 'should not transform if no match for [feat. Artist B]',
-		source: 'Artist A feat. Artist B',
-		expected: 'Artist A feat. Artist B',
+		funcParameter: 'Artist A feat. Artist B',
+		expectedValue: 'Artist A feat. Artist B',
 	},
 ]);

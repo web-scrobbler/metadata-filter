@@ -2,9 +2,10 @@ import chai from 'chai';
 import { expect } from 'chai';
 import spies from 'chai-spies';
 
-import { createFilter } from './../src/filter';
+import { createFilter } from '../src/filter';
 
-import { testExtendedFilter, dummyFn } from './helpers';
+import { dummyFn } from './helper/util';
+import { testExtendedFilter } from './helper/test-filter';
 
 chai.use(spies);
 
@@ -29,8 +30,8 @@ describe('Test `getFields` method', () => {
 
 describe('Test appending filter set', () => {
 	it('should append filter set with different fields', () => {
-		const fn1 = chai.spy();
-		const fn2 = chai.spy();
+		const fn1 = chai.spy(dummyFn);
+		const fn2 = chai.spy(dummyFn);
 
 		const filter1 = createFilter({ foo: fn1 });
 		const filterSet2 = { bar: fn2 };
@@ -41,8 +42,8 @@ describe('Test appending filter set', () => {
 	});
 
 	it('should append filter set with the same field', () => {
-		const fn1 = chai.spy();
-		const fn2 = chai.spy();
+		const fn1 = chai.spy(dummyFn);
+		const fn2 = chai.spy(dummyFn);
 
 		const filter1 = createFilter({ foo: fn1 });
 		const filterSet2 = { foo: fn2 };
@@ -55,8 +56,8 @@ describe('Test appending filter set', () => {
 
 describe('Test extending filter', () => {
 	it('should merge two filters with different fields', () => {
-		const fn1 = chai.spy();
-		const fn2 = chai.spy();
+		const fn1 = chai.spy(dummyFn);
+		const fn2 = chai.spy(dummyFn);
 
 		const filter1 = createFilter({ foo: fn1 });
 		const filter2 = createFilter({ bar: fn2 });
@@ -67,8 +68,8 @@ describe('Test extending filter', () => {
 	});
 
 	it('should merge two filters with the same field', () => {
-		const fn1 = chai.spy();
-		const fn2 = chai.spy();
+		const fn1 = chai.spy(dummyFn);
+		const fn2 = chai.spy(dummyFn);
 
 		const filter1 = createFilter({ foo: fn1 });
 		const filter2 = createFilter({ foo: fn2 });
@@ -82,9 +83,10 @@ describe('Test extending filter', () => {
 describe('Test filtering empty strings', () => {
 	/**
 	 * Function that should not be called.
-	 * @throws {Error} if is called
+
+	 * @throws if is called
 	 */
-	function shouldNotBeCalled() {
+	function shouldNotBeCalled(): string {
 		throw new Error('This function should not be called');
 	}
 
@@ -119,18 +121,20 @@ describe('Test invalid filter', () => {
 	});
 
 	it('should throw error if the filter set is invalid', () => {
+		// @ts-ignore
 		expect(() => createFilter({ foo: 1 })).to.throw();
 	});
 
 	it('should throw error if the filter set as an array is invalid', () => {
+		// @ts-ignore
 		expect(() => createFilter({ foo: [1, 2] })).to.throw();
 	});
 });
 
 describe('Test method chaining', () => {
-	const fn1 = chai.spy();
-	const fn2 = chai.spy();
-	const fn3 = chai.spy();
+	const fn1 = chai.spy(dummyFn);
+	const fn2 = chai.spy(dummyFn);
+	const fn3 = chai.spy(dummyFn);
 
 	const filter = createFilter({ artist: fn1 })
 		.extend(createFilter({ track: fn2 }))

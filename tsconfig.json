@@ -1,9 +1,8 @@
 {
   "compilerOptions": {
-    "allowJs": true,
     "declaration": true,
-    "emitDeclarationOnly": true,
+    "esModuleInterop": true,
     "outDir": "dist"
   },
-  "include": ["src"],
+  "include": ["src/**/*", "test/**/*"],
 }

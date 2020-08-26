@@ -1,11 +1,17 @@
+import { FilterFuncion } from './functions';
+
+type MergedFilterSet = Record<string, FilterFuncion[]>;
+
+export type FilterSet = Record<string, FilterFuncion | FilterFuncion[]>;
+
 /**
  * Create a new MetadataFilter instance from a given filter set.
  *
- * @param {Object} filterSet Filter set
+ * @param filterSet Filter set
  *
- * @return {MetadataFilter} MetadataFilter instance
+ * @return MetadataFilter instance
  */
-export function createFilter(filterSet) {
+export function createFilter(filterSet: FilterSet): MetadataFilter {
 	return new MetadataFilter(filterSet);
 }
 
@@ -23,19 +29,20 @@ export function createFilter(filterSet) {
  * `MetadataFilter.filterField` method.
  */
 export class MetadataFilter {
+	private mergedFilterSet: MergedFilterSet;
+
 	/**
 	 * @constructor
 	 *
-	 * @param {Object} filterSet Set of filters
+	 * @param filterSet Set of filters
 	 *
-	 * @throws {TypeError} Throw an error if no filter set is specified
+	 * @throws Throw an error if no filter set is specified
 	 */
-	constructor(filterSet) {
+	constructor(filterSet: FilterSet) {
 		if (!filterSet) {
 			throw new TypeError('No filter set is specified!');
 		}
 
-		/** @private */
 		this.mergedFilterSet = {};
 		this.appendFilters(filterSet);
 	}
@@ -43,14 +50,14 @@ export class MetadataFilter {
 	/**
 	 * Filter the field value using filters for the given field.
 	 *
-	 * @param {String} field Metadata field
-	 * @param {String} fieldValue Field value to be filtered
+	 * @param field Metadata field
+	 * @param fieldValue Field value to be filtered
 	 *
-	 * @return {String} Filtered string
+	 * @return Filtered string
 	 *
-	 * @throws {TypeError} Throw an error if an invalid field is specified
+	 * @throws Throw an error if an invalid field is specified
 	 */
-	filterField(field, fieldValue) {
+	filterField(field: string, fieldValue: string): string {
 		if (!(field in this.mergedFilterSet)) {
 			throw new TypeError(`Invalid filter field: ${field}`);
 		}
@@ -61,11 +68,11 @@ export class MetadataFilter {
 	/**
 	 * Append a new filter set.
 	 *
-	 * @param {Object} filterSet Set of filters
+	 * @param filterSet Set of filters
 	 *
-	 * @return {MetadataFilter} Current instance
+	 * @return Current instance
 	 */
-	append(filterSet) {
+	append(filterSet: FilterSet): MetadataFilter {
 		this.appendFilters(filterSet);
 		return this;
 	}
@@ -73,11 +80,11 @@ export class MetadataFilter {
 	/**
 	 * Extend the filter by a filter set from a given filter.
 	 *
-	 * @param {Object} filter Filter object
+	 * @param filter Filter object
 	 *
-	 * @return {MetadataFilter} Current instance
+	 * @return Current instance
 	 */
-	extend(filter) {
+	extend(filter: MetadataFilter): MetadataFilter {
 		this.appendFilters(filter.mergedFilterSet);
 		return this;
 	}
@@ -85,34 +92,32 @@ export class MetadataFilter {
 	/**
 	 * Check if the filter contains filter functions for a given field.
 	 *
-	 * @param {String} field Field to check
+	 * @param field Field to check
 	 *
-	 * @return {Boolean} Check result
+	 * @return Check result
 	 */
-	canFilterField(field) {
+	canFilterField(field: string): boolean {
 		return field in this.mergedFilterSet;
 	}
 
 	/**
 	 * Return a list of fields that the filter can filter.
 	 *
-	 * @return {String[]} List of fields
+	 * @return List of fields
 	 */
-	getFields() {
+	getFields(): string[] {
 		return Object.keys(this.mergedFilterSet);
 	}
 
 	/**
 	 * Filter text using given filters.
 	 *
-	 * @param {String} text String to be filtered
-	 * @param {Function[]} filters Array of filter functions
+	 * @param text String to be filtered
+	 * @param filters Array of filter functions
 	 *
-	 * @return {String} Filtered string
-	 *
-	 * @private
+	 * @return Filtered string
 	 */
-	filterText(text, filters) {
+	private filterText(text: string, filters: FilterFuncion[]): string {
 		if (!text) {
 			return text;
 		}
@@ -128,13 +133,13 @@ export class MetadataFilter {
 	/**
 	 * Convert given filters into array of filters.
 	 *
-	 * @param {Function[]|Function} filters Array of filter functions or filter function
+	 * @param filters Array of filter functions or filter function
 	 *
-	 * @return {Function[]} Array of filter funcions
-	 *
-	 * @private
+	 * @return Array of filter funcions
 	 */
-	createFilters(filters) {
+	private createFilters(
+		filters: FilterFuncion | FilterFuncion[]
+	): FilterFuncion[] {
 		if (Array.isArray(filters)) {
 			for (const filterFn of filters) {
 				MetadataFilter.assertFilterFunctionIsValid(filterFn);
@@ -151,14 +156,12 @@ export class MetadataFilter {
 	/**
 	 * Add given filters to current ones.
 	 *
-	 * @param {Object} filterSet Set of filters
+	 * @param filterSet Set of filters
 	 *
-	 * @throws {TypeError} Throw an error if a field of filter set is invalid
-	 * @throws {TypeError} Throw an error if a filter function is not a function
-	 *
-	 * @private
+	 * @throws Throw an error if a field of filter set is invalid
+	 * @throws Throw an error if a filter function is not a function
 	 */
-	appendFilters(filterSet) {
+	private appendFilters(filterSet: FilterSet): void {
 		for (const field in filterSet) {
 			if (!(field in this.mergedFilterSet)) {
 				this.mergedFilterSet[field] = [];
@@ -173,15 +176,15 @@ export class MetadataFilter {
 	/**
 	 * Throw an error if the given filter function is not a valid function.
 	 *
-	 * @param  {Object} fn Object to check
+	 * @param  fn Object to check
 	 *
-	 * @throws {TypeError} Throw an error if the given argument is not a function
-	 *
-	 * @private
+	 * @throws Throw an error if the given argument is not a function
 	 */
-	static assertFilterFunctionIsValid(fn) {
+	private static assertFilterFunctionIsValid(fn: unknown): void {
 		if (typeof fn !== 'function') {
-			throw new TypeError(`Invalid filter function: expected 'function', got '${typeof fn}'`);
+			throw new TypeError(
+				`Invalid filter function: expected 'function', got '${typeof fn}'`
+			);
 		}
 	}
 }

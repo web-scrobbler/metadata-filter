@@ -1,16 +1,16 @@
 import { removeFeature } from '../../src/functions';
 
-import { testFilterFunction } from '../helpers';
+import { testFilterFunction } from '../helper/test-function';
 
 testFilterFunction(removeFeature, [
 	{
 		description: 'should remove featured artist from suffix',
-		source: 'Artist A [feat. Artist B]',
-		expected: 'Artist A',
+		funcParameter: 'Artist A [feat. Artist B]',
+		expectedValue: 'Artist A',
 	},
 	{
 		description: 'should remove featured artist from suffix',
-		source: 'Artist A (feat. Artist B)',
-		expected: 'Artist A',
+		funcParameter: 'Artist A (feat. Artist B)',
+		expectedValue: 'Artist A',
 	},
 ]);

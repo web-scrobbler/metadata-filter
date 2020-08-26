@@ -18,6 +18,11 @@
     "metadata"
   ],
   "devDependencies": {
+    "@types/chai": "4.2.12",
+    "@types/chai-spies": "1.0.1",
+    "@types/mocha": "8.0.3",
+    "@typescript-eslint/eslint-plugin": "3.10.1",
+    "@typescript-eslint/parser": "3.10.1",
     "chai": "4.2.0",
     "chai-spies": "1.0.0",
     "eslint": "7.7.0",
@@ -31,6 +36,8 @@
     "rollup": "2.26.5",
     "rollup-plugin-banner2": "1.0.0",
     "rollup-plugin-terser": "7.0.0",
+    "rollup-plugin-typescript2": "0.27.2",
+    "ts-node": "9.0.0",
     "typescript": "4.0.2"
   },
   "engines": {
@@ -38,17 +45,16 @@
   },
   "license": "MIT",
   "scripts": {
-    "lint": "eslint **/*.js",
-    "test": "mocha --recursive --require esm",
-    "gen-types": "tsc -p .",
+    "lint": "eslint **/*.js **/*.ts",
+    "test": "mocha --recursive --require ts-node/register test/**/*.spec.ts",
     "build": "rollup -c",
-    "prepare": "npm run build && npm run gen-types",
+    "prepare": "npm run build",
     "test-with-coverage": "nyc npm test",
     "upload-coverage": "curl -Ls https://coverage.codacy.com/get.sh | bash -s report -r ./coverage/lcov.info",
     "clean-coverage": "rm -rf ./coverage"
   },
   "eslintConfig": {
-    "extends": "web-scrobbler",
+    "extends": "web-scrobbler/typescript",
     "parserOptions": {
       "sourceType": "module"
     }

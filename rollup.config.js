@@ -1,4 +1,5 @@
 import banner from 'rollup-plugin-banner2';
+import typescript from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
 
 import { name, version } from './package.json';
@@ -27,12 +28,12 @@ function output(distFileName, format) {
 }
 
 export default {
-	input: 'src/index.js',
+	input: 'src/index.ts',
 	output: [
 		output('filter', 'umd'),
 		output('filter.min', 'umd'),
 		output('filter.esm', 'esm'),
 		output('filter.esm.min', 'esm'),
 	],
-	plugins: [banner(() => bannerText)],
+	plugins: [banner(() => bannerText), typescript()],
 };

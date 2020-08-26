@@ -7,26 +7,27 @@ import {
 	SUFFIX_FILTER_RULES,
 	VERSION_FILTER_RULES,
 	YOUTUBE_TRACK_FILTER_RULES,
+	FilterRule,
 } from './rules';
 
-const escapeHtmlEntityMap = {
+const escapeHtmlEntityMap: Record<string, RegExp> = {
 	'&': /&amp;/g,
 	'<': /&lt;/g,
 	'>': /&gt;/g,
 	'"': /&quot;/g,
 };
 
-/* Filter functions */
+export type FilterFuncion = (text: string) => string;
 
 /**
  * Generate Album Artist from Artist when "feat. Artist B" is present.
  *
- * @param {String} text String to be filtered
+ * @param text String to be filtered
  *
- * @return {String} Transformed string
+ * @return Transformed string
  */
-export function albumArtistFromArtist(text) {
-	if (text.includes(' feat. ')) {
+export function albumArtistFromArtist(text: string): string {
+	if (text.indexOf(' feat. ') !== -1) {
 		return text.split(' feat. ')[0];
 	}
 	return text;
@@ -35,11 +36,11 @@ export function albumArtistFromArtist(text) {
 /**
  * Decode HTML entities in given text string.
  *
- * @param {String} text String with HTML entities
+ * @param text String with HTML entities
  *
- * @return {String} Decoded string
+ * @return Decoded string
  */
-export function decodeHtmlEntities(text) {
+export function decodeHtmlEntities(text: string): string {
 	let filteredText = text;
 
 	for (const target in escapeHtmlEntityMap) {
@@ -61,15 +62,18 @@ export function decodeHtmlEntities(text) {
 /**
  * Replace text according to given filter rules.
  *
- * @param {String} text String to be filtered
- * @param {Object[]} set Array of replace rules
+ * @param text String to be filtered
+ * @param filterRules Array of replace rules
  *
- * @return {String} Filtered string
+ * @return Filtered string
  */
-export function filterWithFilterRules(text, set) {
+export function filterWithFilterRules(
+	text: string,
+	filterRules: FilterRule[]
+): string {
 	let filteredText = text;
 
-	for (const data of set) {
+	for (const data of filterRules) {
 		filteredText = filteredText.replace(data.source, data.target);
 	}
 
@@ -79,109 +83,109 @@ export function filterWithFilterRules(text, set) {
 /**
  * Replace "Title - X Remix" suffix with "Title (X Remix) and similar".
  *
- * @param {String} text String to be filtered
+ * @param text String to be filtered
  *
- * @return {String} Filtered string
+ * @return Filtered string
  */
-export function fixTrackSuffix(text) {
+export function fixTrackSuffix(text: string): string {
 	return filterWithFilterRules(text, SUFFIX_FILTER_RULES);
 }
 
 /**
  * Generate normalized "feat. Artist B" text from [feat. Artist B] style.
  *
- * @param {String} text String to be filtered
+ * @param text String to be filtered
  *
- * @return {String} Transformed string
+ * @return Transformed string
  */
-export function normalizeFeature(text) {
+export function normalizeFeature(text: string): string {
 	return filterWithFilterRules(text, NORMALIZE_FEATURE_FILTER_RULES);
 }
 
 /**
  * Remove zero-width characters from given string.
  *
- * @param {String} text String to be filtered
+ * @param text String to be filtered
  *
- * @return {String} Filtered string
+ * @return Filtered string
  */
-export function removeZeroWidth(text) {
+export function removeZeroWidth(text: string): string {
 	return text.replace(/[\u200B-\u200D\uFEFF]/g, '');
 }
 
 /**
  * Replace all non-breaking space symbols with a space symbol.
  *
- * @param {String} text String to be filtered
+ * @param text String to be filtered
  *
- * @return {String}	Filtered string
+ * @return Filtered string
  */
-export function replaceNbsp(text) {
+export function replaceNbsp(text: string): string {
 	return text.replace(/\u00a0/g, '\u0020');
 }
 
 /**
  * Remove "Explicit" and "Clean"-like strings from the text.
  *
- * @param {String} text String to be filtered
+ * @param text String to be filtered
  *
- * @return {String} Filtered string
+ * @return Filtered string
  */
-export function removeCleanExplicit(text) {
+export function removeCleanExplicit(text: string): string {
 	return filterWithFilterRules(text, CLEAN_EXPLICIT_FILTER_RULES);
 }
 
 /**
  * Remove "Live..."-like strings from the text.
  *
- * @param {String} text String to be filtered
+ * @param text String to be filtered
  *
- * @return {String} Filtered string
+ * @return Filtered string
  */
-export function removeLive(text) {
+export function removeLive(text: string): string {
 	return filterWithFilterRules(text, LIVE_FILTER_RULES);
 }
 
 /**
  * Remove "Remastered..."-like strings from the text.
  *
- * @param {String} text String to be filtered
+ * @param text String to be filtered
  *
- * @return {String} Filtered string
+ * @return Filtered string
  */
-export function removeRemastered(text) {
+export function removeRemastered(text: string): string {
 	return filterWithFilterRules(text, REMASTERED_FILTER_RULES);
 }
 
 /**
  * Remove "(Single|Album|Mono version}"-like strings from the text.
  *
- * @param {String} text String to be filtered
+ * @param text String to be filtered
  *
- * @return {String} Filtered string
+ * @return Filtered string
  */
-export function removeVersion(text) {
+export function removeVersion(text: string): string {
 	return filterWithFilterRules(text, VERSION_FILTER_RULES);
 }
 
 /**
  * Remove "feat"-like strings from the text.
  *
- * @param {String} text String to be filtered
+ * @param text String to be filtered
  *
- * @return {String} Filtered string
+ * @return Filtered string
  */
-export function removeFeature(text) {
+export function removeFeature(text: string): string {
 	return filterWithFilterRules(text, FEATURE_FILTER_RULES);
 }
 
 /**
  * Remove Youtube-related garbage from the text.
  *
- * @param {String} text String to be filtered
+ * @param text String to be filtered
  *
- * @return {String} Filtered string
+ * @return Filtered string
  */
-export function youtube(text) {
+export function youtube(text: string): string {
 	return filterWithFilterRules(text, YOUTUBE_TRACK_FILTER_RULES);
 }

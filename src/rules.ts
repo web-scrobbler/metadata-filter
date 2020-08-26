@@ -6,10 +6,15 @@
  * 'target' property value.
  */
 
+export interface FilterRule {
+	source: RegExp | string;
+	target: string;
+}
+
 /**
  * Filter rules to remove YouTube suffixes and prefixes from a text.
  */
-export const YOUTUBE_TRACK_FILTER_RULES = [
+export const YOUTUBE_TRACK_FILTER_RULES: FilterRule[] = [
 	// Trim whitespaces
 	{ source: /^\s+|\s+$/g, target: '' },
 	// **NEW**
@@ -70,7 +75,7 @@ export const YOUTUBE_TRACK_FILTER_RULES = [
 /**
  * Filter rules to remove "Remastered..."-like strings from a text.
  */
-export const REMASTERED_FILTER_RULES = [
+export const REMASTERED_FILTER_RULES: FilterRule[] = [
 	// Here Comes The Sun - Remastered
 	{ source: /-\sRemastered$/, target: '' },
 	// Hey Jude - Remastered 2015
@@ -105,21 +110,21 @@ export const REMASTERED_FILTER_RULES = [
 	{ source: /[([]\d{4} Re-?[Mm]astered Digital Version[)\]]$/, target: '' },
 ];
 
-export const LIVE_FILTER_RULES = [
+export const LIVE_FILTER_RULES: FilterRule[] = [
 	// Track - Live
 	{ source: /-\sLive?$/, target: '' },
 	// Track - Live at
 	{ source: /-\sLive\s.+?$/, target: '' },
 ];
 
-export const CLEAN_EXPLICIT_FILTER_RULES = [
+export const CLEAN_EXPLICIT_FILTER_RULES: FilterRule[] = [
 	// (Explicit) or [Explicit]
 	{ source: /\s[([]Explicit[)\]]/i, target: '' },
 	// (Clean) or [Clean]
 	{ source: /\s[([]Clean[)\]]/i, target: '' },
 ];
 
-export const FEATURE_FILTER_RULES = [
+export const FEATURE_FILTER_RULES: FilterRule[] = [
 	// [Feat. Artist] or (Feat. Artist)
 	{ source: /\s[([]feat. .+[)\]]/i, target: '' },
 ];
@@ -133,7 +138,7 @@ export const NORMALIZE_FEATURE_FILTER_RULES = [
  * Filter rules to remove "(Album|Stereo|Mono Version)"-like strings
  * from a text.
  */
-export const VERSION_FILTER_RULES = [
+export const VERSION_FILTER_RULES: FilterRule[] = [
 	// Love Will Come To You (Album Version)
 	{ source: /[([]Album Version[)\]]$/, target: '' },
 	// I Melt With You (Rerecorded)
@@ -153,7 +158,7 @@ export const VERSION_FILTER_RULES = [
 	{ source: /[([]Explicit Version[)\]]/i, target: '' },
 ];
 
-export const SUFFIX_FILTER_RULES = [
+export const SUFFIX_FILTER_RULES: FilterRule[] = [
 	// "- X Remix" -> "(X Remix)" and similar
 	{
 		source: /-\s(.+?)\s((Re)?mix|edit|dub|mix|vip|version)$/i,

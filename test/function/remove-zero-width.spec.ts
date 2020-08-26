@@ -1,26 +1,26 @@
 import { removeZeroWidth } from '../../src/functions';
 
-import { testFilterFunction } from '../helpers';
+import { testFilterFunction } from '../helper/test-function';
 
 testFilterFunction(removeZeroWidth, [
 	{
 		description: 'should do nothing with clean string',
-		source: 'Track Metafield',
-		expected: 'Track Metafield',
+		funcParameter: 'Track Metafield',
+		expectedValue: 'Track Metafield',
 	},
 	{
 		description: 'should remove zero-width characters',
-		source: 'Str\u200Ding\u200B',
-		expected: 'String',
+		funcParameter: 'Str\u200Ding\u200B',
+		expectedValue: 'String',
 	},
 	{
 		description: 'should remove trailing zero-width characters',
-		source: 'String\u200C',
-		expected: 'String',
+		funcParameter: 'String\u200C',
+		expectedValue: 'String',
 	},
 	{
 		description: 'should remove leading zero-width characters',
-		source: '\u200DString',
-		expected: 'String',
+		funcParameter: '\u200DString',
+		expectedValue: 'String',
 	},
 ]);
