@@ -122,12 +122,7 @@ export class MetadataFilter {
 			return text;
 		}
 
-		let filteredText = text;
-		for (const filter of filters) {
-			filteredText = filter(filteredText);
-		}
-
-		return filteredText;
+		return filters.reduce((text, filter) => filter(text), text);
 	}
 
 	/**

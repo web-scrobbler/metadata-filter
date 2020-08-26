@@ -71,13 +71,11 @@ export function filterWithFilterRules(
 	text: string,
 	filterRules: FilterRule[]
 ): string {
-	let filteredText = text;
+	return filterRules.reduce((text, filterRule) => {
+		const { source, target } = filterRule;
 
-	for (const data of filterRules) {
-		filteredText = filteredText.replace(data.source, data.target);
-	}
-
-	return filteredText;
+		return text.replace(source, target);
+	}, text);
 }
 
 /**
