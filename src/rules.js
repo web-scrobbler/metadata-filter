@@ -161,3 +161,10 @@ export const SUFFIX_FILTER_RULES = [
 	},
 	{ source: /-\s(Remix|VIP)$/i, target: '($1)' },
 ];
+
+export const Spanish = [
+	// (Videoclip Oficial) or [Videoclip Oficial]
+	{ source: /\s[([]Videoclip Of+icial[)\]]/i, target: '' },
+	// (Video Oficial) or [Video Oficial]
+	{ source: /\s[([]Video Of+icial[)\]]/i, target: '' },
+];
