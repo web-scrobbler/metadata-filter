@@ -78,7 +78,7 @@ Finally, you can take existing MetadataFilter objects and extend them with anoth
 This is done by providing the `.extend()` method with another MetadataFilter object.
 
 ```javascript
-let filter = MetadataFilter.getSpotifyFilter();
+const filter = MetadataFilter.getSpotifyFilter();
 
 filter.extend(MetadataFilter.getAmazonFilter());
 // This would also work: filter.extend(MetadataFilter.createFilter(filterSet));
@@ -89,7 +89,7 @@ console.log(filter.filterField('track', 'Seasons in the Abyss (Album Version)'))
 As an alternative, you can use the `.append()` method to apply a filter set to
 the existing MetadataFilter.
 ```javascript
-let filter = MetadataFilter.createFilter({ track: filterTrack });
+const filter = MetadataFilter.createFilter({ track: filterTrack });
 
 filter.append({ artist: filterArtist });
 ```
@@ -97,7 +97,7 @@ filter.append({ artist: filterArtist });
 Since these methods return a MetadataFilter instance, you can chain method calls.
 ```javascript
 
-let filter = MetadataFilter.createFilter({ track: filterTrack }).append({ artist: filterArtist });
+const filter = MetadataFilter.createFilter({ track: filterTrack }).append({ artist: filterArtist });
 ```
 
 ## Development
