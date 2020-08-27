@@ -65,6 +65,18 @@ export const YOUTUBE_TRACK_FILTER_RULES = [
 	{ source: /^[/,:;~-\s"]+/, target: '' },
 	// trim trailing white chars and dash
 	{ source: /[/,:;~-\s"]+$/, target: '' },
+	
+	// Spanish
+	// (Videoclip Oficial) or [Videoclip Oficial]
+	{ source: /\s[([]Videoclip Of+icial[)\]]/i, target: '' },
+	// (Video Oficial) or [Video Oficial]
+	{ source: /\s[([]Video Of+icial[)\]]/i, target: '' },
+	// Sub Español
+	{ source: /sub\s*español/i, target: '' },
+	// (Letra/Lyrics)
+	{ source: /\s[([]Letra+Lyrics[)\]]/i, target: '' },
+	// (Letra)
+	{ source: /\s[([]Letra[)\]]/i, target: '' },
 ];
 
 /**
@@ -160,13 +172,4 @@ export const SUFFIX_FILTER_RULES = [
 		target: '($1 $2)',
 	},
 	{ source: /-\s(Remix|VIP)$/i, target: '($1)' },
-];
-
-export const Spanish = [
-	// (Videoclip Oficial) or [Videoclip Oficial]
-	{ source: /\s[([]Videoclip Of+icial[)\]]/i, target: '' },
-	// (Video Oficial) or [Video Oficial]
-	{ source: /\s[([]Video Of+icial[)\]]/i, target: '' },
-	// Sub Español
-	{ source: /sub\s*español/i, target: '' },
 ];
