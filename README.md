@@ -124,10 +124,10 @@ const filter = MetadataFilter.createFilter({ track: filterTrack }).append({ arti
 Licensed under the [MIT License](LICENSE.md).
 
 <!-- Badges -->
-[WorkflowBadge]: https://github.com/web-scrobbler/metadata-filter/workflows/Test/badge.svg
+[WorkflowBadge]: https://img.shields.io/github/workflow/status/web-scrobbler/metadata-filter/Test?label=test
 [NpmBadge]: https://img.shields.io/npm/v/metadata-filter
-[CodacyBadge]: https://api.codacy.com/project/badge/Grade/100b50dc21664ce6bc591c28b73d6892
-[CodacyCovBadge]: https://api.codacy.com/project/badge/Coverage/100b50dc21664ce6bc591c28b73d6892
+[CodacyBadge]: https://img.shields.io/codacy/grade/100b50dc21664ce6bc591c28b73d6892
+[CodacyCovBadge]: https://img.shields.io/codacy/coverage/100b50dc21664ce6bc591c28b73d6892
 
 <!-- Related pages -->
 [Codacy]: https://app.codacy.com/gh/web-scrobbler/metadata-filter/dashboard
