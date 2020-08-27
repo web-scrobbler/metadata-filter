@@ -27,7 +27,7 @@ console.log(MetadataFilter.removeVersion('Get Lucky (Album Version)')); // Get L
 console.log(MetadataFilter.youtube('Car Bomb - Scattered Sprites (Official Music Video)')); // Car Bomb - Scattered Sprites
 ```
 
-See [src/functions.js](src/functions.js) for more details.
+See [src/functions.ts](src/functions.ts) for more details.
 
 ### Multiple filters
 
@@ -70,7 +70,7 @@ the above filter set can be acquired using `getSpotifyFilter()`:
 const filter = MetadataFilter.getSpotifyFilter();
 ```
 
-See [src/filters.js](src/filters.js) for more details.
+See [src/filters.ts](src/filters.ts) for more details.
 
 ### Extending filters
 
