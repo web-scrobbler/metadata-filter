@@ -1,4 +1,4 @@
-# metadata-filter [![Test][WorkflowBadge]][Workflow] [![NPM][NpmBadge]][Npm] [![Codacy][CodacyBadge]][Codacy] [![Coverage][CodacyCovBadge]][Codacy]
+# metadata-filter [![Test][workflowbadge]][workflow] [![NPM][npmbadge]][npm] [![Codacy][codacybadge]][codacy] [![Coverage][codacycovbadge]][codacy]
 
 A module for cleaning up artist, album, and song names.
 
@@ -24,7 +24,11 @@ const MetadataFilter = require('metadata-filter');
 
 console.log(MetadataFilter.removeRemastered('Jane Doe (Remastered)')); // Jane Doe
 console.log(MetadataFilter.removeVersion('Get Lucky (Album Version)')); // Get Lucky
-console.log(MetadataFilter.youtube('Car Bomb - Scattered Sprites (Official Music Video)')); // Car Bomb - Scattered Sprites
+console.log(
+	MetadataFilter.youtube(
+		'Car Bomb - Scattered Sprites (Official Music Video)'
+	)
+); // Car Bomb - Scattered Sprites
 ```
 
 See [src/functions.ts](src/functions.ts) for more details.
@@ -40,16 +44,16 @@ and albumArtists.
 
 ```javascript
 const filterSet = {
-  track: [
-    MetadataFilter.removeRemastered,
-    MetadataFilter.fixTrackSuffix,
-    MetadataFilter.removeLive,
-  ],
-  album: [
-    MetadataFilter.removeRemastered,
-    MetadataFilter.fixTrackSuffix,
-    MetadataFilter.removeLive,
-  ],
+	track: [
+		MetadataFilter.removeRemastered,
+		MetadataFilter.fixTrackSuffix,
+		MetadataFilter.removeLive,
+	],
+	album: [
+		MetadataFilter.removeRemastered,
+		MetadataFilter.fixTrackSuffix,
+		MetadataFilter.removeLive,
+	],
 };
 ```
 
@@ -57,8 +61,8 @@ Then, construct a MetadataFilter using this filter set.
 
 ```javascript
 const filter = MetadataFilter.createFilter(filterSet);
-console.log(filter.filterField('album', 'Nevermind (Remastered)')) // Nevermind
-console.log(filter.filterField('track', 'In Bloom - Nevermind Version')) // In Bloom
+console.log(filter.filterField('album', 'Nevermind (Remastered)')); // Nevermind
+console.log(filter.filterField('track', 'In Bloom - Nevermind Version')); // In Bloom
 ```
 
 ### Predefined filters
@@ -83,11 +87,14 @@ const filter = MetadataFilter.getSpotifyFilter();
 filter.extend(MetadataFilter.getAmazonFilter());
 // This would also work: filter.extend(MetadataFilter.createFilter(filterSet));
 
-console.log(filter.filterField('track', 'Seasons in the Abyss (Album Version)')); // Seasons in the Abyss
+console.log(
+	filter.filterField('track', 'Seasons in the Abyss (Album Version)')
+); // Seasons in the Abyss
 ```
 
 As an alternative, you can use the `.append()` method to apply a filter set to
 the existing MetadataFilter.
+
 ```javascript
 const filter = MetadataFilter.createFilter({ track: filterTrack });
 
@@ -95,9 +102,11 @@ filter.append({ artist: filterArtist });
 ```
 
 Since these methods return a MetadataFilter instance, you can chain method calls.
-```javascript
 
-const filter = MetadataFilter.createFilter({ track: filterTrack }).append({ artist: filterArtist });
+```javascript
+const filter = MetadataFilter.createFilter({ track: filterTrack }).append({
+	artist: filterArtist,
+});
 ```
 
 ## Development
@@ -124,12 +133,14 @@ const filter = MetadataFilter.createFilter({ track: filterTrack }).append({ arti
 Licensed under the [MIT License](LICENSE.md).
 
 <!-- Badges -->
-[WorkflowBadge]: https://img.shields.io/github/workflow/status/web-scrobbler/metadata-filter/Test?label=test
-[NpmBadge]: https://img.shields.io/npm/v/metadata-filter
-[CodacyBadge]: https://img.shields.io/codacy/grade/100b50dc21664ce6bc591c28b73d6892
-[CodacyCovBadge]: https://img.shields.io/codacy/coverage/100b50dc21664ce6bc591c28b73d6892
+
+[workflowbadge]: https://img.shields.io/github/workflow/status/web-scrobbler/metadata-filter/Test?label=test
+[npmbadge]: https://img.shields.io/npm/v/metadata-filter
+[codacybadge]: https://img.shields.io/codacy/grade/100b50dc21664ce6bc591c28b73d6892
+[codacycovbadge]: https://img.shields.io/codacy/coverage/100b50dc21664ce6bc591c28b73d6892
 
 <!-- Related pages -->
-[Codacy]: https://app.codacy.com/gh/web-scrobbler/metadata-filter/dashboard
-[Npm]: https://www.npmjs.com/package/metadata-filter
-[Workflow]: https://github.com/web-scrobbler/metadata-filter/actions?query=workflow%3ATest
+
+[codacy]: https://app.codacy.com/gh/web-scrobbler/metadata-filter/dashboard
+[npm]: https://www.npmjs.com/package/metadata-filter
+[workflow]: https://github.com/web-scrobbler/metadata-filter/actions?query=workflow%3ATest

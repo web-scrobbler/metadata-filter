@@ -36,4 +36,3 @@ const testData = [
 ];
 
 testFilterFunction(decodeHtmlEntities, testData);
-
