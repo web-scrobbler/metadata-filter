@@ -351,12 +351,12 @@ testFilterFunction(youtube, [
 	},
 	{
 		description: 'should remove "(Video Oficial)" string',
-		funcParameter: 'Track Title (Video Oficial)',
+		funcParameter: 'Track Title [Video Oficial]',
 		expectedValue: 'Track Title',
 	},
 	{
 		description: 'should remove "(Letra)" string',
-		funcParameter: 'Track Title (Letra)',
+		funcParameter: 'Track Title [Letra]',
 		expectedValue: 'Track Title',
 	},
 	{
