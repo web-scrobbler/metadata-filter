@@ -343,4 +343,30 @@ testFilterFunction(youtube, [
 		funcParameter: 'Fully Alive',
 		expectedValue: 'Fully Alive',
 	},
+
+	{
+		description: 'should remove "(whatever) + [whatever]" string',
+		funcParameter: 'Track Title (Videoclip Oficial) [Videoclip Oficial]',
+		expectedValue: 'Track Title',
+	},
+	{
+		description: 'should remove "(whatever) + [whatever]" string',
+		funcParameter: 'Track Title (Video Oficial) [Video Oficial]',
+		expectedValue: 'Track Title',
+	},
+	{
+		description: 'should remove "Sub Español" string',
+		funcParameter: 'Track Title Sub Español',
+		expectedValue: 'Track Title',
+	},
+	{
+		description: 'should remove "(Letra) + [Letra]" string',
+		funcParameter: 'Track Title (Letra) [Letra]',
+		expectedValue: 'Track Title',
+	},
+	{
+		description: 'should remove "(Lyrics) + [Lyrics]" string',
+		funcParameter: 'Track Title (Lyrics) [Lyrics]',
+		expectedValue: 'Track Title',
+	},
 ]);
