@@ -360,8 +360,13 @@ testFilterFunction(youtube, [
 		expectedValue: 'Track Title',
 	},
 	{
-		description: 'should remove "(Lyrics) + [Lyrics]" string',
-		funcParameter: 'Track Title (Lyrics) [Lyrics]',
+		description: 'should remove "(En vivo)" string',
+		funcParameter: 'Track Title (En vivo)',
+		expectedValue: 'Track Title',
+	},
+		{
+		description: 'should remove "(Director's Cut)" string',
+		funcParameter: 'Track Title (Director's Cut)',
 		expectedValue: 'Track Title',
 	},
 ]);
