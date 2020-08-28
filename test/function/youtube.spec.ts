@@ -345,23 +345,18 @@ testFilterFunction(youtube, [
 	},
 
 	{
-		description: 'should remove "(whatever) + [whatever]" string',
-		funcParameter: 'Track Title (Videoclip Oficial) [Videoclip Oficial]',
+		description: 'should remove "(Videoclip Oficial)" string',
+		funcParameter: 'Track Title (Videoclip Oficial)',
 		expectedValue: 'Track Title',
 	},
 	{
-		description: 'should remove "(whatever) + [whatever]" string',
-		funcParameter: 'Track Title (Video Oficial) [Video Oficial]',
+		description: 'should remove "(Video Oficial)" string',
+		funcParameter: 'Track Title (Video Oficial)',
 		expectedValue: 'Track Title',
 	},
 	{
-		description: 'should remove "Sub Español" string',
-		funcParameter: 'Track Title Sub Español',
-		expectedValue: 'Track Title',
-	},
-	{
-		description: 'should remove "(Letra) + [Letra]" string',
-		funcParameter: 'Track Title (Letra) [Letra]',
+		description: 'should remove "(Letra)" string',
+		funcParameter: 'Track Title (Letra)',
 		expectedValue: 'Track Title',
 	},
 	{
