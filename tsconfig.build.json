@@ -3,7 +3,8 @@
   "compilerOptions": {
     "declaration": true,
     "declarationDir": "types",
-    "outDir": "dist"
+    "outDir": "dist",
+    "strict": true
   },
   // Skip `test` directory to prevent generating declaration files for tests
   "include": ["src/**/*"]
