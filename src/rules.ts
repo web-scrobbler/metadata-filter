@@ -57,8 +57,6 @@ export const YOUTUBE_TRACK_FILTER_RULES: FilterRule[] = [
 	{ source: /\(live.*?\)$/i, target: '' },
 	// | something
 	{ source: /\|.*$/i, target: '' },
-	// Leftovers after e.g. (official video)
-	{ source: /\(+\s*\)+/, target: '' },
 	// Artist - The new "Track title" featuring someone
 	{ source: /^(|.*\s)"(.{5,})"(\s.*|)$/, target: '$2' },
 	// 'Track title'
@@ -82,6 +80,8 @@ export const YOUTUBE_TRACK_FILTER_RULES: FilterRule[] = [
  * `YOUTUBE_TRACK_FILTER_RULES` filter rules.
  */
 export const TRIM_SYMBOLS_FILTER_RULES: FilterRule[] = [
+	// Leftovers after e.g. (official video)
+	{ source: /\(+\s*\)+/, target: '' },
 	// trim starting white chars and dash
 	{ source: /^[/,:;~-\s"]+/, target: '' },
 	// trim trailing white chars and dash
