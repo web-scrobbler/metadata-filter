@@ -1,4 +1,4 @@
-import { MetadataFilter, createFilter } from '../../src/filter';
+import { MetadataFilter, createFilter, FilterSet } from '../../src/filter';
 import { FilterFuncion } from '../../src/functions';
 
 /**
@@ -17,7 +17,7 @@ export function createFilterFromFunction(
 	const filterSet = fields.reduce((filterSet, field) => {
 		filterSet[field] = filterFunc;
 		return filterSet;
-	}, {});
+	}, {} as FilterSet);
 
 	return createFilter(filterSet);
 }

@@ -111,6 +111,7 @@ describe('Test filtering empty strings', () => {
 
 	it('should not call filter function is the input is null', () => {
 		const input = null;
+		// @ts-ignore
 		const actual = filter.filterField('artist', input);
 
 		expect(actual).to.be.equal(input);
@@ -127,6 +128,7 @@ describe('Test filtering invalid filter field', () => {
 
 describe('Test invalid filter', () => {
 	it('should throw error if the filter set is not specified', () => {
+		// @ts-ignore
 		expect(() => createFilter(null)).to.throw();
 	});
 

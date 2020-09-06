@@ -58,11 +58,11 @@ export class MetadataFilter {
 	 * @throws Throw an error if an invalid field is specified
 	 */
 	filterField(field: string, fieldValue: string): string {
-		if (!(field in this.mergedFilterSet)) {
-			throw new TypeError(`Invalid filter field: ${field}`);
+		if (field in this.mergedFilterSet) {
+			return this.filterText(fieldValue, this.mergedFilterSet[field]);
 		}
 
-		return this.filterText(fieldValue, this.mergedFilterSet[field]);
+		throw new TypeError(`Invalid filter field: ${field}`);
 	}
 
 	/**
