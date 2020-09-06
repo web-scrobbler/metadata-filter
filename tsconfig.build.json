@@ -1,11 +1,11 @@
 // This config is used for build only
 {
+  "extends": "./tsconfig.json",
   "compilerOptions": {
     "declaration": true,
     "declarationDir": "types",
     "outDir": "dist",
-    "target": "ES2015",
-    "strict": true
+    "target": "ES2015"
   },
   // Skip `test` directory to prevent generating declaration files for tests
   "include": ["src/**/*"]
