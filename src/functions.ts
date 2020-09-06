@@ -28,7 +28,7 @@ export type FilterFuncion = (text: string) => string;
  * @return Transformed string
  */
 export function albumArtistFromArtist(text: string): string {
-	if (text.indexOf(' feat. ') !== -1) {
+	if (text.includes(' feat. ')) {
 		return text.split(' feat. ')[0];
 	}
 	return text;
