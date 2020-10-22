@@ -3,9 +3,6 @@ updates:
   - package-ecosystem: npm
     directory: '/'
     schedule:
-      interval: weekly
-      day: saturday
-      time: '19:00'
-      timezone: Europe/Moscow
+      interval: monthly
     open-pull-requests-limit: 10
     versioning-strategy: increase
