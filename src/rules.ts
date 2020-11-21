@@ -181,4 +181,6 @@ export const SUFFIX_FILTER_RULES: FilterRule[] = [
 		target: '($1 $2)',
 	},
 	{ source: /-\s(Remix|VIP)$/i, target: '($1)' },
+	// Remove "- Original" suffix
+	{ source: /-\sOriginal$/i, target: '' },
 ];

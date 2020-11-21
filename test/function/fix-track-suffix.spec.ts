@@ -93,4 +93,9 @@ testFilterFunction(fixTrackSuffix, [
 		funcParameter: 'Track A - Factoria Vocal Mix',
 		expectedValue: 'Track A (Factoria Vocal Mix)',
 	},
+	{
+		description: 'should remove "- Original" sufix',
+		funcParameter: 'Track A - Original',
+		expectedValue: 'Track A ',
+	},
 ]);
