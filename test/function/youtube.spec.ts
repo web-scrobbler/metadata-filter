@@ -39,8 +39,18 @@ testFilterFunction(youtube, [
 		expectedValue: 'Track Title',
 	},
 	{
+		description: 'should remove "(HD)" string',
+		funcParameter: 'Track Title (HD)',
+		expectedValue: 'Track Title',
+	},
+	{
 		description: 'should remove "HQ" string',
 		funcParameter: 'Track Title HQ',
+		expectedValue: 'Track Title',
+	},
+	{
+		description: 'should remove "(HQ)" string',
+		funcParameter: 'Track Title (HQ)',
 		expectedValue: 'Track Title',
 	},
 	{
