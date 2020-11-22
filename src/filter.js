@@ -363,8 +363,10 @@ class MetadataFilter {
 			{ source: /\(\s*of+icial\s*\)/i, target: '' },
 			// (1999)
 			{ source: /\(\s*[0-9]{4}\s*\)/i, target: '' },
-			// HD (HQ)
-			{ source: /(HD|HQ)\s*$/, target: '' },
+			// (HD) / (HQ)
+			{ source: /\(\s*(HD|HQ)\s*\)$/, target: '' },
+			// HD / HQ
+			{ source: /(HD|HQ)\s?$/, target: '' },
 			// video clip officiel or video clip official
 			{ source: /(vid[\u00E9e]o)?\s?clip\sof+ici[ae]l/i, target: '' },
 			// offizielles

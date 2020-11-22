@@ -89,8 +89,16 @@ const YOUTUBE_FILTER_RULES_TEST_DATA = [{
 	source: 'Track Title HD',
 	expected: 'Track Title'
 }, {
+	description: 'should remove "(HD)" string',
+	source: 'Track Title (HD)',
+	expected: 'Track Title'
+}, {
 	description: 'should remove "HQ" string',
 	source: 'Track Title HQ',
+	expected: 'Track Title'
+}, {
+	description: 'should remove "(HQ)" string',
+	source: 'Track Title (HQ)',
 	expected: 'Track Title'
 }, {
 	description: 'should extract title from single quotes',
