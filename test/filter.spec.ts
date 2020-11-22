@@ -2,7 +2,7 @@ import chai from 'chai';
 import { expect } from 'chai';
 import spies from 'chai-spies';
 
-import { createFilter } from '../src/filter';
+import { createFilter, createFilterSetForFields } from '../src/filter';
 
 import { dummyFn } from './helper/util';
 import { testExtendedFilter } from './helper/test-filter';
@@ -153,4 +153,43 @@ describe('Test method chaining', () => {
 		.append({ album: fn3 });
 
 	testExtendedFilter(filter, fn1, fn2, fn3);
+});
+
+describe('Test creating filter set for fields', () => {
+	const fn1 = chai.spy(dummyFn);
+	const fn2 = chai.spy(dummyFn);
+
+	it('should throw error when received invalid argument', () => {
+		// @ts-ignore
+		expect(() => createFilterSetForFields(null, fn1)).to.throw;
+	});
+
+	it('should throw error when received empty fields array', () => {
+		expect(() => createFilterSetForFields([], fn1)).to.throw;
+	});
+
+	it('should create filter set with single functions', () => {
+		const filterSet = createFilterSetForFields(['foo', 'bar', 'baz'], fn1);
+		const expectedResult = {
+			foo: fn1,
+			bar: fn1,
+			baz: fn1,
+		};
+
+		expect(filterSet).to.be.deep.equal(expectedResult);
+	});
+
+	it('should create filter set with multiple filter functions', () => {
+		const filterSet = createFilterSetForFields(
+			['foo', 'bar', 'baz'],
+			[fn1, fn2]
+		);
+		const expectedResult = {
+			foo: [fn1, fn2],
+			bar: [fn1, fn2],
+			baz: [fn1, fn2],
+		};
+
+		expect(filterSet).to.be.deep.equal(expectedResult);
+	});
 });

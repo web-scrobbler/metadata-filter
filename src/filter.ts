@@ -16,6 +16,36 @@ export function createFilter(filterSet: FilterSet): MetadataFilter {
 }
 
 /**
+ * Create a filter set where each given field has given filter function(s).
+ * Useful to create a filter where multiple fields should be filtered with
+ * the same filter functions.
+ *
+ * @param fields Array of fields to filter
+ * @param filterFn Filter function or array of filter functions
+ *
+ * @return Filter set object
+ */
+export function createFilterSetForFields(
+	fields: string[],
+	filterFn: FilterFuncion | FilterFuncion[]
+): FilterSet {
+	if (!Array.isArray(fields)) {
+		throw new TypeError(
+			`Invalid 'fields' argument: expected 'string[]', got '${typeof fields}'`
+		);
+	}
+
+	if (fields.length === 0) {
+		throw new Error("Invalid 'fields' argument: received an empty array");
+	}
+
+	return fields.reduce((acc, field) => {
+		acc[field] = filterFn;
+		return acc;
+	}, {} as FilterSet);
+}
+
+/**
  * Base filter object that filters metadata fields by given filter set.
  *
  * The filter set is an object containing properties (fields) with filter
