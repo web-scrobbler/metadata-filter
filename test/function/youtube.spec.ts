@@ -373,4 +373,9 @@ testFilterFunction(youtube, [
 		funcParameter: 'Track Title Sub Español',
 		expectedValue: 'Track Title',
 	},
+	{
+		description: 'should remove multiple spaces',
+		funcParameter: 'Imminent (Lyric Video) ft. Joshua Idehen',
+		expectedValue: 'Imminent ft. Joshua Idehen',
+	},
 ]);
