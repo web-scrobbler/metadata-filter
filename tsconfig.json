@@ -1,7 +1,12 @@
 {
   "compilerOptions": {
     "esModuleInterop": true,
-    "strict": true
+    "strict": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src/**/*", "test/**/*"]
 }
