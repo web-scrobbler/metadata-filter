@@ -1,8 +1,8 @@
-import type { FilterFuncion } from './functions';
+import type { FilterFunction } from './functions';
 
-type MergedFilterSet = Record<string, FilterFuncion[]>;
+type MergedFilterSet = Record<string, FilterFunction[]>;
 
-export type FilterSet = Record<string, FilterFuncion | FilterFuncion[]>;
+export type FilterSet = Record<string, FilterFunction | FilterFunction[]>;
 
 /**
  * Create a new MetadataFilter instance from a given filter set.
@@ -27,7 +27,7 @@ export function createFilter(filterSet: FilterSet): MetadataFilter {
  */
 export function createFilterSetForFields(
 	fields: string[],
-	filterFn: FilterFuncion | FilterFuncion[]
+	filterFn: FilterFunction | FilterFunction[]
 ): FilterSet {
 	if (!Array.isArray(fields)) {
 		throw new TypeError(
@@ -147,7 +147,7 @@ export class MetadataFilter {
 	 *
 	 * @return Filtered string
 	 */
-	private filterText(text: string, filters: FilterFuncion[]): string {
+	private filterText(text: string, filters: FilterFunction[]): string {
 		if (!text) {
 			return text;
 		}
@@ -163,8 +163,8 @@ export class MetadataFilter {
 	 * @return Array of filter funcions
 	 */
 	private wrapFiltersIntoArray(
-		filters: FilterFuncion | FilterFuncion[]
-	): FilterFuncion[] {
+		filters: FilterFunction | FilterFunction[]
+	): FilterFunction[] {
 		if (Array.isArray(filters)) {
 			return filters;
 		}

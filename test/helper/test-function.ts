@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-import { FilterFuncion } from '../../src/functions';
+import type { FilterFunction } from '../../src/functions';
 
 /**
  * An interface to describe test data used to test a function.
@@ -33,7 +33,7 @@ export interface FilterFunctionTestData {
  * @param testData Test data
  */
 export function testFilterFunction(
-	filterFunction: FilterFuncion,
+	filterFunction: FilterFunction,
 	testData: FilterFunctionTestData[]
 ): void {
 	// @ts-ignore
