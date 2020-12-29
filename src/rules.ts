@@ -188,3 +188,12 @@ export const SUFFIX_FILTER_RULES: FilterRule[] = [
 	// Remove "- Original" suffix
 	{ source: /-\sOriginal$/i, target: '' },
 ];
+
+export const PARODY_FILTER_RULES: FilterRule[] = [
+	// Party In the CIA (Parody of "Party In The U.S.A." by Miley Cyrus)
+	{ source: /\s\(Parody of ".*" by .*\)$/, target: '' },
+	// White & Nerdy (Parody of "Ridin'" by Chamillionaire feat. Krayzie Bone)
+	{ source: /\s\(Parody of ".*" by .* feat\. .*\)$/, target: '' },
+	// The Saga Begins (Lyrical Adaption of "American Pie")
+	{ source: /\s\(Lyrical Adaption of ".*"\)$/, target: '' },
+];
