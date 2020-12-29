@@ -2,10 +2,13 @@ import { removeParody } from '../../src/functions';
 
 import { testFilterFunction } from '../helper/test-function';
 
+/* eslint quotes: ['error', 'single', { 'allowTemplateLiterals': true }] */
+
 testFilterFunction(removeParody, [
 	{
 		description: `should remove ' (Parody of "Party In The U.S.A." by Miley Cyrus)' string`,
-		funcParameter: 'Party In the CIA (Parody of "Party In The U.S.A." by Miley Cyrus)',
+		funcParameter:
+			'Party In the CIA (Parody of "Party In The U.S.A." by Miley Cyrus)',
 		expectedValue: 'Party In the CIA',
 	},
 	{
