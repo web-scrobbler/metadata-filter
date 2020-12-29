@@ -1,5 +1,5 @@
 import { MetadataFilter, createFilter, FilterSet } from '../../src/filter';
-import { FilterFuncion } from '../../src/functions';
+import type { FilterFunction } from '../../src/functions';
 
 /**
  * Return a MetadataFilter instance using the given filter function.
@@ -11,7 +11,7 @@ import { FilterFuncion } from '../../src/functions';
  * @return MetadataFilter instance
  */
 export function createFilterFromFunction(
-	filterFunc: FilterFuncion,
+	filterFunc: FilterFunction,
 	fields: string[]
 ): MetadataFilter {
 	const filterSet = fields.reduce((filterSet, field) => {

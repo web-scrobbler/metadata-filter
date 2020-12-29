@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 
 import { MetadataFilter } from '../../src/filter';
-import { FilterFuncion } from '../../src';
+import type { FilterFunction } from '../../src';
 
 /**
  * Test an extended filter object.
@@ -13,7 +13,7 @@ import { FilterFuncion } from '../../src';
  */
 export function testExtendedFilter(
 	filter: MetadataFilter,
-	...filterFunctions: FilterFuncion[]
+	...filterFunctions: FilterFunction[]
 ): void {
 	it('should call all filter functions', () => {
 		for (const field of filter.getFields()) {

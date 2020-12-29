@@ -19,7 +19,7 @@ const escapeHtmlEntityMap: Record<string, RegExp> = {
 	'"': /&quot;/g,
 };
 
-export type FilterFuncion = (text: string) => string;
+export type FilterFunction = (text: string) => string;
 
 /**
  * Generate Album Artist from Artist when "feat. Artist B" is present.
