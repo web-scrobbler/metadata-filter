@@ -85,9 +85,9 @@ export const TRIM_SYMBOLS_FILTER_RULES: FilterRule[] = [
 	// Leftovers after e.g. (official video)
 	{ source: /\(+\s*\)+/, target: '' },
 	// trim starting white chars and dash
-	{ source: /^[/,:;~-\s"]+/, target: '' },
+	{ source: /^[/,:;~\s"-]+/, target: '' },
 	// trim trailing white chars and dash
-	{ source: /[/,:;~-\s"]+$/, target: '' },
+	{ source: /[/,:;~\s"-]+$/, target: '' },
 	// remove multiple spaces
 	{ source: /\s{1,}/, target: ' ' },
 ];
