@@ -3,6 +3,7 @@ import {
 	FEATURE_FILTER_RULES,
 	LIVE_FILTER_RULES,
 	NORMALIZE_FEATURE_FILTER_RULES,
+	PARODY_FILTER_RULES,
 	REMASTERED_FILTER_RULES,
 	SUFFIX_FILTER_RULES,
 	TRIM_SYMBOLS_FILTER_RULES,
@@ -165,6 +166,16 @@ export function removeRemastered(text: string): string {
  */
 export function removeVersion(text: string): string {
 	return filterWithFilterRules(text, VERSION_FILTER_RULES);
+}
+
+/**
+ * Remove "(Parody of "X" by Y)"-like strings from the text.
+ * @param text String to be filtered
+ *
+ * @return Filtered string
+ */
+export function removeParody(text: string): string {
+	return filterWithFilterRules(text, PARODY_FILTER_RULES);
 }
 
 /**
