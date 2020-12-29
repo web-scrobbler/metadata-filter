@@ -1,4 +1,4 @@
-import { FilterFuncion } from './functions';
+import type { FilterFuncion } from './functions';
 
 type MergedFilterSet = Record<string, FilterFuncion[]>;
 
