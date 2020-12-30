@@ -4,6 +4,7 @@
   "compilerOptions": {
     "declaration": true,
     "declarationDir": "types",
+    "newLine": "lf",
     "outDir": "dist",
     "target": "ES2015"
   },
