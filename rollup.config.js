@@ -37,7 +37,25 @@ export default {
 	plugins: [
 		banner(() => bannerText),
 		typescript({
-			tsconfig: 'tsconfig.build.json',
+			tsconfig: './src/tsconfig.json',
+			tsconfigOverride: {
+				compilerOptions: {
+					/*
+					 * Workaround for plugin to generate declarations to
+					 * the `declarationDir` directory.
+					 */
+					composite: false,
+
+					/**
+					 * Disallow to generate declaration maps. This option
+					 * should be enabled in TypeScript config to allow
+					 * performing refactoring in IDEs (e.g. Visual Studio Code).
+					 *
+					 * Ref: https://www.typescriptlang.org/docs/handbook/project-references.html#declarationmaps
+					 */
+					declarationMap: false,
+				},
+			},
 			useTsconfigDeclarationDir: true,
 		}),
 	],

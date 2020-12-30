@@ -1,0 +1,12 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "declarationDir": "../types",
+    "declarationMap": true,
+    "newLine": "lf",
+    "outDir": "../dist",
+    "target": "ES2015"
+  }
+}
