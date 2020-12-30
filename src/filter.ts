@@ -1,4 +1,9 @@
 import type { FilterFunction } from './functions';
+import {
+	assertFieldsAreValid,
+	assertFilterSetFiltersAreValid,
+	assertFilterSetIsValid,
+} from './assert';
 
 type MergedFilterSet = Record<string, FilterFunction[]>;
 
@@ -29,15 +34,8 @@ export function createFilterSetForFields(
 	fields: string[],
 	filterFn: FilterFunction | FilterFunction[]
 ): FilterSet {
-	if (!Array.isArray(fields)) {
-		throw new TypeError(
-			`Invalid 'fields' argument: expected 'string[]', got '${typeof fields}'`
-		);
-	}
-
-	if (fields.length === 0) {
-		throw new Error("Invalid 'fields' argument: received an empty array");
-	}
+	assertFieldsAreValid(fields);
+	assertFilterSetFiltersAreValid(filterFn);
 
 	return fields.reduce((acc, field) => {
 		acc[field] = filterFn;
@@ -69,10 +67,6 @@ export class MetadataFilter {
 	 * @throws Throw an error if no filter set is specified
 	 */
 	constructor(filterSet: FilterSet) {
-		if (!filterSet) {
-			throw new TypeError('No filter set is specified!');
-		}
-
 		this.mergedFilterSet = {};
 		this.appendFilters(filterSet);
 	}
@@ -115,6 +109,16 @@ export class MetadataFilter {
 	 * @return Current instance
 	 */
 	extend(filter: MetadataFilter): MetadataFilter {
+		if (!filter) {
+			throw new TypeError('No filter is specified!');
+		}
+
+		if (!(filter instanceof MetadataFilter)) {
+			throw new TypeError(
+				`Invalid filter: expected 'MetadataFilter', got '${typeof filter}'`
+			);
+		}
+
 		this.appendFilters(filter.mergedFilterSet);
 		return this;
 	}
@@ -181,34 +185,15 @@ export class MetadataFilter {
 	 * @throws Throw an error if a filter function is not a function
 	 */
 	private appendFilters(filterSet: FilterSet): void {
+		assertFilterSetIsValid(filterSet);
+
 		for (const field in filterSet) {
 			if (!(field in this.mergedFilterSet)) {
 				this.mergedFilterSet[field] = [];
 			}
 
 			const filterFunctions = this.wrapFiltersIntoArray(filterSet[field]);
-			MetadataFilter.validateFilters(filterFunctions);
-
 			this.mergedFilterSet[field].push(...filterFunctions);
-		}
-	}
-
-	/**
-	 * Assert every function in the given array of objects is a filter function.
-	 *
-	 * @param filters Array of filter functions
-	 *
-	 * @throws Throw an error if the assertion is failed
-	 */
-	private static validateFilters(filters: unknown[]) {
-		for (const filterFn of filters) {
-			if (typeof filterFn === 'function') {
-				continue;
-			}
-
-			throw new TypeError(
-				`Invalid filter function: expected 'function', got '${typeof filterFn}'`
-			);
 		}
 	}
 }

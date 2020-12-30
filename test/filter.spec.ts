@@ -54,6 +54,32 @@ describe('Test appending filter set', () => {
 	});
 });
 
+describe('Test appending invalid filter set to filter', () => {
+	it('should throw error if filter set is not specified', () => {
+		const baseFilter = createFilter({ foo: dummyFn });
+		// @ts-expect-error
+		expect(() => baseFilter.append(null)).to.throw(
+			'No filter set is specified!'
+		);
+	});
+
+	it('should throw error if filter set is not an object', () => {
+		const baseFilter = createFilter({ foo: dummyFn });
+		// @ts-expect-error
+		expect(() => baseFilter.append(2)).to.throw(
+			"Invalid filter set: expected 'object', got 'number'"
+		);
+	});
+
+	it('should throw error if filter set is invalid', () => {
+		const baseFilter = createFilter({ foo: dummyFn });
+		// @ts-expect-error
+		expect(() => baseFilter.append({ foo: 2 })).to.throw(
+			"Invalid filter function: expected 'function', got 'number'"
+		);
+	});
+});
+
 describe('Test extending filter', () => {
 	it('should merge two filters with different fields', () => {
 		const fn1 = chai.spy(dummyFn);
@@ -77,6 +103,24 @@ describe('Test extending filter', () => {
 		const filter = filter1.extend(filter2);
 
 		testExtendedFilter(filter, fn1, fn2);
+	});
+});
+
+describe('Test extending filter with invalid filter', () => {
+	it('should throw error if filter set is nullable', () => {
+		const baseFilter = createFilter({ foo: dummyFn });
+		// @ts-expect-error
+		expect(() => baseFilter.extend(null)).to.throw(
+			'No filter is specified!'
+		);
+	});
+
+	it('should throw error if filter set is invalid', () => {
+		const baseFilter = createFilter({ foo: dummyFn });
+		// @ts-expect-error
+		expect(() => baseFilter.extend(2)).to.throw(
+			"Invalid filter: expected 'MetadataFilter', got 'number'"
+		);
 	});
 });
 
@@ -177,6 +221,33 @@ describe('Test creating filter set for fields', () => {
 	it('should throw error when received empty fields array', () => {
 		expect(() => createFilterSetForFields([], fn1)).to.throw(
 			"Invalid 'fields' argument: received an empty array"
+		);
+	});
+
+	it('should throw error when received invalid filter function', () => {
+		// @ts-expect-error
+		expect(() => createFilterSetForFields(['foo'], 2)).to.throw(
+			"Invalid filter function: expected 'function', got 'number'"
+		);
+	});
+
+	it('should throw error when received array of invalid filter function', () => {
+		// @ts-expect-error
+		expect(() => createFilterSetForFields(['foo'], [2, 3])).to.throw(
+			"Invalid filter function: expected 'function', got 'number'"
+		);
+	});
+
+	it('should throw error when received array of invalid fields', () => {
+		// @ts-expect-error
+		expect(() => createFilterSetForFields(['foo', 2], fn1)).to.throw(
+			"Invalid field: expected 'string', got 'number'"
+		);
+	});
+
+	it('should throw error when received array with empty field', () => {
+		expect(() => createFilterSetForFields(['foo', ''], fn1)).to.throw(
+			"Invalid field: expected 'string', got an empty string"
 		);
 	});
 
