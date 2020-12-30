@@ -161,11 +161,11 @@ describe('Test creating filter set for fields', () => {
 
 	it('should throw error when received invalid argument', () => {
 		// @ts-expect-error
-		expect(() => createFilterSetForFields(null, fn1)).to.throw;
+		expect(() => createFilterSetForFields(null, fn1)).to.throw();
 	});
 
 	it('should throw error when received empty fields array', () => {
-		expect(() => createFilterSetForFields([], fn1)).to.throw;
+		expect(() => createFilterSetForFields([], fn1)).to.throw();
 	});
 
 	it('should create filter set with single functions', () => {
