@@ -36,7 +36,6 @@ export function testFilterFunction(
 	filterFunction: FilterFunction,
 	testData: FilterFunctionTestData[]
 ): void {
-	// @ts-ignore
 	const functionName = filterFunction.name;
 
 	describe(`Test '${functionName}' filter function`, () => {
