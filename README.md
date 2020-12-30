@@ -4,11 +4,42 @@ A module for cleaning up artist, album, and song names.
 
 ## Installation
 
+### Install using npm
+
 ```
 npm i metadata-filter
 ```
 
+### Include via CDN
+
+```html
+<script src="https://unpkg.com/metadata-filter@latest/dist/filter.min.js"></script>
+```
+
 ## Usage
+
+If you want to use this module in a project which is built with a bundler (e.g.
+webpack), you can use CommonJS-like or ES6 imports:
+
+```javascript
+// CommonJS style
+const MetadataFilter = require('metadata-filter');
+
+// ES6 style
+import * as MetadataFilter from 'metadata-filter';
+
+MetadataFilter.removeRemastered(yourInput);
+```
+
+In a browser you can access to the module by using the global `MetadataFilter`
+object:
+
+```html
+<!-- Assume you have `metadata-filter` module included with `script` tag -->
+<script lang="javascript">
+	MetadataFilter.removeRemastered(yourInput);
+</script>
+```
 
 ### Single filter functions
 
@@ -20,8 +51,6 @@ However, it is possible (not officially supported) to use some of these on
 combined fields ("Artist - Song", "Artist - Album"), as in the third example below.
 
 ```javascript
-const MetadataFilter = require('metadata-filter');
-
 console.log(MetadataFilter.removeRemastered('Jane Doe (Remastered)')); // Jane Doe
 console.log(MetadataFilter.removeVersion('Get Lucky (Album Version)')); // Get Lucky
 console.log(
