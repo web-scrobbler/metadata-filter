@@ -122,24 +122,32 @@ describe('Test filtering invalid filter field', () => {
 	it('should throw error if invalid field is filtered', () => {
 		const filter = createFilter({ foo: (text) => text });
 
-		expect(() => filter.filterField('bar', 'Field value')).to.throw();
+		expect(() => filter.filterField('bar', 'Field value')).to.throw(
+			'Invalid filter field: bar'
+		);
 	});
 });
 
 describe('Test invalid filter', () => {
 	it('should throw error if the filter set is not specified', () => {
 		// @ts-expect-error
-		expect(() => createFilter(null)).to.throw();
+		expect(() => createFilter(null)).to.throw(
+			'No filter set is specified!'
+		);
 	});
 
 	it('should throw error if the filter set is invalid', () => {
 		// @ts-expect-error
-		expect(() => createFilter({ foo: 1 })).to.throw();
+		expect(() => createFilter({ foo: 1 })).to.throw(
+			"Invalid filter function: expected 'function', got 'number'"
+		);
 	});
 
 	it('should throw error if the filter set as an array is invalid', () => {
 		// @ts-expect-error
-		expect(() => createFilter({ foo: [1, 2] })).to.throw();
+		expect(() => createFilter({ foo: [1, 2] })).to.throw(
+			"Invalid filter function: expected 'function', got 'number'"
+		);
 	});
 });
 
@@ -161,11 +169,15 @@ describe('Test creating filter set for fields', () => {
 
 	it('should throw error when received invalid argument', () => {
 		// @ts-expect-error
-		expect(() => createFilterSetForFields(null, fn1)).to.throw();
+		expect(() => createFilterSetForFields(null, fn1)).to.throw(
+			"Invalid 'fields' argument: expected 'string[]', got 'object'"
+		);
 	});
 
 	it('should throw error when received empty fields array', () => {
-		expect(() => createFilterSetForFields([], fn1)).to.throw();
+		expect(() => createFilterSetForFields([], fn1)).to.throw(
+			"Invalid 'fields' argument: received an empty array"
+		);
 	});
 
 	it('should create filter set with single functions', () => {
