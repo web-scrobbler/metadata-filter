@@ -111,7 +111,7 @@ describe('Test filtering empty strings', () => {
 
 	it('should not call filter function is the input is null', () => {
 		const input = null;
-		// @ts-ignore
+		// @ts-expect-error
 		const actual = filter.filterField('artist', input);
 
 		expect(actual).to.be.equal(input);
@@ -128,17 +128,17 @@ describe('Test filtering invalid filter field', () => {
 
 describe('Test invalid filter', () => {
 	it('should throw error if the filter set is not specified', () => {
-		// @ts-ignore
+		// @ts-expect-error
 		expect(() => createFilter(null)).to.throw();
 	});
 
 	it('should throw error if the filter set is invalid', () => {
-		// @ts-ignore
+		// @ts-expect-error
 		expect(() => createFilter({ foo: 1 })).to.throw();
 	});
 
 	it('should throw error if the filter set as an array is invalid', () => {
-		// @ts-ignore
+		// @ts-expect-error
 		expect(() => createFilter({ foo: [1, 2] })).to.throw();
 	});
 });
@@ -160,7 +160,7 @@ describe('Test creating filter set for fields', () => {
 	const fn2 = chai.spy(dummyFn);
 
 	it('should throw error when received invalid argument', () => {
-		// @ts-ignore
+		// @ts-expect-error
 		expect(() => createFilterSetForFields(null, fn1)).to.throw;
 	});
 
