@@ -1,0 +1,102 @@
+[
+    {
+        "description": "should do nothing with clean string",
+        "funcParameter": "Track Title",
+        "expectedValue": "Track Title"
+    },
+    {
+        "description": "should remove \"- Remastered\" string",
+        "funcParameter": "Track Title - Remastered",
+        "expectedValue": "Track Title "
+    },
+    {
+        "description": "should remove \"- Remastered YYYY\" string",
+        "funcParameter": "Track Title - Remastered 2015",
+        "expectedValue": "Track Title "
+    },
+    {
+        "description": "should remove \"(Remastered YYYY)\" string",
+        "funcParameter": "Track Title (Remastered 2009)",
+        "expectedValue": "Track Title "
+    },
+    {
+        "description": "should remove \"(Remaster YYYY)\" string",
+        "funcParameter": "Track Title (Remaster 2009)",
+        "expectedValue": "Track Title "
+    },
+    {
+        "description": "should remove \"[YYYY - Remaster]\" string",
+        "funcParameter": "Track Title [2011 - Remaster]",
+        "expectedValue": "Track Title "
+    },
+    {
+        "description": "should remove \"(YYYY - Remaster)\" string",
+        "funcParameter": "Track Title (2011 - Remaster)",
+        "expectedValue": "Track Title "
+    },
+    {
+        "description": "should remove \"(YYYY Remaster)\" string",
+        "funcParameter": "Track Title (2011 Remaster)",
+        "expectedValue": "Track Title "
+    },
+    {
+        "description": "should remove \"- YYYY - Remaster\" string",
+        "funcParameter": "Track Title - 2011 - Remaster",
+        "expectedValue": "Track Title "
+    },
+    {
+        "description": "should remove \"- YYYY Remaster\" string",
+        "funcParameter": "Track Title - 2006 Remaster",
+        "expectedValue": "Track Title "
+    },
+    {
+        "description": "should remove \"- YYYY Digital Remaster\" string",
+        "funcParameter": "Track Title - 2001 Digital Remaster",
+        "expectedValue": "Track Title "
+    },
+    {
+        "description": "should remove \"- YYYY Remastered Version\" string",
+        "funcParameter": "Track Title - 2011 Remastered Version",
+        "expectedValue": "Track Title "
+    },
+    {
+        "description": "should remove \"(Live / Remastered)\" string",
+        "funcParameter": "Track Title (Live / Remastered)",
+        "expectedValue": "Track Title "
+    },
+    {
+        "description": "should remove \"- Live / Remastered\" string",
+        "funcParameter": "Track Title - Live / Remastered",
+        "expectedValue": "Track Title "
+    },
+    {
+        "description": "should remove \"(Remastered)\" string",
+        "funcParameter": "Track Title (Remastered)",
+        "expectedValue": "Track Title "
+    },
+    {
+        "description": "should remove \"[Remastered]\" string",
+        "funcParameter": "Track Title [Remastered]",
+        "expectedValue": "Track Title "
+    },
+    {
+        "description": "should remove \"(YYYY Remastered Version)\" string",
+        "funcParameter": "Track Title (2014 Remastered Version)",
+        "expectedValue": "Track Title "
+    },
+    {
+        "description": "should remove \"[YYYY Remastered Version]\" string",
+        "funcParameter": "Track Title [2014 Remastered Version]",
+        "expectedValue": "Track Title "
+    },
+    {
+        "description": "should remove \"(YYYY Re-Mastered Digital Version)\" string",
+        "funcParameter": "Track Title (2009 Re-Mastered Digital Version)",
+        "expectedValue": "Track Title "
+    },
+    {
+        "description": "should remove \"(YYYY Remastered Digital Version)\" string",
+        "funcParameter": "Track Title (2009 Remastered Digital Version)",
+        "expectedValue": "Track Title "
+    }
+]

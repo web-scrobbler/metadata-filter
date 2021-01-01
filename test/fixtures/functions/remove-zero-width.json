@@ -1,0 +1,22 @@
+[
+    {
+        "description": "should do nothing with clean string",
+        "funcParameter": "Track Metafield",
+        "expectedValue": "Track Metafield"
+    },
+    {
+        "description": "should remove zero-width characters",
+        "funcParameter": "Str\u200ding\u200b",
+        "expectedValue": "String"
+    },
+    {
+        "description": "should remove trailing zero-width characters",
+        "funcParameter": "String\u200c",
+        "expectedValue": "String"
+    },
+    {
+        "description": "should remove leading zero-width characters",
+        "funcParameter": "\u200dString",
+        "expectedValue": "String"
+    }
+]
