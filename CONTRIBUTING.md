@@ -22,7 +22,7 @@ It's worth reading [how to write][commit-messages] good commit messages.
 
 ## Coding conventions
 
-Please ensure before committing the changes they meet our requirements by running `npx run lint`.
+Please ensure before committing the changes they meet our requirements by running `npm run lint`.
 
 We use EditorConfig, which helps to keep code in the same code style in different code editors. If you haven't use EditorConfig before, you can visit [EditorConfig website][editorconfig] for further information.
 

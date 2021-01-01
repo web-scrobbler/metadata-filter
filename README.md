@@ -64,7 +64,7 @@ See [src/functions.ts](src/functions.ts) for more details.
 
 ### Multiple filters
 
-You can also to use multiple filters on a string at once by creating a
+You can also use multiple filters on a string at once by creating a
 `MetadataFilter` object which combines multiple functions from above,
 or by using one of the pre-existing [filter objects](#predefined-filters).
 
@@ -86,12 +86,12 @@ const filterSet = {
 };
 ```
 
-Then, construct a MetadataFilter using this filter set.
+Then, construct a `MetadataFilter` using this filter set.
 
 ```javascript
 const filter = MetadataFilter.createFilter(filterSet);
 console.log(filter.filterField('album', 'Nevermind (Remastered)')); // Nevermind
-console.log(filter.filterField('track', 'In Bloom - Nevermind Version')); // In Bloom
+console.log(filter.filterField('track', 'In Bloom - Nevermind Version')); // In Bloom (Nevermind Version)
 ```
 
 ### Predefined filters
@@ -107,8 +107,8 @@ See [src/filters.ts](src/filters.ts) for more details.
 
 ### Extending filters
 
-Finally, you can take existing MetadataFilter objects and extend them with another filter.
-This is done by providing the `.extend()` method with another MetadataFilter object.
+Finally, you can take existing `MetadataFilter` objects and extend them with another filter.
+This is done by providing the `.extend()` method with another `MetadataFilter` object.
 
 ```javascript
 const filter = MetadataFilter.getSpotifyFilter();
@@ -122,7 +122,7 @@ console.log(
 ```
 
 As an alternative, you can use the `.append()` method to apply a filter set to
-the existing MetadataFilter.
+an existing `MetadataFilter` object.
 
 ```javascript
 const filter = MetadataFilter.createFilter({ track: filterTrack });
@@ -130,7 +130,7 @@ const filter = MetadataFilter.createFilter({ track: filterTrack });
 filter.append({ artist: filterArtist });
 ```
 
-Since these methods return a MetadataFilter instance, you can chain method calls.
+Since these methods return a `MetadataFilter` instance, you can chain method calls.
 
 ```javascript
 const filter = MetadataFilter.createFilter({ track: filterTrack }).append({
