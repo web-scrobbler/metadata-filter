@@ -15,13 +15,11 @@ export function testExtendedFilter(
 	filter: MetadataFilter,
 	...filterFunctions: FilterFunction[]
 ): void {
-	it('should call all filter functions', () => {
-		for (const field of filter.getFields()) {
-			filter.filterField(field, 'Test');
-		}
+	for (const field of filter.getFields()) {
+		filter.filterField(field, 'Test');
+	}
 
-		for (const f of filterFunctions) {
-			expect(f).to.have.been.called();
-		}
-	});
+	for (const f of filterFunctions) {
+		expect(f).to.have.been.called();
+	}
 }

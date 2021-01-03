@@ -196,15 +196,17 @@ describe('Test invalid filter', () => {
 });
 
 describe('Test method chaining', () => {
-	const fn1 = chai.spy(dummyFn);
-	const fn2 = chai.spy(dummyFn);
-	const fn3 = chai.spy(dummyFn);
+	it('should call all filter functions', () => {
+		const fn1 = chai.spy(dummyFn);
+		const fn2 = chai.spy(dummyFn);
+		const fn3 = chai.spy(dummyFn);
 
-	const filter = createFilter({ artist: fn1 })
-		.extend(createFilter({ track: fn2 }))
-		.append({ album: fn3 });
+		const filter = createFilter({ artist: fn1 })
+			.extend(createFilter({ track: fn2 }))
+			.append({ album: fn3 });
 
-	testExtendedFilter(filter, fn1, fn2, fn3);
+		testExtendedFilter(filter, fn1, fn2, fn3);
+	});
 });
 
 describe('Test creating filter set for fields', () => {
