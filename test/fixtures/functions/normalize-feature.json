@@ -1,0 +1,17 @@
+[
+    {
+        "description": "should transform [feat. Artist B] to feat. Artist B",
+        "funcParameter": "Artist A [feat. Artist B]",
+        "expectedValue": "Artist A feat. Artist B"
+    },
+    {
+        "description": "should not transform if no match for [feat. Artist B]",
+        "funcParameter": "Artist A",
+        "expectedValue": "Artist A"
+    },
+    {
+        "description": "should not transform if no match for [feat. Artist B]",
+        "funcParameter": "Artist A feat. Artist B",
+        "expectedValue": "Artist A feat. Artist B"
+    }
+]

@@ -9,17 +9,17 @@ export interface FilterFunctionTestData {
 	/**
 	 * Test case description.
 	 */
-	description: string;
+	readonly description: string;
 
 	/**
 	 * Function parateter.
 	 */
-	funcParameter: string;
+	readonly funcParameter: string;
 
 	/**
 	 * Expected value.
 	 */
-	expectedValue: string;
+	readonly expectedValue: string;
 }
 
 /**

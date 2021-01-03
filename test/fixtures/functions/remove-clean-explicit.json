@@ -1,0 +1,22 @@
+[
+    {
+        "description": "should remove [Explicit] suffix",
+        "funcParameter": "Track [Explicit]",
+        "expectedValue": "Track"
+    },
+    {
+        "description": "should remove (Explicit) suffix",
+        "funcParameter": "Track (Explicit)",
+        "expectedValue": "Track"
+    },
+    {
+        "description": "should remove [Clean] suffix",
+        "funcParameter": "Track [Clean]",
+        "expectedValue": "Track"
+    },
+    {
+        "description": "should remove (Clean) suffix",
+        "funcParameter": "Track (Clean)",
+        "expectedValue": "Track"
+    }
+]
