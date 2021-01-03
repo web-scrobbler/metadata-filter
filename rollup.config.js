@@ -19,10 +19,10 @@ function output(distFileName, format) {
 	}
 
 	return {
-		format,
-		plugins,
 		file: `dist/${distFileName}.js`,
+		format: format,
 		name: 'MetadataFilter',
+		plugins: plugins,
 	};
 }
 
