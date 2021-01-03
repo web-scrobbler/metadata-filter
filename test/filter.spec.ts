@@ -205,8 +205,8 @@ describe('Test method chaining', () => {
 });
 
 describe('Test creating filter set for fields', () => {
-	const fn1 = chai.spy(dummyFn);
-	const fn2 = chai.spy(dummyFn);
+	const fn1 = dummyFn;
+	const fn2 = dummyFn;
 
 	it('should throw error when received invalid argument', () => {
 		// @ts-expect-error
