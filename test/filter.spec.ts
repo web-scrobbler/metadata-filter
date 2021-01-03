@@ -135,22 +135,16 @@ describe('Test filtering strings', () => {
 });
 
 describe('Test filtering empty strings', () => {
-	/**
-	 * Function that should not be called.
+	const fn1 = chai.spy(dummyFn);
 
-	 * @throws if is called
-	 */
-	function shouldNotBeCalled(): string {
-		throw new Error('This function should not be called');
-	}
-
-	const filter = createFilter({ artist: shouldNotBeCalled });
+	const filter = createFilter({ artist: fn1 });
 
 	it('should not call filter function is the input is an empty string', () => {
 		const input = '';
 		const actual = filter.filterField('artist', input);
 
 		expect(actual).to.be.equal(input);
+		expect(fn1).to.have.not.been.called();
 	});
 
 	it('should not call filter function is the input is null', () => {
@@ -159,6 +153,7 @@ describe('Test filtering empty strings', () => {
 		const actual = filter.filterField('artist', input);
 
 		expect(actual).to.be.equal(input);
+		expect(fn1).to.have.not.been.called();
 	});
 });
 
