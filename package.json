@@ -46,7 +46,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "lint": "eslint \"src/**/*.ts\" \"test/**/*.ts\" rollup.config.js",
+    "lint": "eslint \"{src,test}/**/*.ts\" rollup.config.js",
     "test": "mocha --require ts-node/register \"test/**/*.spec.ts\"",
     "build": "rollup -c",
     "clean": "rm -rf dist types",
