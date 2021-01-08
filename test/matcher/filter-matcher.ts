@@ -22,7 +22,7 @@ Assertion.addMethod(
 declare global {
 	export namespace Chai {
 		interface Assertion {
-			filterWith(...fn: ((x: string) => string)[]): Assertion;
+			filterWith(...fn: FilterFunction[]): Assertion;
 		}
 	}
 }
