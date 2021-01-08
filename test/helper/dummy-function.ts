@@ -1,3 +1,5 @@
+import { spy } from 'chai';
+
 import { FilterFunction } from '../../src';
 
 /**
@@ -17,5 +19,5 @@ export function dummyFn(text: string): string {
  * @return Filter function
  */
 export function createSpyFilterFunction(): FilterFunction {
-	return chai.spy(dummyFn);
+	return spy(dummyFn);
 }
