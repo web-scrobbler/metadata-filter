@@ -20,6 +20,26 @@ import {
 	youtube,
 } from '../src/functions';
 
+const functionsToTest = {
+	'album-artist-from-artist': albumArtistFromArtist,
+	'decode-html-entities': decodeHtmlEntities,
+	'fix-track-suffix': fixTrackSuffix,
+	'normalize-feature': normalizeFeature,
+	'remove-zero-width': removeZeroWidth,
+	'replace-nbsp': replaceNbsp,
+	'remove-clean-explicit': removeCleanExplicit,
+	'remove-live': removeLive,
+	'remove-remastered': removeRemastered,
+	'remove-version': removeVersion,
+	'remove-parody': removeParody,
+	'remove-feature': removeFeature,
+	youtube: youtube,
+};
+
+for (const [functionId, func] of Object.entries(functionsToTest)) {
+	testFilterFunction(func, loadFunctionFixtureFile(functionId));
+}
+
 function loadFunctionFixtureFile(functionId: string): FilterFunctionTestData[] {
 	const fixtures = loadFixtureFile<FilterFunctionTestData>(
 		`functions/${functionId}`
@@ -44,24 +64,4 @@ function loadFunctionFixtureFile(functionId: string): FilterFunctionTestData[] {
 	}
 
 	return fixtures;
-}
-
-const functionsToTest = {
-	'album-artist-from-artist': albumArtistFromArtist,
-	'decode-html-entities': decodeHtmlEntities,
-	'fix-track-suffix': fixTrackSuffix,
-	'normalize-feature': normalizeFeature,
-	'remove-zero-width': removeZeroWidth,
-	'replace-nbsp': replaceNbsp,
-	'remove-clean-explicit': removeCleanExplicit,
-	'remove-live': removeLive,
-	'remove-remastered': removeRemastered,
-	'remove-version': removeVersion,
-	'remove-parody': removeParody,
-	'remove-feature': removeFeature,
-	youtube: youtube,
-};
-
-for (const [functionId, func] of Object.entries(functionsToTest)) {
-	testFilterFunction(func, loadFunctionFixtureFile(functionId));
 }
