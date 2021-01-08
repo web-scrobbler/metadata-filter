@@ -1,13 +1,9 @@
 import chai from 'chai';
 import { expect } from 'chai';
-import spies from 'chai-spies';
 
 import { createFilter, createFilterSetForFields } from '../src/filter';
 
 import { dummyFn } from './helper/util';
-import { testExtendedFilter } from './helper/test-filter';
-
-chai.use(spies);
 
 describe('Test `canFilterField` method', () => {
 	it('should return true for supported field', () => {
@@ -37,8 +33,7 @@ describe('Test appending filter set', () => {
 		const filterSet2 = { bar: fn2 };
 
 		const filter = filter1.append(filterSet2);
-
-		testExtendedFilter(filter, fn1, fn2);
+		expect(filter).to.filterWith(fn1, fn2);
 	});
 
 	it('should append filter set with the same field', () => {
@@ -49,8 +44,7 @@ describe('Test appending filter set', () => {
 		const filterSet2 = { foo: fn2 };
 
 		const filter = filter1.append(filterSet2);
-
-		testExtendedFilter(filter, fn1, fn2);
+		expect(filter).to.filterWith(fn1, fn2);
 	});
 });
 
@@ -89,8 +83,7 @@ describe('Test extending filter', () => {
 		const filter2 = createFilter({ bar: fn2 });
 
 		const filter = filter1.extend(filter2);
-
-		testExtendedFilter(filter, fn1, fn2);
+		expect(filter).to.filterWith(fn1, fn2);
 	});
 
 	it('should merge two filters with the same field', () => {
@@ -101,8 +94,7 @@ describe('Test extending filter', () => {
 		const filter2 = createFilter({ foo: fn2 });
 
 		const filter = filter1.extend(filter2);
-
-		testExtendedFilter(filter, fn1, fn2);
+		expect(filter).to.filterWith(fn1, fn2);
 	});
 });
 
@@ -199,8 +191,7 @@ describe('Test method chaining', () => {
 		const filter = createFilter({ artist: fn1 })
 			.extend(createFilter({ track: fn2 }))
 			.append({ album: fn3 });
-
-		testExtendedFilter(filter, fn1, fn2, fn3);
+		expect(filter).to.filterWith(fn1, fn2, fn3);
 	});
 });
 

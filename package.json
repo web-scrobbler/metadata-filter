@@ -6,18 +6,12 @@
   "main": "dist/filter.js",
   "module": "dist/filter.esm.js",
   "types": "types/index.d.ts",
-  "files": [
-    "dist",
-    "types"
-  ],
+  "files": ["dist", "types"],
   "repository": {
     "type": "git",
     "url": "https://github.com/web-scrobbler/metadata-filter.git"
   },
-  "keywords": [
-    "filters",
-    "metadata"
-  ],
+  "keywords": ["filters", "metadata"],
   "devDependencies": {
     "@types/chai": "4.2.14",
     "@types/chai-spies": "1.0.3",
@@ -47,7 +41,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint \"{src,test}/**/*.ts\" rollup.config.js",
-    "test": "mocha --require ts-node/register \"test/**/*.spec.ts\"",
+    "test": "mocha --require ts-node/register --require test/setup-mocha.ts \"test/**/*.spec.ts\"",
     "build": "rollup -c",
     "clean": "rm -rf dist types",
     "prepare": "npm run clean && npm run build",
