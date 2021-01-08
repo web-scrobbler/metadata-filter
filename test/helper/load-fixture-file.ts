@@ -1,17 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 
-/**
- * A dummy filter function that returns an input.
- *
- * @param text String to be filtered
- *
- * @return Unmodified input
- */
-export function dummyFn(text: string): string {
-	return text;
-}
-
 const fixturesBasePath = path.normalize(path.join(__dirname, '../fixtures'));
 
 /**

@@ -2,7 +2,7 @@ import {
 	FilterFunctionTestData,
 	testFilterFunction,
 } from './helper/test-function';
-import { loadFixtureFile } from './helper/util';
+import { loadFixtureFile } from './helper/load-fixture-file';
 
 import {
 	albumArtistFromArtist,

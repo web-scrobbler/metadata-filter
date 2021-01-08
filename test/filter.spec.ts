@@ -1,9 +1,8 @@
-import chai from 'chai';
 import { expect } from 'chai';
 
 import { createFilter, createFilterSetForFields } from '../src/filter';
 
-import { dummyFn } from './helper/util';
+import { createSpyFilterFunction, dummyFn } from './helper/dummy-function';
 
 describe('Test `canFilterField` method', () => {
 	it('should return true for supported field', () => {
@@ -26,8 +25,8 @@ describe('Test `getFields` method', () => {
 
 describe('Test appending filter set', () => {
 	it('should append filter set with different fields', () => {
-		const fn1 = chai.spy(dummyFn);
-		const fn2 = chai.spy(dummyFn);
+		const fn1 = createSpyFilterFunction();
+		const fn2 = createSpyFilterFunction();
 
 		const filter1 = createFilter({ foo: fn1 });
 		const filterSet2 = { bar: fn2 };
@@ -37,8 +36,8 @@ describe('Test appending filter set', () => {
 	});
 
 	it('should append filter set with the same field', () => {
-		const fn1 = chai.spy(dummyFn);
-		const fn2 = chai.spy(dummyFn);
+		const fn1 = createSpyFilterFunction();
+		const fn2 = createSpyFilterFunction();
 
 		const filter1 = createFilter({ foo: fn1 });
 		const filterSet2 = { foo: fn2 };
@@ -76,8 +75,8 @@ describe('Test appending invalid filter set to filter', () => {
 
 describe('Test extending filter', () => {
 	it('should merge two filters with different fields', () => {
-		const fn1 = chai.spy(dummyFn);
-		const fn2 = chai.spy(dummyFn);
+		const fn1 = createSpyFilterFunction();
+		const fn2 = createSpyFilterFunction();
 
 		const filter1 = createFilter({ foo: fn1 });
 		const filter2 = createFilter({ bar: fn2 });
@@ -87,8 +86,8 @@ describe('Test extending filter', () => {
 	});
 
 	it('should merge two filters with the same field', () => {
-		const fn1 = chai.spy(dummyFn);
-		const fn2 = chai.spy(dummyFn);
+		const fn1 = createSpyFilterFunction();
+		const fn2 = createSpyFilterFunction();
 
 		const filter1 = createFilter({ foo: fn1 });
 		const filter2 = createFilter({ foo: fn2 });
@@ -127,7 +126,7 @@ describe('Test filtering strings', () => {
 });
 
 describe('Test filtering empty strings', () => {
-	const fn1 = chai.spy(dummyFn);
+	const fn1 = createSpyFilterFunction();
 
 	const filter = createFilter({ artist: fn1 });
 
@@ -184,9 +183,9 @@ describe('Test invalid filter', () => {
 
 describe('Test method chaining', () => {
 	it('should call all filter functions', () => {
-		const fn1 = chai.spy(dummyFn);
-		const fn2 = chai.spy(dummyFn);
-		const fn3 = chai.spy(dummyFn);
+		const fn1 = createSpyFilterFunction();
+		const fn2 = createSpyFilterFunction();
+		const fn3 = createSpyFilterFunction();
 
 		const filter = createFilter({ artist: fn1 })
 			.extend(createFilter({ track: fn2 }))
