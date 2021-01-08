@@ -1,4 +1,7 @@
-import { FilterFunctionTestData, testFilterFunction } from './helper/test-function';
+import {
+	FilterFunctionTestData,
+	testFilterFunction,
+} from './helper/test-function';
 import { loadFixtureFile } from './helper/util';
 
 import {
@@ -18,17 +21,25 @@ import {
 } from '../src/functions';
 
 function loadFunctionFixtureFile(functionId: string): FilterFunctionTestData[] {
-	const fixtures = loadFixtureFile<FilterFunctionTestData>(`functions/${functionId}`);
+	const fixtures = loadFixtureFile<FilterFunctionTestData>(
+		`functions/${functionId}`
+	);
 
 	for (const fixture of fixtures) {
 		if (typeof fixture.description !== 'string') {
-			throw new Error(`Missing description in test case for '${functionId}'`);
+			throw new Error(
+				`Missing description in test case for '${functionId}'`
+			);
 		}
 		if (typeof fixture.funcParameter !== 'string') {
-			throw new Error(`Missing funcParameter in test case for '${functionId}'`);
+			throw new Error(
+				`Missing funcParameter in test case for '${functionId}'`
+			);
 		}
 		if (typeof fixture.expectedValue !== 'string') {
-			throw new Error(`Missing expectedValue in test case for '${functionId}'`);
+			throw new Error(
+				`Missing expectedValue in test case for '${functionId}'`
+			);
 		}
 	}
 
@@ -48,7 +59,7 @@ const functionsToTest = {
 	'remove-version': removeVersion,
 	'remove-parody': removeParody,
 	'remove-feature': removeFeature,
-	'youtube': youtube,
+	youtube: youtube,
 };
 
 for (const [functionId, func] of Object.entries(functionsToTest)) {
