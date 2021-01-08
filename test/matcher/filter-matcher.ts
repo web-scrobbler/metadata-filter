@@ -2,12 +2,17 @@
 
 import { Assertion } from 'chai';
 
-import type { FilterFunction, MetadataFilter } from '../../src';
+import { FilterFunction, MetadataFilter } from '../../src';
 
 Assertion.addMethod(
 	'filterWith',
 	function (...filterFunctions: FilterFunction[]) {
-		const filter = this._obj as MetadataFilter;
+		const filter = this._obj as unknown;
+		if (!(filter instanceof MetadataFilter)) {
+			throw new Error(
+				"'filterWith' method must be used for MetadataFilter objects"
+			);
+		}
 
 		for (const field of filter.getFields()) {
 			filter.filterField(field, 'Test');
