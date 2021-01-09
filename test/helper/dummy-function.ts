@@ -1,6 +1,6 @@
 import { spy } from 'chai';
 
-import type { FilterFunction } from '../../src';
+import type { FilterFunction } from '../../src/filter';
 
 /**
  * A dummy filter function that returns an input.

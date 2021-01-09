@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-import type { FilterFunction } from '../../src';
+import type { FilterFunction } from '../../src/filter';
 
 /**
  * An interface to describe test data used to test a function.

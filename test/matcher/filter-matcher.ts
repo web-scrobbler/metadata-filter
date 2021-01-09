@@ -2,7 +2,7 @@
 
 import { Assertion } from 'chai';
 
-import { FilterFunction, MetadataFilter } from '../../src';
+import { FilterFunction, MetadataFilter } from '../../src/filter';
 
 export function filterMatcher(chai: Chai.ChaiStatic): void {
 	chai.Assertion.addMethod('filterWith', filterWith);
