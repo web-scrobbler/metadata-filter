@@ -5,8 +5,6 @@ import {
 	assertFilterSetIsValid,
 } from './assert';
 
-type MergedFilterSet = Record<string, FilterFunction[]>;
-
 export type FilterSet = Record<string, FilterFunction | FilterFunction[]>;
 
 /**
@@ -57,7 +55,7 @@ export function createFilterSetForFields(
  * `MetadataFilter.filterField` method.
  */
 export class MetadataFilter {
-	private mergedFilterSet: MergedFilterSet;
+	private mergedFilterSet: Record<string, FilterFunction[]>;
 
 	/**
 	 * @constructor
