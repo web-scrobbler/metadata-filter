@@ -62,14 +62,14 @@ console.log(
 
 See [src/functions.ts](src/functions.ts) for more details.
 
-### Multiple filters
+### Combine filter functions
 
-You can also use multiple filters on a string at once by creating a
+You can also use multiple filter functions on a string at once by creating a
 `MetadataFilter` object which combines multiple functions from above,
 or by using one of the pre-existing [filter objects](#predefined-filters).
 
-First, create a filter set. This is a set of rules for artists, albums, tracks,
-and albumArtists.
+First, create a filter set. This is a set of filter functions for different
+fields.
 
 ```javascript
 const filterSet = {
