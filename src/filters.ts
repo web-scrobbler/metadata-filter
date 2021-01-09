@@ -108,7 +108,7 @@ export function createAmazonFilter(): MetadataFilter {
  * Get a filter with Amazon-related filter functions.
  *
  * @return Filter object
- * @deprecated Use `createSpotifyFilter` function
+ * @deprecated Use `createAmazonFilter` function
  */
 export function getAmazonFilter(): MetadataFilter {
 	return createAmazonFilter();
