@@ -18,8 +18,18 @@ import {
  *
  * @return Filter object
  */
-export function getYoutubeFilter(): MetadataFilter {
+export function createYouTubeFilter(): MetadataFilter {
 	return new MetadataFilter({ track: youtube });
+}
+
+/**
+ * Get a filter with YouTube-related filter functions.
+ *
+ * @return Filter object
+ * @deprecated Use `createYouTubeFilter` function
+ */
+export function getYoutubeFilter(): MetadataFilter {
+	return createYouTubeFilter();
 }
 
 /**
@@ -27,7 +37,7 @@ export function getYoutubeFilter(): MetadataFilter {
  *
  * @return Filter object
  */
-export function getRemasteredFilter(): MetadataFilter {
+export function createRemasteredFilter(): MetadataFilter {
 	return new MetadataFilter({
 		track: removeRemastered,
 		album: removeRemastered,
@@ -35,11 +45,21 @@ export function getRemasteredFilter(): MetadataFilter {
 }
 
 /**
+ * Get a filter that removes "Remastered"-like suffixes.
+ *
+ * @return Filter object
+ * @deprecated Use `createRemasteredFilter` function
+ */
+export function getRemasteredFilter(): MetadataFilter {
+	return createRemasteredFilter();
+}
+
+/**
  * Get a filter with Spotify-related filter functions.
  *
  * @return Filter object
  */
-export function getSpotifyFilter(): MetadataFilter {
+export function createSpotifyFilter(): MetadataFilter {
 	return new MetadataFilter({
 		track: [removeRemastered, removeParody, fixTrackSuffix, removeLive],
 		album: [removeRemastered, fixTrackSuffix, removeLive],
@@ -47,11 +67,21 @@ export function getSpotifyFilter(): MetadataFilter {
 }
 
 /**
+ * Get a filter with Spotify-related filter functions.
+ *
+ * @return Filter object
+ * @deprecated Use `createSpotifyFilter` function
+ */
+export function getSpotifyFilter(): MetadataFilter {
+	return createSpotifyFilter();
+}
+
+/**
  * Get a filter with Amazon-related filter functions.
  *
  * @return Filter object
  */
-export function getAmazonFilter(): MetadataFilter {
+export function createAmazonFilter(): MetadataFilter {
 	return new MetadataFilter({
 		artist: [normalizeFeature],
 		track: [
@@ -75,13 +105,33 @@ export function getAmazonFilter(): MetadataFilter {
 }
 
 /**
+ * Get a filter with Amazon-related filter functions.
+ *
+ * @return Filter object
+ * @deprecated Use `createSpotifyFilter` function
+ */
+export function getAmazonFilter(): MetadataFilter {
+	return createAmazonFilter();
+}
+
+/**
  * Get a filter with Tidal-related filter functions.
  *
  * @return Filter object
  */
-export function getTidalFilter(): MetadataFilter {
+export function createTidalFilter(): MetadataFilter {
 	return new MetadataFilter({
 		track: [removeRemastered, fixTrackSuffix, removeVersion, removeLive],
 		album: [removeRemastered, fixTrackSuffix, removeVersion, removeLive],
 	});
+}
+
+/**
+ * Get a filter with Tidal-related filter functions.
+ *
+ * @return Filter object
+ * @deprecated Use `createTidalFilter` function
+ */
+export function getTidalFilter(): MetadataFilter {
+	return createTidalFilter();
 }
