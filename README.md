@@ -97,7 +97,7 @@ console.log(filter.filterField('track', 'In Bloom - Nevermind Version')); // In 
 ### Predefined filters
 
 There are also predefined filters available for easy access. For example,
-the above filter set can be acquired using `createSpotifyFilter()`:
+the above filter set can be acquired using `createSpotifyFilter()` function:
 
 ```javascript
 const filter = MetadataFilter.createSpotifyFilter();
