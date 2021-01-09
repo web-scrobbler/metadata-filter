@@ -1,6 +1,7 @@
 import chai from 'chai';
 import spies from 'chai-spies';
 
-import './matcher/filter-matcher';
+import { filterMatcher } from './matcher/filter-matcher';
 
 chai.use(spies);
+chai.use(filterMatcher);
