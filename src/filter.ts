@@ -1,9 +1,10 @@
-import type { FilterFunction } from './functions';
 import {
 	assertFieldsAreValid,
 	assertFilterSetFiltersAreValid,
 	assertFilterSetIsValid,
 } from './assert';
+
+export type FilterFunction = (text: string) => string;
 
 export type FilterSet = Record<string, FilterFunction | FilterFunction[]>;
 

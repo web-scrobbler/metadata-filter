@@ -1,5 +1,4 @@
-import type { FilterSet } from './filter';
-import type { FilterFunction } from './functions';
+import type { FilterSet, FilterFunction } from './filter';
 
 /**
  * Assert the given fields are valid.
