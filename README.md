@@ -97,10 +97,10 @@ console.log(filter.filterField('track', 'In Bloom - Nevermind Version')); // In 
 ### Predefined filters
 
 There are also predefined filters available for easy access. For example,
-the above filter set can be acquired using `getSpotifyFilter()`:
+the above filter set can be acquired using `createSpotifyFilter()`:
 
 ```javascript
-const filter = MetadataFilter.getSpotifyFilter();
+const filter = MetadataFilter.createSpotifyFilter();
 ```
 
 See [src/filters.ts](src/filters.ts) for more details.
@@ -111,9 +111,9 @@ Finally, you can take existing `MetadataFilter` objects and extend them with ano
 This is done by providing the `.extend()` method with another `MetadataFilter` object.
 
 ```javascript
-const filter = MetadataFilter.getSpotifyFilter();
+const filter = MetadataFilter.createSpotifyFilter();
 
-filter.extend(MetadataFilter.getAmazonFilter());
+filter.extend(MetadataFilter.createAmazonFilter());
 // This would also work: filter.extend(MetadataFilter.createFilter(filterSet));
 
 console.log(
