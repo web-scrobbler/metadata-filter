@@ -17,9 +17,20 @@ describe('Test `canFilterField` method', () => {
 });
 
 describe('Test `getFields` method', () => {
+	it('should return an empty array when no fields available', () => {
+		const filterFields = createFilter({}).getFields();
+
+		expect(filterFields).to.be.an('array').that.is.empty;
+	});
+
 	it('should return a list of fields', () => {
-		const filter = createFilter({ foo: dummyFn, bar: dummyFn });
-		expect(filter.getFields()).to.be.deep.equal(['foo', 'bar']);
+		const filterFields = createFilter({
+			foo: dummyFn,
+			bar: dummyFn,
+		}).getFields();
+
+		expect(filterFields).to.include('foo');
+		expect(filterFields).to.include('bar');
 	});
 });
 
