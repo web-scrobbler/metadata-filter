@@ -34,7 +34,7 @@ describe('Test `getFields` method', () => {
 	});
 });
 
-describe('Test appending filter set', () => {
+describe('Test `append` method', () => {
 	it('should append filter set with different fields', () => {
 		const fn1 = createSpyFilterFunction();
 		const fn2 = createSpyFilterFunction();
@@ -56,9 +56,7 @@ describe('Test appending filter set', () => {
 		const filter = filter1.append(filterSet2);
 		expect(filter).to.filterWith(fn1, fn2);
 	});
-});
 
-describe('Test appending invalid filter set to filter', () => {
 	it('should throw error if filter set is not specified', () => {
 		const baseFilter = createFilter({ foo: dummyFn });
 		// @ts-expect-error
@@ -84,7 +82,7 @@ describe('Test appending invalid filter set to filter', () => {
 	});
 });
 
-describe('Test extending filter', () => {
+describe('Test `extend` method', () => {
 	it('should merge two filters with different fields', () => {
 		const fn1 = createSpyFilterFunction();
 		const fn2 = createSpyFilterFunction();
@@ -106,10 +104,8 @@ describe('Test extending filter', () => {
 		const filter = filter1.extend(filter2);
 		expect(filter).to.filterWith(fn1, fn2);
 	});
-});
 
-describe('Test extending filter with invalid filter', () => {
-	it('should throw error if filter set is nullable', () => {
+	it('should throw error if filter is nullable', () => {
 		const baseFilter = createFilter({ foo: dummyFn });
 		// @ts-expect-error
 		expect(() => baseFilter.extend(null)).to.throw(
@@ -117,7 +113,7 @@ describe('Test extending filter with invalid filter', () => {
 		);
 	});
 
-	it('should throw error if filter set is invalid', () => {
+	it('should throw error if filter is invalid', () => {
 		const baseFilter = createFilter({ foo: dummyFn });
 		// @ts-expect-error
 		expect(() => baseFilter.extend(2)).to.throw(
@@ -126,7 +122,7 @@ describe('Test extending filter with invalid filter', () => {
 	});
 });
 
-describe('Test filtering strings', () => {
+describe('Test `filterField` method', () => {
 	it('should filter string', () => {
 		const filter = createFilter({
 			artist: [(text) => `${text}1`, (text) => `${text}2`],
@@ -134,14 +130,11 @@ describe('Test filtering strings', () => {
 
 		expect(filter.filterField('artist', 'Text')).to.be.equal('Text12');
 	});
-});
-
-describe('Test filtering empty strings', () => {
-	const fn1 = createSpyFilterFunction();
-
-	const filter = createFilter({ artist: fn1 });
 
 	it('should not call filter function is the input is an empty string', () => {
+		const fn1 = createSpyFilterFunction();
+		const filter = createFilter({ artist: fn1 });
+
 		const input = '';
 		const actual = filter.filterField('artist', input);
 
@@ -150,6 +143,9 @@ describe('Test filtering empty strings', () => {
 	});
 
 	it('should not call filter function is the input is null', () => {
+		const fn1 = createSpyFilterFunction();
+		const filter = createFilter({ artist: fn1 });
+
 		const input = null;
 		// @ts-expect-error
 		const actual = filter.filterField('artist', input);
@@ -157,9 +153,7 @@ describe('Test filtering empty strings', () => {
 		expect(actual).to.be.equal(input);
 		expect(fn1).to.have.not.been.called();
 	});
-});
 
-describe('Test filtering invalid filter field', () => {
 	it('should throw error if invalid field is filtered', () => {
 		const filter = createFilter({ foo: (text) => text });
 
@@ -169,7 +163,7 @@ describe('Test filtering invalid filter field', () => {
 	});
 });
 
-describe('Test invalid filter', () => {
+describe('Test `createFilter` function', () => {
 	it('should throw error if the filter set is not specified', () => {
 		// @ts-expect-error
 		expect(() => createFilter(null)).to.throw(
@@ -205,7 +199,7 @@ describe('Test method chaining', () => {
 	});
 });
 
-describe('Test creating filter set for fields', () => {
+describe('Test `createFilterSetForFields` function', () => {
 	const fn1 = dummyFn;
 	const fn2 = dummyFn;
 
