@@ -98,5 +98,10 @@
     "description": "should remove \"(YYYY Remastered Digital Version)\" string",
     "funcParameter": "Track Title (2009 Remastered Digital Version)",
     "expectedValue": "Track Title "
+  },
+  {
+    "description": "should remove \"[Remastered] (Remastered Version)\" string",
+    "funcParameter": "Album Name [Remastered] (Remastered Version)",
+    "expectedValue": "Album Name "
   }
 ]

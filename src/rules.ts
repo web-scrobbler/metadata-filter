@@ -128,6 +128,8 @@ export const REMASTERED_FILTER_RULES: FilterRule[] = [
 	// She Was Hot (2009 Re-Mastered Digital Version)
 	// She Was Hot (2009 Remastered Digital Version)
 	{ source: /[([]\d{4} Re-?[Mm]astered Digital Version[)\]]$/, target: '' },
+	// Wish You Were Here [Remastered] (Remastered Version)
+	{ source: /\[Remastered\]\s\(Remastered\sVersion\)$/, target: '' },
 ];
 
 export const LIVE_FILTER_RULES: FilterRule[] = [
