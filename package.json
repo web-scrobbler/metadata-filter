@@ -23,7 +23,7 @@
     "@types/chai-spies": "1.0.3",
     "@types/mocha": "8.2.0",
     "@typescript-eslint/eslint-plugin": "4.11.1",
-    "@typescript-eslint/parser": "4.11.1",
+    "@typescript-eslint/parser": "4.14.1",
     "chai": "4.2.0",
     "chai-spies": "1.0.0",
     "eslint": "7.16.0",
