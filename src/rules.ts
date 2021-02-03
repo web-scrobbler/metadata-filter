@@ -199,3 +199,22 @@ export const PARODY_FILTER_RULES: FilterRule[] = [
 	// The Saga Begins (Lyrical Adaption of "American Pie")
 	{ source: /\s\(Lyrical Adaption of ".*"\)$/, target: '' },
 ];
+
+/**
+ * Replace text according to given filter rules.
+ *
+ * @param text String to be filtered
+ * @param filterRules Array of replace rules
+ *
+ * @return Filtered string
+ */
+export function filterWithFilterRules(
+	text: string,
+	filterRules: FilterRule[]
+): string {
+	return filterRules.reduce((text, filterRule) => {
+		const { source, target } = filterRule;
+
+		return text.replace(source, target);
+	}, text);
+}
