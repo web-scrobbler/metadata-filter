@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-import { createFilter, createFilterSetForFields } from '../src/filter';
+import { createFilter, createFilterSetForFields } from '../src';
 
 import { createSpyFilterFunction, dummyFn } from './helper/dummy-function';
 

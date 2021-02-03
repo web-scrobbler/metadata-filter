@@ -18,7 +18,7 @@ import {
 	removeParody,
 	removeFeature,
 	youtube,
-} from '../src/functions';
+} from '../src';
 
 const functionsToTest = {
 	'album-artist-from-artist': albumArtistFromArtist,
