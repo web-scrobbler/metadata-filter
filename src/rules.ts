@@ -186,7 +186,7 @@ export const SUFFIX_FILTER_RULES: FilterRule[] = [
 		source: /-\s(.+?)\s((Re)?mix|edit|dub|mix|vip|version)$/i,
 		target: '($1 $2)',
 	},
-	{ source: /-\s(Remix|VIP)$/i, target: '($1)' },
+	{ source: /-\s(Remix|VIP|Instrumental)$/i, target: '($1)' },
 	// Remove "- Original" suffix
 	{ source: /-\sOriginal$/i, target: '' },
 ];

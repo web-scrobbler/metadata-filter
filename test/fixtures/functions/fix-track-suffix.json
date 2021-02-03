@@ -50,6 +50,11 @@
     "expectedValue": "Track Title (Short Version)"
   },
   {
+    "description": "should replace invalid \"Instrumental\" suffix",
+    "funcParameter": "Track Title - Instrumental",
+    "expectedValue": "Track Title (Instrumental)"
+  },
+  {
     "description": "should remove \"- Original\" sufix",
     "funcParameter": "Track Title - Original",
     "expectedValue": "Track Title "
