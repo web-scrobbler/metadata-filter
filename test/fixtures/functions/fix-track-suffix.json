@@ -10,47 +10,47 @@
     "expectedValue": "Track Title (Remix)"
   },
   {
-    "description": "should replace invalid \"Remix\" suffix",
+    "description": "should replace \"Remix\" suffix",
     "funcParameter": "Track Title - Artist Remix",
     "expectedValue": "Track Title (Artist Remix)"
   },
   {
-    "description": "should replace invalid \"X Remix\" suffix",
+    "description": "should replace \"X Remix\" suffix",
     "funcParameter": "Track Title - Remix",
     "expectedValue": "Track Title (Remix)"
   },
   {
-    "description": "should replace invalid \"X Dub\" suffix",
+    "description": "should replace \"X Dub\" suffix",
     "funcParameter": "Track Title - Group X dub",
     "expectedValue": "Track Title (Group X dub)"
   },
   {
-    "description": "should replace invalid \"X Edit\" suffix",
+    "description": "should replace \"X Edit\" suffix",
     "funcParameter": "Track Title - Group X edit",
     "expectedValue": "Track Title (Group X edit)"
   },
   {
-    "description": "should replace invalid \"X Mix\" suffix",
+    "description": "should replace \"X Mix\" suffix",
     "funcParameter": "Track Title - Group X mix",
     "expectedValue": "Track Title (Group X mix)"
   },
   {
-    "description": "should replace invalid multifle suffixes",
+    "description": "should replace multifle suffixes",
     "funcParameter": "Track Title - Group X Remix Edit",
     "expectedValue": "Track Title (Group X Remix Edit)"
   },
   {
-    "description": "should replace invalid \"VIP\" suffix",
+    "description": "should replace \"VIP\" suffix",
     "funcParameter": "Track Title - VIP",
     "expectedValue": "Track Title (VIP)"
   },
   {
-    "description": "should replace invalid \"X Version\" suffix",
+    "description": "should replace \"X Version\" suffix",
     "funcParameter": "Track Title - Short Version",
     "expectedValue": "Track Title (Short Version)"
   },
   {
-    "description": "should replace invalid \"Instrumental\" suffix",
+    "description": "should replace \"Instrumental\" suffix",
     "funcParameter": "Track Title - Instrumental",
     "expectedValue": "Track Title (Instrumental)"
   },
