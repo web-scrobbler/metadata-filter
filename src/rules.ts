@@ -1,13 +1,20 @@
 /**
- * Filter rules are an array that contains replace rules.
- *
- * Each rule is an object that contains 'source' and 'target' properties.
- * 'source' property is a string or RegEx object which is replaced by
- * 'target' property value.
+ * Filter rules are an array that contains replacement rules.
  */
 
+/**
+ * An object containing a replacement rule for the `filterWithFilterRules`
+ * function.
+ */
 export interface FilterRule {
+	/**
+	 * String or pattern to replace.
+	 */
 	source: RegExp | string;
+
+	/**
+	 * Replacement string.
+	 */
 	target: string;
 }
 
@@ -201,10 +208,10 @@ export const YOUTUBE_TRACK_FILTER_RULES: FilterRule[] = [
 ];
 
 /**
- * Replace text according to given filter rules.
+ * Replace text in the given string according to given filter rules.
  *
  * @param text String to be filtered
- * @param filterRules Array of replace rules
+ * @param filterRules Array of filter rules
  *
  * @return Filtered string
  */
