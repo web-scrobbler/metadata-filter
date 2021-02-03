@@ -82,28 +82,6 @@ export function normalizeFeature(text: string): string {
 }
 
 /**
- * Remove zero-width characters from given string.
- *
- * @param text String to be filtered
- *
- * @return Filtered string
- */
-export function removeZeroWidth(text: string): string {
-	return text.replace(/[\u200B-\u200D\uFEFF]/g, '');
-}
-
-/**
- * Replace all non-breaking space symbols with a space symbol.
- *
- * @param text String to be filtered
- *
- * @return Filtered string
- */
-export function replaceNbsp(text: string): string {
-	return text.replace(/\u00a0/g, '\u0020');
-}
-
-/**
  * Remove "Explicit" and "Clean"-like strings from the text.
  *
  * @param text String to be filtered
@@ -115,6 +93,17 @@ export function removeCleanExplicit(text: string): string {
 }
 
 /**
+ * Remove "feat"-like strings from the text.
+ *
+ * @param text String to be filtered
+ *
+ * @return Filtered string
+ */
+export function removeFeature(text: string): string {
+	return filterWithFilterRules(text, FEATURE_FILTER_RULES);
+}
+
+/**
  * Remove "Live..."-like strings from the text.
  *
  * @param text String to be filtered
@@ -123,6 +112,16 @@ export function removeCleanExplicit(text: string): string {
  */
 export function removeLive(text: string): string {
 	return filterWithFilterRules(text, LIVE_FILTER_RULES);
+}
+
+/**
+ * Remove "(Parody of "X" by Y)"-like strings from the text.
+ * @param text String to be filtered
+ *
+ * @return Filtered string
+ */
+export function removeParody(text: string): string {
+	return filterWithFilterRules(text, PARODY_FILTER_RULES);
 }
 
 /**
@@ -148,24 +147,25 @@ export function removeVersion(text: string): string {
 }
 
 /**
- * Remove "(Parody of "X" by Y)"-like strings from the text.
+ * Remove zero-width characters from given string.
+ *
  * @param text String to be filtered
  *
  * @return Filtered string
  */
-export function removeParody(text: string): string {
-	return filterWithFilterRules(text, PARODY_FILTER_RULES);
+export function removeZeroWidth(text: string): string {
+	return text.replace(/[\u200B-\u200D\uFEFF]/g, '');
 }
 
 /**
- * Remove "feat"-like strings from the text.
+ * Replace all non-breaking space symbols with a space symbol.
  *
  * @param text String to be filtered
  *
  * @return Filtered string
  */
-export function removeFeature(text: string): string {
-	return filterWithFilterRules(text, FEATURE_FILTER_RULES);
+export function replaceNbsp(text: string): string {
+	return text.replace(/\u00a0/g, '\u0020');
 }
 
 /**
