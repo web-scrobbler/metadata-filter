@@ -28,6 +28,7 @@ export function createYouTubeFilter(): MetadataFilter {
  * @return Filter object
  * @deprecated Use `createYouTubeFilter` function
  */
+/* istanbul ignore next */
 export function getYoutubeFilter(): MetadataFilter {
 	return createYouTubeFilter();
 }
@@ -50,6 +51,7 @@ export function createRemasteredFilter(): MetadataFilter {
  * @return Filter object
  * @deprecated Use `createRemasteredFilter` function
  */
+/* istanbul ignore next */
 export function getRemasteredFilter(): MetadataFilter {
 	return createRemasteredFilter();
 }
@@ -72,6 +74,7 @@ export function createSpotifyFilter(): MetadataFilter {
  * @return Filter object
  * @deprecated Use `createSpotifyFilter` function
  */
+/* istanbul ignore next */
 export function getSpotifyFilter(): MetadataFilter {
 	return createSpotifyFilter();
 }
@@ -110,6 +113,7 @@ export function createAmazonFilter(): MetadataFilter {
  * @return Filter object
  * @deprecated Use `createAmazonFilter` function
  */
+/* istanbul ignore next */
 export function getAmazonFilter(): MetadataFilter {
 	return createAmazonFilter();
 }
@@ -132,6 +136,7 @@ export function createTidalFilter(): MetadataFilter {
  * @return Filter object
  * @deprecated Use `createTidalFilter` function
  */
+/* istanbul ignore next */
 export function getTidalFilter(): MetadataFilter {
 	return createTidalFilter();
 }
