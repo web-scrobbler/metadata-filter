@@ -69,7 +69,8 @@ export const REMASTERED_FILTER_RULES: FilterRule[] = [
 	{ source: /\(\d+(\s-)?\sRemaster\)$/, target: '' },
 	// Outside The Wall - 2011 - Remaster
 	// China Grove - 2006 Remaster
-	{ source: /-\s\d+(\s-)?\sRemaster$/, target: '' },
+	// Easy Living - 2003 Remastered
+	{ source: /-\s\d+(\s-)?\sRemaster(?:ed)?$/, target: '' },
 	// Learning To Fly - 2001 Digital Remaster
 	{ source: /-\s\d+\s.+?\sRemaster$/, target: '' },
 	// Your Possible Pasts - 2011 Remastered Version
