@@ -50,6 +50,11 @@
     "expectedValue": "Track Title "
   },
   {
+    "description": "should remove \"- YYYY Remastered\" string",
+    "funcParameter": "Track Title - 2006 Remastered",
+    "expectedValue": "Track Title "
+  },
+  {
     "description": "should remove \"- YYYY Digital Remaster\" string",
     "funcParameter": "Track Title - 2001 Digital Remaster",
     "expectedValue": "Track Title "
