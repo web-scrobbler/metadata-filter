@@ -148,7 +148,7 @@ const filter = MetadataFilter.createFilter({ track: filterTrack }).append({
 > npm run build
 
 # Format files
-> npm run formatgst
+> npm run format
 
 # Lint source files
 > npm run lint
