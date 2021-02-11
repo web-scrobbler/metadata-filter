@@ -150,25 +150,25 @@ export const YOUTUBE_TRACK_FILTER_RULES: FilterRule[] = [
 	{ source: /^\s+|\s+$/g, target: '' },
 	// **NEW**
 	{ source: /\*+\s?\S+\s?\*+$/, target: '' },
-	// [whatever]
+	// [Whatever]
 	{ source: /\[[^\]]+\]/, target: '' },
-	// (whatever version)
+	// (Whatever Version)
 	{ source: /\([^)]*version\)$/i, target: '' },
-	// video extensions
+	// Video extensions
 	{ source: /\.(avi|wmv|mpg|mpeg|flv)$/i, target: '' },
-	// (LYRICs VIDEO)
+	// (Lyrics Video)
 	{ source: /\(.*lyrics?\s*(video)?\)/i, target: '' },
-	// (Official Track Stream)
+	// ((Official)? (Track)? Stream)
 	{ source: /\((of+icial\s*)?(track\s*)?stream\)/i, target: '' },
-	// (Official)? (Music)? Video|Audio
+	// ((Official)? (Music)? Video|Audio)
 	{ source: /\((of+icial\s*)?(music\s*)?(video|audio)\)/i, target: '' },
 	// - (Official)? (Music)? Video|Audio
 	{ source: /-\s(of+icial\s*)?(music\s*)?(video|audio)$/i, target: '' },
-	// (ALBUM TRACK)
+	// (Album Track)
 	{ source: /(ALBUM TRACK\s*)?(album track\s*)/i, target: '' },
 	// (Cover Art)
 	{ source: /(COVER ART\s*)?(Cover Art\s*)/i, target: '' },
-	// (official)
+	// (Official)
 	{ source: /\(\s*of+icial\s*\)/i, target: '' },
 	// (1999)
 	{ source: /\(\s*[0-9]{4}\s*\)/i, target: '' },
@@ -176,19 +176,19 @@ export const YOUTUBE_TRACK_FILTER_RULES: FilterRule[] = [
 	{ source: /\(\s*(HD|HQ)\s*\)$/, target: '' },
 	// HD / HQ
 	{ source: /(HD|HQ)\s?$/, target: '' },
-	// video clip officiel or video clip official
+	// Video Clip Officiel / Video Clip Official
 	{ source: /(vid[\u00E9e]o)?\s?clip\sof+ici[ae]l/i, target: '' },
-	// offizielles
+	// Offizielles
 	{ source: /of+iziel+es\s*video/i, target: '' },
-	// video clip
+	// Video Clip
 	{ source: /vid[\u00E9e]o\s?clip/i, target: '' },
-	// clip
+	// Clip
 	{ source: /\sclip/i, target: '' },
 	// Full Album
 	{ source: /full\s*album/i, target: '' },
-	// (live)
+	// (Live)
 	{ source: /\(live.*?\)$/i, target: '' },
-	// | something
+	// | Something
 	{ source: /\|.*$/i, target: '' },
 	// Artist - The new "Track title" featuring someone
 	{ source: /^(|.*\s)"(.{5,})"(\s.*|)$/, target: '$2' },
