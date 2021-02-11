@@ -5,57 +5,57 @@
     "expectedValue": "Track Title"
   },
   {
-    "description": "should remove \"(Album Version)\" string",
+    "description": "should remove '(Album Version)' string",
     "funcParameter": "Track Title (Album Version)",
     "expectedValue": "Track Title "
   },
   {
-    "description": "should remove \"[Album Version]\" string",
+    "description": "should remove '[Album Version]' string",
     "funcParameter": "Track Title [Album Version]",
     "expectedValue": "Track Title "
   },
   {
-    "description": "should remove \"(Rerecorded)\" string",
+    "description": "should remove '(Rerecorded)' string",
     "funcParameter": "Track Title (Rerecorded)",
     "expectedValue": "Track Title "
   },
   {
-    "description": "should remove \"[Rerecorded]\" string",
+    "description": "should remove '[Rerecorded]' string",
     "funcParameter": "Track Title [Rerecorded]",
     "expectedValue": "Track Title "
   },
   {
-    "description": "should remove \"(Re-recorded)\" string",
+    "description": "should remove '(Re-recorded)' string",
     "funcParameter": "Track Title (Rerecorded)",
     "expectedValue": "Track Title "
   },
   {
-    "description": "should remove \"[Re-recorded]\" string",
+    "description": "should remove '[Re-recorded]' string",
     "funcParameter": "Track Title [Rerecorded]",
     "expectedValue": "Track Title "
   },
   {
-    "description": "should remove \"(Single Version)\" string",
+    "description": "should remove '(Single Version)' string",
     "funcParameter": "Track Title (Single Version)",
     "expectedValue": "Track Title "
   },
   {
-    "description": "should remove \"(Edit)\" string",
+    "description": "should remove '(Edit)' string",
     "funcParameter": "Track Title (Edit)",
     "expectedValue": "Track Title "
   },
   {
-    "description": "should remove \"- Mono Version\" string",
+    "description": "should remove '- Mono Version' string",
     "funcParameter": "Track Title - Mono Version",
     "expectedValue": "Track Title "
   },
   {
-    "description": "should remove \"- Stereo Version\" string",
+    "description": "should remove '- Stereo Version' string",
     "funcParameter": "Track Title - Stereo Version",
     "expectedValue": "Track Title "
   },
   {
-    "description": "should remove \"(Deluxe Edition)\" string",
+    "description": "should remove '(Deluxe Edition)' string",
     "funcParameter": "Album Title (Deluxe Edition)",
     "expectedValue": "Album Title "
   }

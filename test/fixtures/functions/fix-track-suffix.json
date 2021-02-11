@@ -10,27 +10,27 @@
     "expectedValue": "Track Title (Remix)"
   },
   {
-    "description": "should replace \"Remix\" suffix",
+    "description": "should replace 'Remix' suffix",
     "funcParameter": "Track Title - Artist Remix",
     "expectedValue": "Track Title (Artist Remix)"
   },
   {
-    "description": "should replace \"X Remix\" suffix",
+    "description": "should replace 'X Remix' suffix",
     "funcParameter": "Track Title - Remix",
     "expectedValue": "Track Title (Remix)"
   },
   {
-    "description": "should replace \"X Dub\" suffix",
+    "description": "should replace 'X Dub' suffix",
     "funcParameter": "Track Title - Group X dub",
     "expectedValue": "Track Title (Group X dub)"
   },
   {
-    "description": "should replace \"X Edit\" suffix",
+    "description": "should replace 'X Edit' suffix",
     "funcParameter": "Track Title - Group X edit",
     "expectedValue": "Track Title (Group X edit)"
   },
   {
-    "description": "should replace \"X Mix\" suffix",
+    "description": "should replace 'X Mix' suffix",
     "funcParameter": "Track Title - Group X mix",
     "expectedValue": "Track Title (Group X mix)"
   },
@@ -40,22 +40,22 @@
     "expectedValue": "Track Title (Group X Remix Edit)"
   },
   {
-    "description": "should replace \"VIP\" suffix",
+    "description": "should replace 'VIP' suffix",
     "funcParameter": "Track Title - VIP",
     "expectedValue": "Track Title (VIP)"
   },
   {
-    "description": "should replace \"X Version\" suffix",
+    "description": "should replace 'X Version' suffix",
     "funcParameter": "Track Title - Short Version",
     "expectedValue": "Track Title (Short Version)"
   },
   {
-    "description": "should replace \"Instrumental\" suffix",
+    "description": "should replace 'Instrumental' suffix",
     "funcParameter": "Track Title - Instrumental",
     "expectedValue": "Track Title (Instrumental)"
   },
   {
-    "description": "should remove \"- Original\" sufix",
+    "description": "should remove '- Original' sufix",
     "funcParameter": "Track Title - Original",
     "expectedValue": "Track Title "
   }
