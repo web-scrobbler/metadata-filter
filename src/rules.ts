@@ -160,10 +160,8 @@ export const YOUTUBE_TRACK_FILTER_RULES: FilterRule[] = [
 	{ source: /\(.*lyrics?\s*(video)?\)/i, target: '' },
 	// (Official Track Stream)
 	{ source: /\((of+icial\s*)?(track\s*)?stream\)/i, target: '' },
-	// (official)? (music)? video
-	{ source: /\((of+icial\s*)?(music\s*)?video\)/i, target: '' },
-	// (official)? (music)? audio
-	{ source: /\((of+icial\s*)?(music\s*)?audio\)/i, target: '' },
+	// (Official)? (Music)? Video|Audio
+	{ source: /\((of+icial\s*)?(music\s*)?(video|audio)\)/i, target: '' },
 	// - (Official)? (Music)? Video|Audio
 	{ source: /-\s(of+icial\s*)?(music\s*)?(video|audio)$/i, target: '' },
 	// (ALBUM TRACK)
