@@ -164,6 +164,8 @@ export const YOUTUBE_TRACK_FILTER_RULES: FilterRule[] = [
 	{ source: /\((of+icial\s*)?(music\s*)?video\)/i, target: '' },
 	// (official)? (music)? audio
 	{ source: /\((of+icial\s*)?(music\s*)?audio\)/i, target: '' },
+	// - (Official)? (Music)? Video|Audio
+	{ source: /-\s(of+icial\s*)?(music\s*)?(video|audio)$/i, target: '' },
 	// (ALBUM TRACK)
 	{ source: /(ALBUM TRACK\s*)?(album track\s*)/i, target: '' },
 	// (Cover Art)

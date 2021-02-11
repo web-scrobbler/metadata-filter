@@ -125,6 +125,46 @@
     "expectedValue": "Track Title"
   },
   {
+    "description": "should remove \"- Official Music Video\" string",
+    "funcParameter": "Track Title - Official Music Video",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove \"- Official Video\" string",
+    "funcParameter": "Track Title - Official Video",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove \"- Music Video\" string",
+    "funcParameter": "Track Title - Music Video",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove \"- Video\" string",
+    "funcParameter": "Track Title - Video",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove \"- Official Music Audio\" string",
+    "funcParameter": "Track Title - Official Music Video",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove \"- Official Audio\" string",
+    "funcParameter": "Track Title - Official Video",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove \"- Music Audio\" string",
+    "funcParameter": "Track Title - Music Audio",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove \"- Audio\" string",
+    "funcParameter": "Track Title - Audio",
+    "expectedValue": "Track Title"
+  },
+  {
     "description": "should remove \"Audio\" string",
     "funcParameter": "Track Title (Audio)",
     "expectedValue": "Track Title"
