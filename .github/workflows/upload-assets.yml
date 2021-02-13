@@ -16,6 +16,9 @@ jobs:
         with:
           node-version: '14'
 
+      - name: Install dependencies
+        run: npm ci
+
       - name: Create dist archive
         run: npm pack
 
