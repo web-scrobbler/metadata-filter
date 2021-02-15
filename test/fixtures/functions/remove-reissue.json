@@ -1,0 +1,181 @@
+[
+  {
+    "description": "should do nothing with clean string",
+    "funcParameter": "Album Title",
+    "expectedValue": "Album Title"
+  },
+
+  {
+    "description": "should remove 'Re-issue' suffix",
+    "funcParameter": "Album Title Re-issue",
+    "expectedValue": "Album Title"
+  },
+
+  {
+    "description": "should remove 'Re-Issue' suffix",
+    "funcParameter": "Album Title Re-Issue",
+    "expectedValue": "Album Title"
+  },
+
+  {
+    "description": "should remove 'Reissue' suffix",
+    "funcParameter": "Album Title Reissue",
+    "expectedValue": "Album Title"
+  },
+
+  {
+    "description": "should remove '(Re-issue)' suffix",
+    "funcParameter": "Album Title (Re-issue)",
+    "expectedValue": "Album Title"
+  },
+
+  {
+    "description": "should remove '(Reissue)' suffix",
+    "funcParameter": "Album Title (Reissue)",
+    "expectedValue": "Album Title"
+  },
+
+  {
+    "description": "should remove '(Re-issue + Bonus)' suffix",
+    "funcParameter": "Album Title (Re-issue + Bonus)",
+    "expectedValue": "Album Title"
+  },
+
+  {
+    "description": "should remove '(Reissue + Bonus)' suffix",
+    "funcParameter": "Album Title (Reissue + Bonus)",
+    "expectedValue": "Album Title"
+  },
+
+  {
+    "description": "should remove '(Remastered Re-issue + Bonus)' suffix",
+    "funcParameter": "Album Title (Remastered Re-issue + Bonus)",
+    "expectedValue": "Album Title"
+  },
+
+  {
+    "description": "should remove '(Remastered Reissue + Bonus)' suffix",
+    "funcParameter": "Album Title (Remastered Reissue + Bonus)",
+    "expectedValue": "Album Title"
+  },
+
+  {
+    "description": "should remove '(Remastered Re-issue + Bonus) [Whatever]' suffix",
+    "funcParameter": "Album Title (Remastered Re-issue + Bonus) [Whatever]",
+    "expectedValue": "Album Title [Whatever]"
+  },
+
+  {
+    "description": "should remove '(Remastered Reissue + Bonus) [Whatever]' suffix",
+    "funcParameter": "Album Title (Remastered Reissue + Bonus) [Whatever]",
+    "expectedValue": "Album Title [Whatever]"
+  },
+
+  {
+    "description": "should remove '(Remastered Re-issue + Bonus) (Whatever)' suffix",
+    "funcParameter": "Album Title (Remastered Re-issue + Bonus) (Whatever)",
+    "expectedValue": "Album Title (Whatever)"
+  },
+
+  {
+    "description": "should remove '(Remastered Reissue + Bonus) (Whatever)' suffix",
+    "funcParameter": "Album Title (Remastered Reissue + Bonus) (Whatever)",
+    "expectedValue": "Album Title (Whatever)"
+  },
+
+  {
+    "description": "should remove '[Re-issue]' suffix",
+    "funcParameter": "Album Title [Re-issue]",
+    "expectedValue": "Album Title"
+  },
+
+  {
+    "description": "should remove '[Reissue]' suffix",
+    "funcParameter": "Album Title [Reissue]",
+    "expectedValue": "Album Title"
+  },
+
+  {
+    "description": "should remove '[Re-issue + Bonus]' suffix",
+    "funcParameter": "Album Title [Re-issue + Bonus]",
+    "expectedValue": "Album Title"
+  },
+
+  {
+    "description": "should remove '[Reissue + Bonus]' suffix",
+    "funcParameter": "Album Title [Reissue + Bonus]",
+    "expectedValue": "Album Title"
+  },
+
+  {
+    "description": "should remove '[Remastered Re-issue + Bonus]' suffix",
+    "funcParameter": "Album Title [Remastered Re-issue + Bonus]",
+    "expectedValue": "Album Title"
+  },
+
+  {
+    "description": "should remove '[Remastered Reissue + Bonus]' suffix",
+    "funcParameter": "Album Title [Remastered Reissue + Bonus]",
+    "expectedValue": "Album Title"
+  },
+
+  {
+    "description": "should remove '[Remastered Re-issue + Bonus] [Whatever]' suffix",
+    "funcParameter": "Album Title [Remastered Re-issue + Bonus] [Whatever]",
+    "expectedValue": "Album Title [Whatever]"
+  },
+
+  {
+    "description": "should remove '[Remastered Reissue + Bonus] [Whatever]' suffix",
+    "funcParameter": "Album Title [Remastered Reissue + Bonus] [Whatever]",
+    "expectedValue": "Album Title [Whatever]"
+  },
+
+  {
+    "description": "should remove '[Remastered Re-issue + Bonus] (Whatever)' suffix",
+    "funcParameter": "Album Title [Remastered Re-issue + Bonus] (Whatever)",
+    "expectedValue": "Album Title (Whatever)"
+  },
+
+  {
+    "description": "should remove '[Remastered Reissue + Bonus] (Whatever)' suffix",
+    "funcParameter": "Album Title [Remastered Reissue + Bonus] (Whatever)",
+    "expectedValue": "Album Title (Whatever)"
+  },
+
+  {
+    "description": "should remove '(YYYY Re-issue)' suffix",
+    "funcParameter": "Album Title (2005 Re-issue)",
+    "expectedValue": "Album Title"
+  },
+
+  {
+    "description": "should remove '(YYYY Reissue)' suffix",
+    "funcParameter": "Album Title (2005 Re-issue)",
+    "expectedValue": "Album Title"
+  },
+
+  {
+    "description": "should remove '(Re-issue YYYY)' suffix",
+    "funcParameter": "Album Title (Re-issue 2005)",
+    "expectedValue": "Album Title"
+  },
+
+  {
+    "description": "should remove '(Reissue YYYY)' suffix",
+    "funcParameter": "Album Title (Re-issue 2005)",
+    "expectedValue": "Album Title"
+  },
+
+  {
+    "description": "should not remove Re-issue if it's not at the end",
+    "funcParameter": "Album Re-issue Title",
+    "expectedValue": "Album Re-issue Title"
+  },
+
+  {
+    "description": "should not remove Reissue if it's not at the end",
+    "funcParameter": "Album Reissue Title",
+    "expectedValue": "Album Reissue Title"
+  }
+]

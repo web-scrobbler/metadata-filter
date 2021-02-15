@@ -4,6 +4,7 @@ import {
 	LIVE_FILTER_RULES,
 	NORMALIZE_FEATURE_FILTER_RULES,
 	PARODY_FILTER_RULES,
+	REISSUE_FILTER_RULES,
 	REMASTERED_FILTER_RULES,
 	SUFFIX_FILTER_RULES,
 	TRIM_SYMBOLS_FILTER_RULES,
@@ -122,6 +123,10 @@ export function removeLive(text: string): string {
  */
 export function removeParody(text: string): string {
 	return filterWithFilterRules(text, PARODY_FILTER_RULES);
+}
+
+export function removeReissue(text: string): string {
+	return filterWithFilterRules(text, REISSUE_FILTER_RULES);
 }
 
 /**

@@ -51,6 +51,15 @@ export const PARODY_FILTER_RULES: FilterRule[] = [
 	{ source: /\s\(Lyrical Adaption of ".*"\)$/, target: '' },
 ];
 
+export const REISSUE_FILTER_RULES: FilterRule[] = [
+	// Album Title Re-issue
+	{ source: /\sRe-?issue$/i, target: '' },
+	// Album Title [Whatever Re-issue Whatever]
+	{ source: /\s\[.*?Re-?issue.*?\]/i, target: '' },
+	// Album Title (Whatever Re-issue Whatever)
+	{ source: /\s\(.*?Re-?issue.*?\)/i, target: '' },
+];
+
 /**
  * Filter rules to remove "Remastered..."-like strings from a text.
  */
