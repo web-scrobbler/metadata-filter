@@ -70,15 +70,15 @@ export const REMASTERED_FILTER_RULES: FilterRule[] = [
 	// Ride the Lightning (Deluxe Remaster)
 	// ...And Justice For All (Remastered Deluxe Box Set)
 	{ source: /[([].*Re-?[Mm]aster(ed)?.*[)\]]$/, target: '' },
-	// Here Comes The Sun - Remastered
 	// Outside The Wall - 2011 - Remaster
 	// China Grove - 2006 Remaster
 	// Easy Living - 2003 Remastered
-	{ source: /-\s\d+(\s-)?\sRemaster(?:ed)?$/, target: '' },
-	// 1979 - Remastered 2012
-	{ source: /-\sRe-?[Mm]aster(ed)?.*$/, target: '' },
 	// Learning To Fly - 2001 Digital Remaster
-	{ source: /-\s\d+\s.+?\sRemaster$/, target: '' },
+	{ source: /-\s\d+(\s-)?\s.*Re-?[Mm]aster(ed)?$/, target: '' },
+	// Here Comes The Sun - Remastered
+	// 1979 - Remastered 2012
+	// 1979 - Remastered Version
+	{ source: /-\sRe-?[Mm]aster(ed)?.*$/, target: '' },
 	// Wish You Were Here [Remastered] (Remastered Version)
 	{ source: /\[Remastered\]\s\(Remastered\sVersion\)$/, target: '' },
 ];
