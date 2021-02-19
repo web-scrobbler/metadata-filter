@@ -79,7 +79,6 @@ export const REMASTERED_FILTER_RULES: FilterRule[] = [
 	{ source: /-\sRe-?[Mm]aster(ed)?.*$/, target: '' },
 	// Learning To Fly - 2001 Digital Remaster
 	{ source: /-\s\d+\s.+?\sRemaster$/, target: '' },
-
 	// Wish You Were Here [Remastered] (Remastered Version)
 	{ source: /\[Remastered\]\s\(Remastered\sVersion\)$/, target: '' },
 ];
