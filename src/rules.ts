@@ -99,6 +99,8 @@ export const REMASTERED_FILTER_RULES: FilterRule[] = [
 	{ source: /[([]\d{4} Re-?[Mm]astered Digital Version[)\]]$/, target: '' },
 	// Wish You Were Here [Remastered] (Remastered Version)
 	{ source: /\[Remastered\]\s\(Remastered\sVersion\)$/, target: '' },
+	// Ride the Lightning (Deluxe Remaster)
+	{ source: /[([]Deluxe Remaster[)\]]$/, target: '' },
 ];
 
 export const SUFFIX_FILTER_RULES: FilterRule[] = [
