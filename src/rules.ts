@@ -147,8 +147,19 @@ export const VERSION_FILTER_RULES: FilterRule[] = [
 	{ source: /-\sStereo Version$/, target: '' },
 	// Pure McCartney (Deluxe Edition)
 	{ source: /\(Deluxe Edition\)$/, target: '' },
+	// Ace of Spades (Expanded Edition)
+	// Overkill (Expanded Bonus Track Edition)
+	// On Parole (Expanded and Remastered)
+	{ source: /[([]Expanded.*[)\]]$/, target: '' },
+	// Sound of White Noise - Expanded Edition
+	{ source: /-\sExpanded Edition$/, target: '' },
 	// 6 Foot 7 Foot (Explicit Version)
 	{ source: /[([]Explicit Version[)\]]/i, target: '' },
+	// No Remorse (Bonus Track Edition)
+	{ source: /[([]Bonus Track Edition[)\]]/i, target: '' },
+	// Peace Sells...But Who's Buying (25th Anniversary)
+	// Persistence of Time (30th Anniversary Remaster)
+	{ source: /[([]\d+th\sAnniversary.*[)\]]/i, target: '' }
 ];
 
 /**
