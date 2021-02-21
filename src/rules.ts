@@ -74,7 +74,10 @@ export const REMASTERED_FILTER_RULES: FilterRule[] = [
 	// China Grove - 2006 Remaster
 	// Easy Living - 2003 Remastered
 	// Learning To Fly - 2001 Digital Remaster
-	{ source: /-\s\d+(\s-)?\s.*Re-?[Mm]aster(ed)?$/, target: '' },
+	// Red Right Hand - 2011 Remastered Version
+	{ source: /-\s\d+(\s-)?\s.*Re-?[Mm]aster(ed)?.*$/, target: '' },
+	// Ticket To Ride - Live / Remastered
+	{ source: /-\sLive\s\/\sRemastered$/, target: '' },
 	// Here Comes The Sun - Remastered
 	// 1979 - Remastered 2012
 	// 1979 - Remastered Version
