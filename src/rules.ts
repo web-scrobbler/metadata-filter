@@ -75,7 +75,7 @@ export const REMASTERED_FILTER_RULES: FilterRule[] = [
 	// Easy Living - 2003 Remastered
 	// Learning To Fly - 2001 Digital Remaster
 	// Red Right Hand - 2011 Remastered Version
-	{ source: /-\s\d+(\s-)?\s.*Re-?[Mm]aster(ed)?.*$/, target: '' },
+	{ source: /-\s\d{4}(\s-)?\s.*Re-?[Mm]aster(ed)?.*$/, target: '' },
 	// Ticket To Ride - Live / Remastered
 	{ source: /-\sLive\s\/\sRemastered$/, target: '' },
 	// Here Comes The Sun - Remastered
