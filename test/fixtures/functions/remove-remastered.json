@@ -85,6 +85,26 @@
     "expectedValue": "Track Title "
   },
   {
+    "description": "should remove '(Deluxe Remaster)' string",
+    "funcParameter": "Track Title (Deluxe Remaster)",
+    "expectedValue": "Track Title "
+  },
+  {
+    "description": "should remove '[Deluxe Remaster]' string",
+    "funcParameter": "Track Title [Deluxe Remaster]",
+    "expectedValue": "Track Title "
+  },
+  {
+    "description": "should remove '(Remastered Deluxe Box Set)' string",
+    "funcParameter": "Track Title (Remastered Deluxe Box Set)",
+    "expectedValue": "Track Title "
+  },
+  {
+    "description": "should remove '[Remastered Deluxe Box Set]' string",
+    "funcParameter": "Track Title [Remastered Deluxe Box Set]",
+    "expectedValue": "Track Title "
+  },
+  {
     "description": "should remove '(YYYY Remastered Version)' string",
     "funcParameter": "Track Title (2014 Remastered Version)",
     "expectedValue": "Track Title "
