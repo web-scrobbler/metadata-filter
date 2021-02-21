@@ -108,8 +108,6 @@ export const SUFFIX_FILTER_RULES: FilterRule[] = [
 		target: '($1 $2)',
 	},
 	{ source: /-\s(Remix|VIP|Instrumental)$/i, target: '($1)' },
-	// Remove "- Original" suffix
-	{ source: /-\sOriginal$/i, target: '' },
 ];
 
 /**
@@ -149,6 +147,12 @@ export const VERSION_FILTER_RULES: FilterRule[] = [
 	{ source: /\(Deluxe Edition\)$/, target: '' },
 	// 6 Foot 7 Foot (Explicit Version)
 	{ source: /[([]Explicit Version[)\]]/i, target: '' },
+	// 6 Foot 7 Foot - Original
+	{ source: /-\sOriginal$/i, target: '' },
+	// California Love - Original Version
+	{ source: /-\sOriginal Version$/i, target: '' },
+	// Personal Jesus - Original Single Version
+	{ source: /-\sOriginal Single Version$/i, target: '' },
 ];
 
 /**
