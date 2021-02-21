@@ -58,5 +58,65 @@
     "description": "should remove '(Deluxe Edition)' string",
     "funcParameter": "Album Title (Deluxe Edition)",
     "expectedValue": "Album Title "
+  },
+  {
+    "description": "should remove '(Expanded Edition)' string",
+    "funcParameter": "Album Title (Expanded Edition)",
+    "expectedValue": "Album Title "
+  },
+  {
+    "description": "should remove '[Expanded Edition]' string",
+    "funcParameter": "Album Title [Expanded Edition]",
+    "expectedValue": "Album Title "
+  },
+  {
+    "description": "should remove '(Expanded Bonus Track Edition)' string",
+    "funcParameter": "Album Title (Expanded Bonus Track Edition)",
+    "expectedValue": "Album Title "
+  },
+  {
+    "description": "should remove '(Expanded and Remastered)' string",
+    "funcParameter": "Album Title (Expanded and Remastered)",
+    "expectedValue": "Album Title "
+  },
+  {
+    "description": "should remove '- Expanded Edition' string",
+    "funcParameter": "Album Title - Expanded Edition",
+    "expectedValue": "Album Title "
+  },
+  {
+    "description": "should remove '(Explicit Version)' string",
+    "funcParameter": "Album Title (Explicit Version)",
+    "expectedValue": "Album Title "
+  },
+  {
+    "description": "should remove '[Explicit Version]' string",
+    "funcParameter": "Album Title [Explicit Version]",
+    "expectedValue": "Album Title "
+  },
+  {
+    "description": "should remove '(Bonus Track Edition)' string",
+    "funcParameter": "Album Title (Bonus Track Edition)",
+    "expectedValue": "Album Title "
+  },
+  {
+    "description": "should remove '[Bonus Track Edition]' string",
+    "funcParameter": "Album Title [Bonus Track Edition]",
+    "expectedValue": "Album Title "
+  },
+  {
+    "description": "should remove '(25th Anniversary)' string",
+    "funcParameter": "Album Title (25th Anniversary)",
+    "expectedValue": "Album Title "
+  },
+  {
+    "description": "should remove '[25th Anniversary]' string",
+    "funcParameter": "Album Title [25th Anniversary]",
+    "expectedValue": "Album Title "
+  },
+  {
+    "description": "should remove '30th Anniversary Remaster' string",
+    "funcParameter": "Album Title (30th Anniversary Remaster)",
+    "expectedValue": "Album Title "
   }
 ]
