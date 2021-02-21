@@ -159,7 +159,7 @@ export const VERSION_FILTER_RULES: FilterRule[] = [
 	{ source: /[([]Bonus Track Edition[)\]]/i, target: '' },
 	// Peace Sells...But Who's Buying (25th Anniversary)
 	// Persistence of Time (30th Anniversary Remaster)
-	{ source: /[([]\d+th\sAnniversary.*[)\]]/i, target: '' }
+	{ source: /[([]\d+th\sAnniversary.*[)\]]/i, target: '' },
 ];
 
 /**
