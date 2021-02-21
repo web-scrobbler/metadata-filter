@@ -115,7 +115,7 @@
     "expectedValue": "Album Title "
   },
   {
-    "description": "should remove '30th Anniversary Remaster' string",
+    "description": "should remove '(30th Anniversary Remaster)' string",
     "funcParameter": "Album Title (30th Anniversary Remaster)",
     "expectedValue": "Album Title "
   }
