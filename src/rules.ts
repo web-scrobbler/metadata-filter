@@ -72,19 +72,19 @@ export const REMASTERED_FILTER_RULES: FilterRule[] = [
 	// How The West Was Won [Remastered]
 	// Ride the Lightning (Deluxe Remaster)
 	// ...And Justice For All (Remastered Deluxe Box Set)
-	{ source: /[([].*Re-?[Mm]aster(ed)?.*[)\]]$/, target: '' },
+	{ source: /\s[([].*Re-?[Mm]aster(ed)?.*[)\]]$/, target: '' },
 	// Outside The Wall - 2011 - Remaster
 	// China Grove - 2006 Remaster
 	// Easy Living - 2003 Remastered
 	// Learning To Fly - 2001 Digital Remaster
 	// Red Right Hand - 2011 Remastered Version
-	{ source: /-\s\d{4}(\s-)?\s.*Re-?[Mm]aster(ed)?.*$/, target: '' },
+	{ source: /\s-\s\d{4}(\s-)?\s.*Re-?[Mm]aster(ed)?.*$/, target: '' },
 	// Here Comes The Sun - Remastered
 	// 1979 - Remastered 2012
 	// 1979 - Remastered Version
-	{ source: /-\sRe-?[Mm]aster(ed)?.*$/, target: '' },
+	{ source: /\s-\sRe-?[Mm]aster(ed)?.*$/, target: '' },
 	// Wish You Were Here [Remastered] (Remastered Version)
-	{ source: /\[Remastered\]\s\(Remastered\sVersion\)$/, target: '' },
+	{ source: /\s\[Remastered\]\s\(Remastered\sVersion\)$/, target: '' },
 ];
 
 export const SUFFIX_FILTER_RULES: FilterRule[] = [
