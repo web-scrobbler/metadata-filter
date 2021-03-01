@@ -3,6 +3,7 @@ import {
 	describeAndTestFilterFunction,
 } from './helper/test-function';
 import { loadFixtureFile } from './helper/load-fixture-file';
+import { validateFixtures } from './helper/validate-fixtures';
 
 import {
 	albumArtistFromArtist,
@@ -38,32 +39,17 @@ const functionsToTest = {
 	youtube: youtube,
 };
 
-for (const [functionId, func] of Object.entries(functionsToTest)) {
-	describeAndTestFilterFunction(func, loadFunctionFixtureFile(functionId));
-}
+const requiredFixtureProperties: ReadonlyArray<keyof FilterFunctionFixture> = [
+	'description',
+	'funcParameter',
+	'expectedValue',
+];
 
-function loadFunctionFixtureFile(functionId: string): FilterFunctionFixture[] {
+for (const [fixtureId, func] of Object.entries(functionsToTest)) {
 	const fixtures = loadFixtureFile<FilterFunctionFixture>(
-		`functions/${functionId}`
+		`functions/${fixtureId}`
 	);
+	validateFixtures(fixtureId, fixtures, requiredFixtureProperties);
 
-	for (const fixture of fixtures) {
-		if (typeof fixture.description !== 'string') {
-			throw new Error(
-				`Missing description in test case for '${functionId}'`
-			);
-		}
-		if (typeof fixture.funcParameter !== 'string') {
-			throw new Error(
-				`Missing funcParameter in test case for '${functionId}'`
-			);
-		}
-		if (typeof fixture.expectedValue !== 'string') {
-			throw new Error(
-				`Missing expectedValue in test case for '${functionId}'`
-			);
-		}
-	}
-
-	return fixtures;
+	describeAndTestFilterFunction(func, fixtures);
 }

@@ -11,6 +11,7 @@ import {
 	createYouTubeFilter,
 	MetadataFilter,
 } from '../src';
+import { validateFixtures } from './helper/validate-fixtures';
 
 const filtersToTest: Record<string, MetadataFilter> = {
 	spotify: createSpotifyFilter(),
@@ -32,8 +33,16 @@ describe('Test predefined filters', () => {
 	});
 });
 
-for (const [filterName, filter] of Object.entries(filtersToTest)) {
-	const fixtures = loadFixtureFile<FilterFixture>(`filters/${filterName}`);
+const requiredFixtureProperties: ReadonlyArray<keyof FilterFixture> = [
+	'description',
+	'fieldName',
+	'fieldValue',
+	'expectedValue',
+];
 
-	describeAndTestFilter(filterName, filter, fixtures);
+for (const [fixtureId, filter] of Object.entries(filtersToTest)) {
+	const fixtures = loadFixtureFile<FilterFixture>(`filters/${fixtureId}`);
+	validateFixtures(fixtureId, fixtures, requiredFixtureProperties);
+
+	describeAndTestFilter(fixtureId, filter, fixtures);
 }
