@@ -150,9 +150,10 @@ export const VERSION_FILTER_RULES: FilterRule[] = [
 	// 6 Foot 7 Foot - Original
 	{ source: /-\sOriginal$/i, target: '' },
 	// California Love - Original Version
-	{ source: /-\sOriginal Version$/i, target: '' },
 	// Personal Jesus - Original Single Version
-	{ source: /-\sOriginal Single Version$/i, target: '' },
+	// Prince of the Moment - Original 7" Version
+	// YMCA - Original Version 1978
+	{ source: /-\sOriginal.*Version( \d{4})?$/i, target: '' },
 ];
 
 /**

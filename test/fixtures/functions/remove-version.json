@@ -73,5 +73,15 @@
     "description": "should remove '- Original Single Version' sufix",
     "funcParameter": "Track Title - Original Single Version",
     "expectedValue": "Track Title "
+  },
+  {
+    "description": "should remove '- Original 7\" Version' sufix",
+    "funcParameter": "Track Title - Original 7\" Version",
+    "expectedValue": "Track Title "
+  },
+  {
+    "description": "should remove '- Original Version YYYY' sufix",
+    "funcParameter": "Track Title - Original Version 1978",
+    "expectedValue": "Track Title "
   }
 ]
