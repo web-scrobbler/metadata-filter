@@ -153,7 +153,7 @@ export const VERSION_FILTER_RULES: FilterRule[] = [
 	// Personal Jesus - Original Single Version
 	// Prince of the Moment - Original 7" Version
 	// YMCA - Original Version 1978
-	{ source: /-\sOriginal.*Version( \d{4})?$/i, target: '' },
+	{ source: /-\sOriginal.*Version(\s\d{4})?$/i, target: '' },
 ];
 
 /**
