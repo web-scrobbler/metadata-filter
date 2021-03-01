@@ -1,6 +1,6 @@
 import {
-	FilterFunctionTestData,
-	testFilterFunction,
+	FilterFunctionFixture,
+	describeAndTestFilterFunction,
 } from './helper/test-function';
 import { loadFixtureFile } from './helper/load-fixture-file';
 
@@ -39,11 +39,11 @@ const functionsToTest = {
 };
 
 for (const [functionId, func] of Object.entries(functionsToTest)) {
-	testFilterFunction(func, loadFunctionFixtureFile(functionId));
+	describeAndTestFilterFunction(func, loadFunctionFixtureFile(functionId));
 }
 
-function loadFunctionFixtureFile(functionId: string): FilterFunctionTestData[] {
-	const fixtures = loadFixtureFile<FilterFunctionTestData>(
+function loadFunctionFixtureFile(functionId: string): FilterFunctionFixture[] {
+	const fixtures = loadFixtureFile<FilterFunctionFixture>(
 		`functions/${functionId}`
 	);
 

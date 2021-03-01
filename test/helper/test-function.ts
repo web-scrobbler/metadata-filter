@@ -5,7 +5,7 @@ import type { FilterFunction } from '../../src';
 /**
  * An interface to describe test data used to test a function.
  */
-export interface FilterFunctionTestData {
+export interface FilterFunctionFixture {
 	/**
 	 * Test case description.
 	 */
@@ -30,17 +30,17 @@ export interface FilterFunctionTestData {
  * `FilterFunctionTestData` interface.
  *
  * @param filterFunction Filter function reference
- * @param testData Test data
+ * @param fixtures Test fixtures
  */
-export function testFilterFunction(
+export function describeAndTestFilterFunction(
 	filterFunction: FilterFunction,
-	testData: FilterFunctionTestData[]
+	fixtures: FilterFunctionFixture[]
 ): void {
 	const functionName = filterFunction.name;
 
 	describe(`Test '${functionName}' filter function`, () => {
-		for (const data of testData) {
-			const { description, funcParameter, expectedValue } = data;
+		for (const fixture of fixtures) {
+			const { description, funcParameter, expectedValue } = fixture;
 
 			it(description, () => {
 				const actual = filterFunction(funcParameter);
