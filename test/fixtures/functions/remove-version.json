@@ -120,27 +120,27 @@
     "expectedValue": "Album Title"
   },
   {
-    "description": "should remove '- Original' sufix",
+    "description": "should remove '- Original' suffix",
     "funcParameter": "Track Title - Original",
     "expectedValue": "Track Title"
   },
   {
-    "description": "should remove '- Original Version' sufix",
+    "description": "should remove '- Original Version' suffix",
     "funcParameter": "Track Title - Original Version",
     "expectedValue": "Track Title"
   },
   {
-    "description": "should remove '- Original Single Version' sufix",
+    "description": "should remove '- Original Single Version' suffix",
     "funcParameter": "Track Title - Original Single Version",
     "expectedValue": "Track Title"
   },
   {
-    "description": "should remove '- Original 7\" Version' sufix",
+    "description": "should remove '- Original 7\" Version' suffix",
     "funcParameter": "Track Title - Original 7\" Version",
     "expectedValue": "Track Title"
   },
   {
-    "description": "should remove '- Original Version YYYY' sufix",
+    "description": "should remove '- Original Version YYYY' suffix",
     "funcParameter": "Track Title - Original Version 1978",
     "expectedValue": "Track Title"
   }

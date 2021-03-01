@@ -1,8 +1,8 @@
 [
   {
     "description": "should do nothing with clean string",
-    "funcParameter": "Track Metafield",
-    "expectedValue": "Track Metafield"
+    "funcParameter": "Track Title",
+    "expectedValue": "Track Title"
   },
   {
     "description": "should remove zero-width characters",

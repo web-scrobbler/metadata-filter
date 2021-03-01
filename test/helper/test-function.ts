@@ -12,7 +12,7 @@ export interface FilterFunctionTestData {
 	readonly description: string;
 
 	/**
-	 * Function parateter.
+	 * Function parameter.
 	 */
 	readonly funcParameter: string;
 

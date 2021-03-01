@@ -163,7 +163,7 @@ export class MetadataFilter {
 	 *
 	 * @param filters Array of filter functions or filter function
 	 *
-	 * @return Array of filter funcions
+	 * @return Array of filter functions
 	 */
 	private wrapFiltersIntoArray(
 		filters: FilterFunction | FilterFunction[]

@@ -35,7 +35,7 @@
     "expectedValue": "Track Title (Group X mix)"
   },
   {
-    "description": "should replace multifle suffixes",
+    "description": "should replace multiple suffixes",
     "funcParameter": "Track Title - Group X Remix Edit",
     "expectedValue": "Track Title (Group X Remix Edit)"
   },
