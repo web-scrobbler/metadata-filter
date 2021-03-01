@@ -56,7 +56,7 @@ export function createFilterSetForFields(
  * `MetadataFilter.filterField` method.
  */
 export class MetadataFilter {
-	private mergedFilterSet: Record<string, FilterFunction[]>;
+	private readonly mergedFilterSet: Record<string, FilterFunction[]>;
 
 	/**
 	 * @constructor
