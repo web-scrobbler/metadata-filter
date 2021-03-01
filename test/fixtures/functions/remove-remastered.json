@@ -67,12 +67,12 @@
   {
     "description": "should remove '(Live / Remastered)' string",
     "funcParameter": "Track Title (Live / Remastered)",
-    "expectedValue": "Track Title "
+    "expectedValue": "Track Title (Live)"
   },
   {
     "description": "should remove '- Live / Remastered' string",
     "funcParameter": "Track Title - Live / Remastered",
-    "expectedValue": "Track Title "
+    "expectedValue": "Track Title - Live"
   },
   {
     "description": "should remove '(Remastered)' string",

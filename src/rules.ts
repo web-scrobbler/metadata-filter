@@ -64,6 +64,8 @@ export const REISSUE_FILTER_RULES: FilterRule[] = [
  * Filter rules to remove "Remastered..."-like strings from a text.
  */
 export const REMASTERED_FILTER_RULES: FilterRule[] = [
+	// Vivo (Live / Remastered)
+	{ source: /[([]Live\s\/\sRemastered[)\]]$/, target: '(Live)' },
 	// Mothership (Remastered)
 	// Let It Be (Remastered 2009)
 	// How The West Was Won [Remastered]
@@ -77,7 +79,7 @@ export const REMASTERED_FILTER_RULES: FilterRule[] = [
 	// Red Right Hand - 2011 Remastered Version
 	{ source: /-\s\d{4}(\s-)?\s.*Re-?[Mm]aster(ed)?.*$/, target: '' },
 	// Ticket To Ride - Live / Remastered
-	{ source: /-\sLive\s\/\sRemastered$/, target: '' },
+	{ source: /-\sLive\s\/\sRemastered$/, target: '- Live' },
 	// Here Comes The Sun - Remastered
 	// 1979 - Remastered 2012
 	// 1979 - Remastered Version
