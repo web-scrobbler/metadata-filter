@@ -32,9 +32,11 @@ export const FEATURE_FILTER_RULES: FilterRule[] = [
 
 export const LIVE_FILTER_RULES: FilterRule[] = [
 	// Track - Live
-	{ source: /-\sLive?$/, target: '' },
 	// Track - Live at
-	{ source: /-\sLive\s.+?$/, target: '' },
+	{ source: /-\sLive(\s.+)?$/, target: '' },
+	// Track (Live)
+	{ source: /[([]Live[)\]]$/, target: '' },
+
 ];
 
 export const NORMALIZE_FEATURE_FILTER_RULES = [
