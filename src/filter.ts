@@ -138,7 +138,7 @@ export class MetadataFilter {
 	 *
 	 * @return List of fields
 	 */
-	getFields(): string[] {
+	getFields(): readonly string[] {
 		return Object.keys(this.mergedFilterSet);
 	}
 
