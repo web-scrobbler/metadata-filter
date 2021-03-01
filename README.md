@@ -1,4 +1,4 @@
-# metadata-filter [![Test][workflowbadge]][workflow] [![NPM][npmbadge]][npm] [![Codacy][codacybadge]][codacy] [![Coverage][codacycovbadge]][codacy]
+# metadata-filter [![Test][workflow-badge]][workflow] [![NPM][npm-badge]][npm] [![Codacy][codacy-badge]][codacy] [![Coverage][coverage-badge]][codacy]
 
 A module for cleaning up artist, album, and song names.
 
@@ -170,10 +170,10 @@ Licensed under the [MIT License](LICENSE.md).
 
 <!-- Badges -->
 
-[workflowbadge]: https://img.shields.io/github/workflow/status/web-scrobbler/metadata-filter/Test?label=test
-[npmbadge]: https://img.shields.io/npm/v/metadata-filter
-[codacybadge]: https://img.shields.io/codacy/grade/100b50dc21664ce6bc591c28b73d6892
-[codacycovbadge]: https://img.shields.io/codacy/coverage/100b50dc21664ce6bc591c28b73d6892
+[workflow-badge]: https://img.shields.io/github/workflow/status/web-scrobbler/metadata-filter/Test?label=test
+[npm-badge]: https://img.shields.io/npm/v/metadata-filter
+[codacy-badge]: https://img.shields.io/codacy/grade/100b50dc21664ce6bc591c28b73d6892
+[coverage-badge]: https://img.shields.io/codacy/coverage/100b50dc21664ce6bc591c28b73d6892
 
 <!-- Related pages -->
 
