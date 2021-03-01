@@ -160,6 +160,10 @@ const filter = MetadataFilter.createFilter({ track: filterTrack }).append({
 > npm run test-with-coverage
 ```
 
+## See also
+
+-   [music-metadata-filter] - Python implementation of this module
+
 ## License
 
 Licensed under the [MIT License](LICENSE.md).
@@ -176,3 +180,7 @@ Licensed under the [MIT License](LICENSE.md).
 [codacy]: https://app.codacy.com/gh/web-scrobbler/metadata-filter/dashboard
 [npm]: https://www.npmjs.com/package/metadata-filter
 [workflow]: https://github.com/web-scrobbler/metadata-filter/actions?query=workflow%3ATest
+
+<!-- Related projects -->
+
+[music-metadata-filter]: https://github.com/djmattyg007/music-metadata-filter
