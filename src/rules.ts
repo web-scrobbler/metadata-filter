@@ -36,7 +36,6 @@ export const LIVE_FILTER_RULES: FilterRule[] = [
 	{ source: /-\sLive(\s.+)?$/, target: '' },
 	// Track (Live)
 	{ source: /[([]Live[)\]]$/, target: '' },
-
 ];
 
 export const NORMALIZE_FEATURE_FILTER_RULES = [
