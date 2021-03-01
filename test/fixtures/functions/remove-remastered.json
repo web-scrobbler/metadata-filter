@@ -67,12 +67,12 @@
   {
     "description": "should remove '(Live / Remastered)' string",
     "funcParameter": "Track Title (Live / Remastered)",
-    "expectedValue": "Track Title "
+    "expectedValue": "Track Title (Live)"
   },
   {
     "description": "should remove '- Live / Remastered' string",
     "funcParameter": "Track Title - Live / Remastered",
-    "expectedValue": "Track Title "
+    "expectedValue": "Track Title - Live"
   },
   {
     "description": "should remove '(Remastered)' string",
@@ -82,6 +82,26 @@
   {
     "description": "should remove '[Remastered]' string",
     "funcParameter": "Track Title [Remastered]",
+    "expectedValue": "Track Title "
+  },
+  {
+    "description": "should remove '(Deluxe Remaster)' string",
+    "funcParameter": "Track Title (Deluxe Remaster)",
+    "expectedValue": "Track Title "
+  },
+  {
+    "description": "should remove '[Deluxe Remaster]' string",
+    "funcParameter": "Track Title [Deluxe Remaster]",
+    "expectedValue": "Track Title "
+  },
+  {
+    "description": "should remove '(Remastered Deluxe Box Set)' string",
+    "funcParameter": "Track Title (Remastered Deluxe Box Set)",
+    "expectedValue": "Track Title "
+  },
+  {
+    "description": "should remove '[Remastered Deluxe Box Set]' string",
+    "funcParameter": "Track Title [Remastered Deluxe Box Set]",
     "expectedValue": "Track Title "
   },
   {

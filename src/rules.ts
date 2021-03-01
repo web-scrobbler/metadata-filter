@@ -32,9 +32,10 @@ export const FEATURE_FILTER_RULES: FilterRule[] = [
 
 export const LIVE_FILTER_RULES: FilterRule[] = [
 	// Track - Live
-	{ source: /-\sLive?$/, target: '' },
 	// Track - Live at
-	{ source: /-\sLive\s.+?$/, target: '' },
+	{ source: /-\sLive(\s.+)?$/, target: '' },
+	// Track (Live)
+	{ source: /[([]Live[)\]]$/, target: '' },
 ];
 
 export const NORMALIZE_FEATURE_FILTER_RULES = [
@@ -64,39 +65,24 @@ export const REISSUE_FILTER_RULES: FilterRule[] = [
  * Filter rules to remove "Remastered..."-like strings from a text.
  */
 export const REMASTERED_FILTER_RULES: FilterRule[] = [
-	// Here Comes The Sun - Remastered
-	{ source: /-\sRemastered$/, target: '' },
-	// Hey Jude - Remastered 2015
-	{ source: /-\sRemastered\s\d+$/, target: '' },
+	// Ticket To Ride - Live / Remastered
+	{ source: /Live\s\/\sRemastered/, target: 'Live' },
+	// Mothership (Remastered)
 	// Let It Be (Remastered 2009)
-	// Red Rain (Remaster 2012)
-	{ source: /\(Remaster(ed)?\s\d+\)$/, target: '' },
-	// Pigs On The Wing (Part One) [2011 - Remaster]
-	{ source: /\[\d+\s-\sRemaster\]$/, target: '' },
-	// Comfortably Numb (2011 - Remaster)
-	// Dancing Days (2012 Remaster)
-	{ source: /\(\d+(\s-)?\sRemaster\)$/, target: '' },
+	// How The West Was Won [Remastered]
+	// Ride the Lightning (Deluxe Remaster)
+	// ...And Justice For All (Remastered Deluxe Box Set)
+	{ source: /[([].*Re-?[Mm]aster(ed)?.*[)\]]$/, target: '' },
 	// Outside The Wall - 2011 - Remaster
 	// China Grove - 2006 Remaster
 	// Easy Living - 2003 Remastered
-	{ source: /-\s\d+(\s-)?\sRemaster(?:ed)?$/, target: '' },
 	// Learning To Fly - 2001 Digital Remaster
-	{ source: /-\s\d+\s.+?\sRemaster$/, target: '' },
-	// Your Possible Pasts - 2011 Remastered Version
-	{ source: /-\s\d+\sRemastered Version$/, target: '' },
-	// Roll Over Beethoven (Live / Remastered)
-	{ source: /\(Live\s\/\sRemastered\)$/i, target: '' },
-	// Ticket To Ride - Live / Remastered
-	{ source: /-\sLive\s\/\sRemastered$/, target: '' },
-	// Mothership (Remastered)
-	// How The West Was Won [Remastered]
-	{ source: /[([]Remastered[)\]]$/, target: '' },
-	// A Well Respected Man (2014 Remastered Version)
-	// A Well Respected Man [2014 Remastered Version]
-	{ source: /[([]\d{4} Re[Mm]astered Version[)\]]$/, target: '' },
-	// She Was Hot (2009 Re-Mastered Digital Version)
-	// She Was Hot (2009 Remastered Digital Version)
-	{ source: /[([]\d{4} Re-?[Mm]astered Digital Version[)\]]$/, target: '' },
+	// Red Right Hand - 2011 Remastered Version
+	{ source: /-\s\d{4}(\s-)?\s.*Re-?[Mm]aster(ed)?.*$/, target: '' },
+	// Here Comes The Sun - Remastered
+	// 1979 - Remastered 2012
+	// 1979 - Remastered Version
+	{ source: /-\sRe-?[Mm]aster(ed)?.*$/, target: '' },
 	// Wish You Were Here [Remastered] (Remastered Version)
 	{ source: /\[Remastered\]\s\(Remastered\sVersion\)$/, target: '' },
 ];
@@ -145,8 +131,19 @@ export const VERSION_FILTER_RULES: FilterRule[] = [
 	{ source: /-\sStereo Version$/, target: '' },
 	// Pure McCartney (Deluxe Edition)
 	{ source: /\(Deluxe Edition\)$/, target: '' },
+	// Ace of Spades (Expanded Edition)
+	// Overkill (Expanded Bonus Track Edition)
+	// On Parole (Expanded and Remastered)
+	{ source: /[([]Expanded.*[)\]]$/, target: '' },
+	// Sound of White Noise - Expanded Edition
+	{ source: /-\sExpanded Edition$/, target: '' },
 	// 6 Foot 7 Foot (Explicit Version)
 	{ source: /[([]Explicit Version[)\]]/i, target: '' },
+	// No Remorse (Bonus Track Edition)
+	{ source: /[([]Bonus Track Edition[)\]]/i, target: '' },
+	// Peace Sells...But Who's Buying (25th Anniversary)
+	// Persistence of Time (30th Anniversary Remaster)
+	{ source: /[([]\d+th\sAnniversary.*[)\]]/i, target: '' },
 	// 6 Foot 7 Foot - Original
 	{ source: /-\sOriginal$/i, target: '' },
 	// California Love - Original Version
