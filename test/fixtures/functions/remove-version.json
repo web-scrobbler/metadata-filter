@@ -7,141 +7,141 @@
   {
     "description": "should remove '(Album Version)' string",
     "funcParameter": "Track Title (Album Version)",
-    "expectedValue": "Track Title "
+    "expectedValue": "Track Title"
   },
   {
     "description": "should remove '[Album Version]' string",
     "funcParameter": "Track Title [Album Version]",
-    "expectedValue": "Track Title "
+    "expectedValue": "Track Title"
   },
   {
     "description": "should remove '(Rerecorded)' string",
     "funcParameter": "Track Title (Rerecorded)",
-    "expectedValue": "Track Title "
+    "expectedValue": "Track Title"
   },
   {
     "description": "should remove '[Rerecorded]' string",
     "funcParameter": "Track Title [Rerecorded]",
-    "expectedValue": "Track Title "
+    "expectedValue": "Track Title"
   },
   {
     "description": "should remove '(Re-recorded)' string",
     "funcParameter": "Track Title (Rerecorded)",
-    "expectedValue": "Track Title "
+    "expectedValue": "Track Title"
   },
   {
     "description": "should remove '[Re-recorded]' string",
     "funcParameter": "Track Title [Rerecorded]",
-    "expectedValue": "Track Title "
+    "expectedValue": "Track Title"
   },
   {
     "description": "should remove '(Single Version)' string",
     "funcParameter": "Track Title (Single Version)",
-    "expectedValue": "Track Title "
+    "expectedValue": "Track Title"
   },
   {
     "description": "should remove '(Edit)' string",
     "funcParameter": "Track Title (Edit)",
-    "expectedValue": "Track Title "
+    "expectedValue": "Track Title"
   },
   {
     "description": "should remove '- Mono Version' string",
     "funcParameter": "Track Title - Mono Version",
-    "expectedValue": "Track Title "
+    "expectedValue": "Track Title"
   },
   {
     "description": "should remove '- Stereo Version' string",
     "funcParameter": "Track Title - Stereo Version",
-    "expectedValue": "Track Title "
+    "expectedValue": "Track Title"
   },
   {
     "description": "should remove '(Deluxe Edition)' string",
     "funcParameter": "Album Title (Deluxe Edition)",
-    "expectedValue": "Album Title "
+    "expectedValue": "Album Title"
   },
   {
     "description": "should remove '(Expanded Edition)' string",
     "funcParameter": "Album Title (Expanded Edition)",
-    "expectedValue": "Album Title "
+    "expectedValue": "Album Title"
   },
   {
     "description": "should remove '[Expanded Edition]' string",
     "funcParameter": "Album Title [Expanded Edition]",
-    "expectedValue": "Album Title "
+    "expectedValue": "Album Title"
   },
   {
     "description": "should remove '(Expanded Bonus Track Edition)' string",
     "funcParameter": "Album Title (Expanded Bonus Track Edition)",
-    "expectedValue": "Album Title "
+    "expectedValue": "Album Title"
   },
   {
     "description": "should remove '(Expanded and Remastered)' string",
     "funcParameter": "Album Title (Expanded and Remastered)",
-    "expectedValue": "Album Title "
+    "expectedValue": "Album Title"
   },
   {
     "description": "should remove '- Expanded Edition' string",
     "funcParameter": "Album Title - Expanded Edition",
-    "expectedValue": "Album Title "
+    "expectedValue": "Album Title"
   },
   {
     "description": "should remove '(Explicit Version)' string",
     "funcParameter": "Album Title (Explicit Version)",
-    "expectedValue": "Album Title "
+    "expectedValue": "Album Title"
   },
   {
     "description": "should remove '[Explicit Version]' string",
     "funcParameter": "Album Title [Explicit Version]",
-    "expectedValue": "Album Title "
+    "expectedValue": "Album Title"
   },
   {
     "description": "should remove '(Bonus Track Edition)' string",
     "funcParameter": "Album Title (Bonus Track Edition)",
-    "expectedValue": "Album Title "
+    "expectedValue": "Album Title"
   },
   {
     "description": "should remove '[Bonus Track Edition]' string",
     "funcParameter": "Album Title [Bonus Track Edition]",
-    "expectedValue": "Album Title "
+    "expectedValue": "Album Title"
   },
   {
     "description": "should remove '(XXth Anniversary)' string",
     "funcParameter": "Album Title (25th Anniversary)",
-    "expectedValue": "Album Title "
+    "expectedValue": "Album Title"
   },
   {
     "description": "should remove '[XXth Anniversary]' string",
     "funcParameter": "Album Title [25th Anniversary]",
-    "expectedValue": "Album Title "
+    "expectedValue": "Album Title"
   },
   {
     "description": "should remove '(XXth Anniversary Remaster)' string",
     "funcParameter": "Album Title (30th Anniversary Remaster)",
-    "expectedValue": "Album Title "
+    "expectedValue": "Album Title"
   },
   {
     "description": "should remove '- Original' sufix",
     "funcParameter": "Track Title - Original",
-    "expectedValue": "Track Title "
+    "expectedValue": "Track Title"
   },
   {
     "description": "should remove '- Original Version' sufix",
     "funcParameter": "Track Title - Original Version",
-    "expectedValue": "Track Title "
+    "expectedValue": "Track Title"
   },
   {
     "description": "should remove '- Original Single Version' sufix",
     "funcParameter": "Track Title - Original Single Version",
-    "expectedValue": "Track Title "
+    "expectedValue": "Track Title"
   },
   {
     "description": "should remove '- Original 7\" Version' sufix",
     "funcParameter": "Track Title - Original 7\" Version",
-    "expectedValue": "Track Title "
+    "expectedValue": "Track Title"
   },
   {
     "description": "should remove '- Original Version YYYY' sufix",
     "funcParameter": "Track Title - Original Version 1978",
-    "expectedValue": "Track Title "
+    "expectedValue": "Track Title"
   }
 ]

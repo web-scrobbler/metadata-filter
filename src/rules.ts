@@ -117,40 +117,40 @@ export const TRIM_SYMBOLS_FILTER_RULES: FilterRule[] = [
  */
 export const VERSION_FILTER_RULES: FilterRule[] = [
 	// Love Will Come To You (Album Version)
-	{ source: /[([]Album Version[)\]]$/, target: '' },
+	{ source: /\s[([]Album Version[)\]]$/, target: '' },
 	// I Melt With You (Rerecorded)
 	// When I Need You [Re-Recorded]
-	{ source: /[([]Re-?recorded[)\]]$/, target: '' },
+	{ source: /\s[([]Re-?recorded[)\]]$/, target: '' },
 	// Your Cheatin' Heart (Single Version)
-	{ source: /[([]Single Version[)\]]$/, target: '' },
+	{ source: /\s[([]Single Version[)\]]$/, target: '' },
 	// All Over Now (Edit)
-	{ source: /[([]Edit[)\]]$/, target: '' },
+	{ source: /\s[([]Edit[)\]]$/, target: '' },
 	// (I Can't Get No) Satisfaction - Mono Version
-	{ source: /-\sMono Version$/, target: '' },
+	{ source: /\s-\sMono Version$/, target: '' },
 	// Ruby Tuesday - Stereo Version
-	{ source: /-\sStereo Version$/, target: '' },
+	{ source: /\s-\sStereo Version$/, target: '' },
 	// Pure McCartney (Deluxe Edition)
-	{ source: /\(Deluxe Edition\)$/, target: '' },
+	{ source: /\s\(Deluxe Edition\)$/, target: '' },
 	// Ace of Spades (Expanded Edition)
 	// Overkill (Expanded Bonus Track Edition)
 	// On Parole (Expanded and Remastered)
-	{ source: /[([]Expanded.*[)\]]$/, target: '' },
+	{ source: /\s[([]Expanded.*[)\]]$/, target: '' },
 	// Sound of White Noise - Expanded Edition
-	{ source: /-\sExpanded Edition$/, target: '' },
+	{ source: /\s-\sExpanded Edition$/, target: '' },
 	// 6 Foot 7 Foot (Explicit Version)
-	{ source: /[([]Explicit Version[)\]]/i, target: '' },
+	{ source: /\s[([]Explicit Version[)\]]/i, target: '' },
 	// No Remorse (Bonus Track Edition)
-	{ source: /[([]Bonus Track Edition[)\]]/i, target: '' },
+	{ source: /\s[([]Bonus Track Edition[)\]]/i, target: '' },
 	// Peace Sells...But Who's Buying (25th Anniversary)
 	// Persistence of Time (30th Anniversary Remaster)
-	{ source: /[([]\d+th\sAnniversary.*[)\]]/i, target: '' },
+	{ source: /\s[([]\d+th\sAnniversary.*[)\]]/i, target: '' },
 	// 6 Foot 7 Foot - Original
-	{ source: /-\sOriginal$/i, target: '' },
+	{ source: /\s-\sOriginal$/i, target: '' },
 	// California Love - Original Version
 	// Personal Jesus - Original Single Version
 	// Prince of the Moment - Original 7" Version
 	// YMCA - Original Version 1978
-	{ source: /-\sOriginal.*Version(\s\d{4})?$/i, target: '' },
+	{ source: /\s-\sOriginal.*Version(\s\d{4})?$/i, target: '' },
 ];
 
 /**
