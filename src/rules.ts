@@ -94,8 +94,6 @@ export const SUFFIX_FILTER_RULES: FilterRule[] = [
 		target: '($1 $2)',
 	},
 	{ source: /-\s(Remix|VIP|Instrumental)$/i, target: '($1)' },
-	// Remove "- Original" suffix
-	{ source: /-\sOriginal$/i, target: '' },
 ];
 
 /**
@@ -146,6 +144,13 @@ export const VERSION_FILTER_RULES: FilterRule[] = [
 	// Peace Sells...But Who's Buying (25th Anniversary)
 	// Persistence of Time (30th Anniversary Remaster)
 	{ source: /[([]\d+th\sAnniversary.*[)\]]/i, target: '' },
+	// 6 Foot 7 Foot - Original
+	{ source: /-\sOriginal$/i, target: '' },
+	// California Love - Original Version
+	// Personal Jesus - Original Single Version
+	// Prince of the Moment - Original 7" Version
+	// YMCA - Original Version 1978
+	{ source: /-\sOriginal.*Version(\s\d{4})?$/i, target: '' },
 ];
 
 /**

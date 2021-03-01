@@ -65,7 +65,13 @@ export function getRemasteredFilter(): MetadataFilter {
 export function createSpotifyFilter(): MetadataFilter {
 	return new MetadataFilter({
 		track: [removeRemastered, removeParody, fixTrackSuffix, removeLive],
-		album: [removeRemastered, fixTrackSuffix, removeLive, removeReissue],
+		album: [
+			removeRemastered,
+			fixTrackSuffix,
+			removeLive,
+			removeReissue,
+			removeVersion,
+		],
 	});
 }
 
