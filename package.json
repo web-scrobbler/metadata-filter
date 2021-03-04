@@ -52,7 +52,7 @@
     "lint": "eslint \"{src,test}/**/*.ts\" rollup.config.js",
     "test": "mocha --require ts-node/register --require test/setup-mocha.ts \"test/**/*.spec.ts\"",
     "format": "prettier --write .",
-    "check-format": "prettier --check .",
+    "format:check": "prettier --check .",
     "build": "rollup -c",
     "clean": "rm -rf dist types",
     "prepare": "npm run clean && npm run build",
