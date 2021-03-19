@@ -213,14 +213,14 @@ export const YOUTUBE_TRACK_FILTER_RULES: FilterRule[] = [
 	{ source: /\s\(En\svivo\)/i, target: '' },
 	// Sub Español
 	{ source: /sub\s*español/i, target: '' },
-	//【/(*Music Video/MV/PV*】/)
+	// 【/(*Music Video/MV/PV*】/)
 	{ source: /(\(|【).*?((Music Video)|(MV)|(PV)).*?(】|\))/i, target: '' },
-	//【/(東方/オリジナル*】/)
+	// 【/(東方/オリジナル*】/)
 	{ source: /(\(|【)((オリジナル)|(東方)).*?(】|\))/, target: '' },
 	// MV/PV if not followed by an opening/closing bracket or if ending
 	{ source: /(MV|PV)(「|【|『|】|』|」|$)/i, target: '$2' },
 	// Remove - preceding opening bracket
-	{ source: /-(「|『|【)/, target: '$1' }
+	{ source: /-(「|『|【)/, target: '$1' },
 ];
 
 /**
