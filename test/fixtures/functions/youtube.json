@@ -475,21 +475,6 @@
     "expectedValue": "Artist name『Track title』"
   },
 	{
-    "description": "should remove 'MV' in string if before 」",
-    "funcParameter": "Artist name「Track titleMV」",
-    "expectedValue": "Artist name「Track title」"
-  },
-	{
-    "description": "should remove 'MV' in string if before 】",
-    "funcParameter": "Artist name【Track titleMV】",
-    "expectedValue": "Artist name【Track title】"
-  },
-	{
-    "description": "should remove 'MV' in string if before 』",
-    "funcParameter": "Artist name『Track titleMV』",
-    "expectedValue": "Artist name『Track title』"
-  },
-	{
     "description": "should remove 'PV' string",
     "funcParameter": "Track Title PV",
     "expectedValue": "Track Title"
@@ -512,21 +497,6 @@
 	{
     "description": "should remove 'PV' in string if before 『",
     "funcParameter": "Artist namePV『Track title』",
-    "expectedValue": "Artist name『Track title』"
-  },
-	{
-    "description": "should remove 'PV' in string if before 」",
-    "funcParameter": "Artist name「Track titlePV」",
-    "expectedValue": "Artist name「Track title」"
-  },
-	{
-    "description": "should remove 'PV' in string if before 】",
-    "funcParameter": "Artist name【Track titlePV】",
-    "expectedValue": "Artist name【Track title】"
-  },
-	{
-    "description": "should remove 'PV' in string if before 』",
-    "funcParameter": "Artist name『Track titlePV』",
     "expectedValue": "Artist name『Track title』"
   },
   {
