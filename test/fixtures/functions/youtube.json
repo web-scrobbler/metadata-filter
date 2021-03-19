@@ -423,5 +423,30 @@
     "description": "should remove multiple spaces",
     "funcParameter": "Imminent (Lyric Video) ft. Joshua Idehen",
     "expectedValue": "Imminent ft. Joshua Idehen"
+  },
+  {
+    "description": "should remove '【Music Video】' string",
+    "funcParameter": "【Music Video】Track Title",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '【MV】' string",
+    "funcParameter": "【MV】Track Title",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '【Whatever MV】' string",
+    "funcParameter": "【Whatever MV】Track Title",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '【MV Whatever】' string",
+    "funcParameter": "【MV Whatever】Track Title",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '(MV)' string",
+    "funcParameter": "Track Title(MV)",
+    "expectedValue": "Track Title"
   }
 ]
