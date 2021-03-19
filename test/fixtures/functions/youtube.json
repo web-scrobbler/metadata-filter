@@ -480,11 +480,6 @@
     "expectedValue": "Artist name「Track title」"
   },
 	{
-    "description": "should remove 'MV' in string if before 】",
-    "funcParameter": "Artist name【Track titleMV】",
-    "expectedValue": "Artist name【Track title】"
-  },
-	{
     "description": "should remove 'MV' in string if before 』",
     "funcParameter": "Artist name『Track titleMV』",
     "expectedValue": "Artist name『Track title』"
