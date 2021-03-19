@@ -490,36 +490,6 @@
     "expectedValue": "Track Title"
   },
   {
-    "description": "should remove '[PV]' string",
-    "funcParameter": "[PV]Track Title",
-    "expectedValue": "Track Title"
-  },
-  {
-    "description": "should remove '[Whatever PV]' string",
-    "funcParameter": "[Whatever PV]Track Title",
-    "expectedValue": "Track Title"
-  },
-  {
-    "description": "should remove '[PV Whatever]' string",
-    "funcParameter": "[PV Whatever]Track Title",
-    "expectedValue": "Track Title"
-  },
-  {
-    "description": "should remove '[MV]' string",
-    "funcParameter": "[MV]Track Title",
-    "expectedValue": "Track Title"
-  },
-  {
-    "description": "should remove '[Whatever MV]' string",
-    "funcParameter": "[Whatever MV]Track Title",
-    "expectedValue": "Track Title"
-  },
-  {
-    "description": "should remove '[MV Whatever]' string",
-    "funcParameter": "[MV Whatever]Track Title",
-    "expectedValue": "Track Title"
-  },
-  {
     "description": "should remove '(Whatever PV)' string",
     "funcParameter": "(Whatever PV)Track Title",
     "expectedValue": "Track Title"
