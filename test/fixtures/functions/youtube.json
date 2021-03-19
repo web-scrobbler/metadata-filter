@@ -588,5 +588,10 @@
     "description": "should remove dash from '-【' string",
     "funcParameter": "Artist name -【Track Title】",
     "expectedValue": "Artist name 【Track Title】"
+  },
+  {
+    "description": "should remove 【Official Video】string",
+    "funcParameter": "Artist name -Track Title-【Official Video】",
+    "expectedValue": "Artist name -Track Title"
   }
 ]
