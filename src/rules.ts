@@ -219,6 +219,8 @@ export const YOUTUBE_TRACK_FILTER_RULES: FilterRule[] = [
 	{ source: /(\(|【)((オリジナル)|(東方)).*?(】|\))/i, target: '' },
 	// MV/PV if not followed by an opening/closing bracket or if ending
 	{ source: /(MV|PV)(「|【|『|】|』|」|$)/i, target: '$2' },
+	// Remove - preceding opening bracket
+	{ source: /-(「|『|【)/, target: '$1' }
 ];
 
 /**
