@@ -573,5 +573,20 @@
     "description": "should remove '【東方Whatever】' string",
     "funcParameter": "【東方Whatever】Track Title",
     "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove dash from '-「' string",
+    "funcParameter": "Artist name -「Track Title」",
+    "expectedValue": "Artist name 「Track Title」"
+  },
+  {
+    "description": "should remove dash from '-『' string",
+    "funcParameter": "Artist name -『Track Title』",
+    "expectedValue": "Artist name 『Track Title』"
+  },
+  {
+    "description": "should remove dash from '-【' string",
+    "funcParameter": "Artist name -【Track Title】",
+    "expectedValue": "Artist name 【Track Title】"
   }
 ]
