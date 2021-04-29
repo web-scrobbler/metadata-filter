@@ -95,6 +95,16 @@
     "expectedValue": "Track Title"
   },
   {
+    "description": "should remove '【whatever】' string",
+    "funcParameter": "Track Title 【Official Video】",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '（whatever）' string",
+    "funcParameter": "Track Title （Official Video）",
+    "expectedValue": "Track Title"
+  },
+  {
     "description": "should remove '[whatever] + (whatever)' string",
     "funcParameter": "Track Title [Official Video] (Official Video)",
     "expectedValue": "Track Title"
@@ -423,175 +433,5 @@
     "description": "should remove multiple spaces",
     "funcParameter": "Imminent (Lyric Video) ft. Joshua Idehen",
     "expectedValue": "Imminent ft. Joshua Idehen"
-  },
-  {
-    "description": "should remove '【Music Video】' string",
-    "funcParameter": "【Music Video】Track Title",
-    "expectedValue": "Track Title"
-  },
-  {
-    "description": "should remove '【MV】' string",
-    "funcParameter": "【MV】Track Title",
-    "expectedValue": "Track Title"
-  },
-  {
-    "description": "should remove '【Whatever MV】' string",
-    "funcParameter": "【Whatever MV】Track Title",
-    "expectedValue": "Track Title"
-  },
-  {
-    "description": "should remove '【MV Whatever】' string",
-    "funcParameter": "【MV Whatever】Track Title",
-    "expectedValue": "Track Title"
-  },
-  {
-    "description": "should remove '(MV)' string",
-    "funcParameter": "Track Title(MV)",
-    "expectedValue": "Track Title"
-  },
-  {
-    "description": "should remove 'MV' string",
-    "funcParameter": "Track Title MV",
-    "expectedValue": "Track Title"
-  },
-  {
-    "description": "should not remove 'MV' in string",
-    "funcParameter": "Omvei",
-    "expectedValue": "Omvei"
-  },
-  {
-    "description": "should remove 'MV' in string if before 「",
-    "funcParameter": "Artist nameMV「Track title」",
-    "expectedValue": "Artist name「Track title」"
-  },
-  {
-    "description": "should remove 'MV' in string if before 【",
-    "funcParameter": "Artist nameMV【Track title】",
-    "expectedValue": "Artist name【Track title】"
-  },
-  {
-    "description": "should remove 'MV' in string if before 『",
-    "funcParameter": "Artist nameMV『Track title』",
-    "expectedValue": "Artist name『Track title』"
-  },
-  {
-    "description": "should remove 'MV' in string if before 」",
-    "funcParameter": "Artist name「Track titleMV」",
-    "expectedValue": "Artist name「Track title」"
-  },
-  {
-    "description": "should remove 'MV' in string if before 』",
-    "funcParameter": "Artist name『Track titleMV』",
-    "expectedValue": "Artist name『Track title』"
-  },
-  {
-    "description": "should remove 'PV' string",
-    "funcParameter": "Track Title PV",
-    "expectedValue": "Track Title"
-  },
-  {
-    "description": "should not remove 'PV' in string",
-    "funcParameter": "Oppvakt",
-    "expectedValue": "Oppvakt"
-  },
-  {
-    "description": "should remove 'PV' in string if before 「",
-    "funcParameter": "Artist namePV「Track title」",
-    "expectedValue": "Artist name「Track title」"
-  },
-  {
-    "description": "should remove 'PV' in string if before 『",
-    "funcParameter": "Artist namePV『Track title』",
-    "expectedValue": "Artist name『Track title』"
-  },
-  {
-    "description": "should remove 'PV' in string if before 」",
-    "funcParameter": "Artist name「Track titlePV」",
-    "expectedValue": "Artist name「Track title」"
-  },
-  {
-    "description": "should remove 'PV' in string if before 』",
-    "funcParameter": "Artist name『Track titlePV』",
-    "expectedValue": "Artist name『Track title』"
-  },
-  {
-    "description": "should remove '【PV】' string",
-    "funcParameter": "【PV】Track Title",
-    "expectedValue": "Track Title"
-  },
-  {
-    "description": "should remove '【Whatever PV】' string",
-    "funcParameter": "【Whatever PV】Track Title",
-    "expectedValue": "Track Title"
-  },
-  {
-    "description": "should remove '【PV Whatever】' string",
-    "funcParameter": "【PV Whatever】Track Title",
-    "expectedValue": "Track Title"
-  },
-  {
-    "description": "should remove '(PV)' string",
-    "funcParameter": "Track Title(PV)",
-    "expectedValue": "Track Title"
-  },
-  {
-    "description": "should remove '(Whatever PV)' string",
-    "funcParameter": "(Whatever PV)Track Title",
-    "expectedValue": "Track Title"
-  },
-  {
-    "description": "should remove '(PV Whatever)' string",
-    "funcParameter": "(PV Whatever)Track Title",
-    "expectedValue": "Track Title"
-  },
-  {
-    "description": "should remove '(Whatever MV)' string",
-    "funcParameter": "(Whatever MV)Track Title",
-    "expectedValue": "Track Title"
-  },
-  {
-    "description": "should remove '(MV Whatever)' string",
-    "funcParameter": "(MV Whatever)Track Title",
-    "expectedValue": "Track Title"
-  },
-  {
-    "description": "should remove '【オリジナル】' string",
-    "funcParameter": "【オリジナル】Track Title",
-    "expectedValue": "Track Title"
-  },
-  {
-    "description": "should remove '【オリジナルWhatever】' string",
-    "funcParameter": "【オリジナルWhatever】Track Title",
-    "expectedValue": "Track Title"
-  },
-  {
-    "description": "should remove '【東方】' string",
-    "funcParameter": "【東方】Track Title",
-    "expectedValue": "Track Title"
-  },
-  {
-    "description": "should remove '【東方Whatever】' string",
-    "funcParameter": "【東方Whatever】Track Title",
-    "expectedValue": "Track Title"
-  },
-  {
-    "description": "should remove dash from '-「' string",
-    "funcParameter": "Artist name -「Track Title」",
-    "expectedValue": "Artist name 「Track Title」"
-  },
-  {
-    "description": "should remove dash from '-『' string",
-    "funcParameter": "Artist name -『Track Title』",
-    "expectedValue": "Artist name 『Track Title』"
-  },
-  {
-    "description": "should remove dash from '-【' string",
-    "funcParameter": "Artist name -【Track Title】",
-    "expectedValue": "Artist name 【Track Title】"
-  },
-  {
-    "description": "should remove 【Official Video】string",
-    "funcParameter": "Artist name -Track Title-【Official Video】",
-    "expectedValue": "Artist name -Track Title"
   }
 ]
