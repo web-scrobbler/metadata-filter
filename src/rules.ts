@@ -157,37 +157,36 @@ export const VERSION_FILTER_RULES: FilterRule[] = [
  * Filter rules to remove YouTube suffixes and prefixes from a text.
  */
 export const YOUTUBE_TRACK_FILTER_RULES: FilterRule[] = [
-	// Remove - preceding opening bracket
-	{ source: /-([「【『])/, target: '$1' },
 	// Trim whitespaces
 	{ source: /^\s+|\s+$/g, target: '' },
 	// **NEW**
 	{ source: /\*+\s?\S+\s?\*+$/, target: '' },
 	// [Whatever]
 	{ source: /\[[^\]]+\]/, target: '' },
+	// 【Whatever】
+	{ source: /【[^\]]+】/, target: '' },
+	// （Whatever）
+	{ source: /（[^\]]+）/, target: '' },
 	// (Whatever Version)
 	{ source: /\([^)]*version\)$/i, target: '' },
 	// Video extensions
 	{ source: /\.(avi|wmv|mpg|mpeg|flv)$/i, target: '' },
 	// (Lyrics Video)
-	{ source: /[(【)].*lyrics?\s*(video)?[)】]/i, target: '' },
+	{ source: /\(.*lyrics?\s*(video)?\)/i, target: '' },
 	// ((Official)? (Track)? Stream)
-	{ source: /[(【)](of+icial\s*)?(track\s*)?stream[)】]/i, target: '' },
+	{ source: /\((of+icial\s*)?(track\s*)?stream\)/i, target: '' },
 	// ((Official)? (Music)? Video|Audio)
-	{
-		source: /[(【)](of+icial\s*)?(music\s*)?(video|audio)[)】]/i,
-		target: '',
-	},
+	{ source: /\((of+icial\s*)?(music\s*)?(video|audio)\)/i, target: '' },
 	// - (Official)? (Music)? Video|Audio
 	{ source: /-\s(of+icial\s*)?(music\s*)?(video|audio)$/i, target: '' },
 	// ((Whatever)? Album Track)
-	{ source: /[(【)].*Album\sTrack[)】]/i, target: '' },
+	{ source: /\(.*Album\sTrack\)/i, target: '' },
 	// (Official)
-	{ source: /[(【)]\s*of+icial\s*[)】]/i, target: '' },
+	{ source: /\(\s*of+icial\s*\)/i, target: '' },
 	// (1999)
-	{ source: /[(【)]\s*[0-9]{4}\s*[)】]/i, target: '' },
+	{ source: /\(\s*[0-9]{4}\s*\)/i, target: '' },
 	// (HD) / (HQ)
-	{ source: /[(【)]\s*(HD|HQ)\s*[)】]$/, target: '' },
+	{ source: /\(\s*(HD|HQ)\s*\)$/, target: '' },
 	// HD / HQ
 	{ source: /(HD|HQ)\s?$/, target: '' },
 	// Video Clip Officiel / Video Clip Official
@@ -209,10 +208,7 @@ export const YOUTUBE_TRACK_FILTER_RULES: FilterRule[] = [
 	// 'Track title'
 	{ source: /^(|.*\s)'(.{5,})'(\s.*|)$/, target: '$2' },
 	// (*01/01/1999*)
-	{
-		source: /[(【)].*[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{2,4}.*[)】]/i,
-		target: '',
-	},
+	{ source: /\(.*[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{2,4}.*\)/i, target: '' },
 	// Sub Español
 	{ source: /sub\s*español/i, target: '' },
 	// (Letra)
@@ -221,12 +217,6 @@ export const YOUTUBE_TRACK_FILTER_RULES: FilterRule[] = [
 	{ source: /\s\(En\svivo\)/i, target: '' },
 	// Sub Español
 	{ source: /sub\s*español/i, target: '' },
-	// 【/(*Music Video/MV/PV*】/)
-	{ source: /[(【].*?((MV)|(PV)).*?[】)]/i, target: '' },
-	// 【/(東方/オリジナル*】/)
-	{ source: /[(【]((オリジナル)|(東方)).*?[】)]/, target: '' },
-	// MV/PV if not followed by an opening/closing bracket or if ending
-	{ source: /(MV|PV)([「【『』】」]|$)/i, target: '$2' },
 ];
 
 /**
