@@ -23,7 +23,7 @@
     "tidal"
   ],
   "devDependencies": {
-    "@types/chai": "4.2.15",
+    "@types/chai": "4.2.17",
     "@types/chai-spies": "1.0.3",
     "@types/mocha": "8.2.2",
     "@typescript-eslint/eslint-plugin": "4.20.0",
