@@ -95,6 +95,16 @@
     "expectedValue": "Track Title"
   },
   {
+    "description": "should remove '【whatever】' string",
+    "funcParameter": "Track Title 【Official Video】",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '（whatever）' string",
+    "funcParameter": "Track Title （Official Video）",
+    "expectedValue": "Track Title"
+  },
+  {
     "description": "should remove '[whatever] + (whatever)' string",
     "funcParameter": "Track Title [Official Video] (Official Video)",
     "expectedValue": "Track Title"
