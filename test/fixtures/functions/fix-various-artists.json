@@ -1,0 +1,17 @@
+[
+  {
+    "description": "should do nothing with non matching",
+    "funcParameter": "Boards of Canada",
+    "expectedValue": "Boards of Canada"
+  },
+  {
+    "description": "should simply",
+    "funcParameter": "Various Artists (Fundraiser for Ukraine)",
+    "expectedValue": "Various Artists"
+  },
+  {
+    "description": "should keep",
+    "funcParameter": "Various Artists",
+    "expectedValue": "Various Artists"
+  }
+]

@@ -20,12 +20,14 @@ import {
 	removeParody,
 	removeFeature,
 	youtube,
+	fixVariousArtists,
 } from '../src';
 
 const functionsToTest = {
 	'album-artist-from-artist': albumArtistFromArtist,
 	'decode-html-entities': decodeHtmlEntities,
 	'fix-track-suffix': fixTrackSuffix,
+	'fix-various-artists': fixVariousArtists,
 	'normalize-feature': normalizeFeature,
 	'remove-zero-width': removeZeroWidth,
 	'replace-nbsp': replaceNbsp,

@@ -112,6 +112,15 @@ export const TRIM_SYMBOLS_FILTER_RULES: FilterRule[] = [
 ];
 
 /**
+ * Filter to trim text containing "Various Artists" to just various
+ * artists. Useful for album artist on last.fm where anything more is
+ * rejected.
+ */
+export const VARIOUS_ARTISTS_FILTER_RULES: FilterRule[] = [
+	{ source: /(Various Artists).+/, target: '$1' },
+];
+
+/**
  * Filter rules to remove "(Album|Stereo|Mono Version)"-like strings
  * from a text.
  */
