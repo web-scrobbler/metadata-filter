@@ -10,6 +10,7 @@ import {
 	TRIM_SYMBOLS_FILTER_RULES,
 	VERSION_FILTER_RULES,
 	YOUTUBE_TRACK_FILTER_RULES,
+	VARIOUS_ARTISTS_FILTER_RULES,
 	filterWithFilterRules,
 } from './rules';
 
@@ -69,6 +70,17 @@ export function decodeHtmlEntities(text: string): string {
  */
 export function fixTrackSuffix(text: string): string {
 	return filterWithFilterRules(text, SUFFIX_FILTER_RULES);
+}
+
+/**
+ * Replace "Various Artists something goes here" with "Various Artists".
+ *
+ * @param text String to be filtered
+ *
+ * @return Filtered string
+ */
+export function fixVariousArtists(text: string): string {
+	return filterWithFilterRules(text, VARIOUS_ARTISTS_FILTER_RULES);
 }
 
 /**
