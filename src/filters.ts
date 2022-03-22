@@ -24,17 +24,6 @@ export function createYouTubeFilter(): MetadataFilter {
 }
 
 /**
- * Get a filter with YouTube-related filter functions.
- *
- * @return Filter object
- * @deprecated Use `createYouTubeFilter` function
- */
-/* istanbul ignore next */
-export function getYoutubeFilter(): MetadataFilter {
-	return createYouTubeFilter();
-}
-
-/**
  * Get a filter that removes "Remastered"-like suffixes.
  *
  * @return Filter object
@@ -44,17 +33,6 @@ export function createRemasteredFilter(): MetadataFilter {
 		track: removeRemastered,
 		album: removeRemastered,
 	});
-}
-
-/**
- * Get a filter that removes "Remastered"-like suffixes.
- *
- * @return Filter object
- * @deprecated Use `createRemasteredFilter` function
- */
-/* istanbul ignore next */
-export function getRemasteredFilter(): MetadataFilter {
-	return createRemasteredFilter();
 }
 
 /**
@@ -73,17 +51,6 @@ export function createSpotifyFilter(): MetadataFilter {
 			removeVersion,
 		],
 	});
-}
-
-/**
- * Get a filter with Spotify-related filter functions.
- *
- * @return Filter object
- * @deprecated Use `createSpotifyFilter` function
- */
-/* istanbul ignore next */
-export function getSpotifyFilter(): MetadataFilter {
-	return createSpotifyFilter();
 }
 
 /**
@@ -115,17 +82,6 @@ export function createAmazonFilter(): MetadataFilter {
 }
 
 /**
- * Get a filter with Amazon-related filter functions.
- *
- * @return Filter object
- * @deprecated Use `createAmazonFilter` function
- */
-/* istanbul ignore next */
-export function getAmazonFilter(): MetadataFilter {
-	return createAmazonFilter();
-}
-
-/**
  * Get a filter with Tidal-related filter functions.
  *
  * @return Filter object
@@ -135,15 +91,4 @@ export function createTidalFilter(): MetadataFilter {
 		track: [removeRemastered, fixTrackSuffix, removeVersion, removeLive],
 		album: [removeRemastered, fixTrackSuffix, removeVersion, removeLive],
 	});
-}
-
-/**
- * Get a filter with Tidal-related filter functions.
- *
- * @return Filter object
- * @deprecated Use `createTidalFilter` function
- */
-/* istanbul ignore next */
-export function getTidalFilter(): MetadataFilter {
-	return createTidalFilter();
 }
