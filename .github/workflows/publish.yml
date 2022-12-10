@@ -11,11 +11,14 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v2
 
+      - name: Get Node.js version from .nvmrc
+        id: get-node-version
+        run: echo ::set-output name=NODE_VERSION::$(cat .nvmrc)
+
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: '14'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: '${{ steps.get-node-version.outputs.NODE_VERSION }}'
 
       - name: Install dependencies
         run: npm ci
