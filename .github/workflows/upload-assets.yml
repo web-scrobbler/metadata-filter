@@ -27,7 +27,7 @@ jobs:
         run: npm pack
 
       - name: Upload dist archive
-        uses: AButler/upload-release-assets@e940f6342206c9655b12a28a79646d3982571ad9
+        uses: AButler/upload-release-assets@b2b56d8ca22109e8606ac54603ab60dfb32058a7
         with:
           files: 'metadata-filter-*.tgz'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
