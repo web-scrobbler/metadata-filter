@@ -1,6 +1,6 @@
 {
   "name": "metadata-filter",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "author": "Alexey <alex.esprit@gmail.com>",
   "description": "A module for cleaning up artist, album, and song names.",
   "main": "dist/filter.js",
