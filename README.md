@@ -171,14 +171,14 @@ Licensed under the [MIT License](LICENSE.md).
 <!-- Badges -->
 
 [workflow-badge]: https://img.shields.io/github/workflow/status/web-scrobbler/metadata-filter/Test?label=test
-[npm-badge]: https://img.shields.io/npm/v/metadata-filter
+[npm-badge]: https://img.shields.io/npm/v/@web-scrobbler/metadata-filter
 [codacy-badge]: https://img.shields.io/codacy/grade/100b50dc21664ce6bc591c28b73d6892
 [coverage-badge]: https://img.shields.io/codacy/coverage/100b50dc21664ce6bc591c28b73d6892
 
 <!-- Related pages -->
 
 [codacy]: https://app.codacy.com/gh/web-scrobbler/metadata-filter/dashboard
-[npm]: https://www.npmjs.com/package/metadata-filter
+[npm]: https://www.npmjs.com/package/@web-scrobbler/metadata-filter
 [workflow]: https://github.com/web-scrobbler/metadata-filter/actions?query=workflow%3ATest
 
 <!-- Related projects -->
