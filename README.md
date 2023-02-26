@@ -7,13 +7,13 @@ A module for cleaning up artist, album, and song names.
 ### Install using npm
 
 ```
-npm i metadata-filter
+npm i @web-scrobbler/metadata-filter
 ```
 
 ### Include via CDN
 
 ```html
-<script src="https://unpkg.com/metadata-filter@latest/dist/filter.min.js"></script>
+<script src="https://unpkg.com/@web-scrobbler/metadata-filter@latest/dist/filter.min.js"></script>
 ```
 
 ## Usage
@@ -23,10 +23,10 @@ webpack), you can use CommonJS-like or ES6 imports:
 
 ```javascript
 // CommonJS style
-const MetadataFilter = require('metadata-filter');
+const MetadataFilter = require('@web-scrobbler/metadata-filter');
 
 // ES6 style
-import * as MetadataFilter from 'metadata-filter';
+import * as MetadataFilter from '@web-scrobbler/metadata-filter';
 
 MetadataFilter.removeRemastered(yourInput);
 ```
