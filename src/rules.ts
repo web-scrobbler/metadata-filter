@@ -227,22 +227,3 @@ export const YOUTUBE_TRACK_FILTER_RULES: FilterRule[] = [
 	// Sub Español
 	{ source: /sub\s*español/i, target: '' },
 ];
-
-/**
- * Replace text in the given string according to given filter rules.
- *
- * @param text String to be filtered
- * @param filterRules Array of filter rules
- *
- * @return Filtered string
- */
-export function filterWithFilterRules(
-	text: string,
-	filterRules: FilterRule[]
-): string {
-	return filterRules.reduce((text, filterRule) => {
-		const { source, target } = filterRule;
-
-		return text.replace(source, target);
-	}, text);
-}
