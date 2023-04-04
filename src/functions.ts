@@ -11,7 +11,7 @@ import {
 	VERSION_FILTER_RULES,
 	YOUTUBE_TRACK_FILTER_RULES,
 	VARIOUS_ARTISTS_FILTER_RULES,
-	filterWithFilterRules,
+	FilterRule,
 } from './rules';
 
 const escapeHtmlEntityMap: Record<string, RegExp> = {
@@ -59,6 +59,25 @@ export function decodeHtmlEntities(text: string): string {
 	});
 
 	return filteredText;
+}
+
+/**
+ * Replace text according to given filter rules.
+ *
+ * @param text String to be filtered
+ * @param filterRules Array of replace rules
+ *
+ * @return Filtered string
+ */
+export function filterWithFilterRules(
+	text: string,
+	filterRules: FilterRule[]
+): string {
+	return filterRules.reduce((text, filterRule) => {
+		const { source, target } = filterRule;
+
+		return text.replace(source, target);
+	}, text);
 }
 
 /**
