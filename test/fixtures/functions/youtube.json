@@ -433,5 +433,10 @@
     "description": "should remove multiple spaces",
     "funcParameter": "Imminent (Lyric Video) ft. Joshua Idehen",
     "expectedValue": "Imminent ft. Joshua Idehen"
+  },
+  {
+    "description": "shouldn't remove ideographic space",
+    "funcParameter": "space　between",
+    "expectedValue": "space　between"
   }
 ]

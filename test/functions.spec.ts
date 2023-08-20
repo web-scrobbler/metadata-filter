@@ -38,7 +38,7 @@ const functionsToTest = {
 	'remove-version': removeVersion,
 	'remove-parody': removeParody,
 	'remove-feature': removeFeature,
-	youtube: youtube,
+	'youtube': youtube,
 };
 
 const requiredFixtureProperties: ReadonlyArray<keyof FilterFunctionFixture> = [
