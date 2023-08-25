@@ -29,5 +29,5 @@ jobs:
       - name: Upload dist archive
         uses: AButler/upload-release-assets@v2.0
         with:
-          files: 'metadata-filter-*.tgz'
+          files: 'web-scrobbler-metadata-filter-*.tgz'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
