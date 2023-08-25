@@ -97,7 +97,7 @@ export const SUFFIX_FILTER_RULES: FilterRule[] = [
 ];
 
 /**
- * Special filter rules to remove leftoves after filtering text using
+ * Special filter rules to remove leftovers after filtering text using
  * `YOUTUBE_TRACK_FILTER_RULES` filter rules.
  */
 export const TRIM_SYMBOLS_FILTER_RULES: FilterRule[] = [
@@ -108,7 +108,7 @@ export const TRIM_SYMBOLS_FILTER_RULES: FilterRule[] = [
 	// trim trailing white chars and dash
 	{ source: /[/,:;~\s"-]+$/, target: '' },
 	// remove multiple spaces
-	{ source: /\s{1,}/, target: ' ' },
+	{ source: /\u0020{1,}/, target: ' ' },
 ];
 
 /**
