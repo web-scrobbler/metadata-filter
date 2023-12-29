@@ -217,3 +217,14 @@ export function youtube(text: string): string {
 		...TRIM_SYMBOLS_FILTER_RULES,
 	]);
 }
+
+/**
+ * Replace smart quotes with regular quotes.
+ *
+ * @param text String to be filtered
+ *
+ * @return Filtered string
+ */
+export function replaceSmartQuotes(text: string): string {
+	return text.replace(/[\u2018\u2019]/g, "'").replace(/[\u201c\u201d]/g, '"');
+}
