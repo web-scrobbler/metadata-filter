@@ -1,6 +1,6 @@
 {
   "name": "@web-scrobbler/metadata-filter",
-  "version": "3.0.2",
+  "version": "3.1.0",
   "author": "Alexey <alex.esprit@gmail.com>",
   "description": "A module for cleaning up artist, album, and song names.",
   "main": "dist/filter.js",
