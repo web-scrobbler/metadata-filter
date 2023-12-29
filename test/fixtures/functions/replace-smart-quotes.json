@@ -1,0 +1,32 @@
+[
+  {
+    "description": "should do nothing with clean string",
+    "funcParameter": "Track field",
+    "expectedValue": "Track field"
+  },
+  {
+    "description": "should remove a double left single quotation space",
+    "funcParameter": "Track \u201cfield",
+    "expectedValue": "Track \"field"
+  },
+  {
+    "description": "should remove a double left and double right quotation space",
+    "funcParameter": "Track \u201cfield\u201d",
+    "expectedValue": "Track \"field\""
+  },
+  {
+    "description": "should remove a single left single quotation space",
+    "funcParameter": "Track \u2018field",
+    "expectedValue": "Track 'field"
+  },
+  {
+    "description": "should remove a single left and single right quotation space",
+    "funcParameter": "Track \u2018field\u2019",
+    "expectedValue": "Track 'field'"
+  },
+  {
+    "description": "should remove a single left and double right quotation space",
+    "funcParameter": "Track \u2018field\u201d",
+    "expectedValue": "Track 'field\""
+  }
+]
