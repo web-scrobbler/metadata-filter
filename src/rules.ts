@@ -28,6 +28,7 @@ export const CLEAN_EXPLICIT_FILTER_RULES: FilterRule[] = [
 export const FEATURE_FILTER_RULES: FilterRule[] = [
 	// [Feat. Artist] or (Feat. Artist)
 	{ source: /\s[([]feat. .+[)\]]/i, target: '' },
+	{ source: /\s(feat. .+)/i, target: '' },
 ];
 
 export const LIVE_FILTER_RULES: FilterRule[] = [
@@ -226,4 +227,9 @@ export const YOUTUBE_TRACK_FILTER_RULES: FilterRule[] = [
 	{ source: /\s\(En\svivo\)/i, target: '' },
 	// Sub Español
 	{ source: /sub\s*español/i, target: '' },
+];
+
+export const ADDITIONAL_ARTISTS_FILTER_RULES: FilterRule[] = [
+	{ source: /\s(& .+)/i, target: '' },
+	{ source: /\s(x .+)/i, target: '' },
 ];

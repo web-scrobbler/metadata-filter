@@ -8,5 +8,10 @@
     "description": "should remove featured artist from suffix",
     "funcParameter": "Artist A (feat. Artist B)",
     "expectedValue": "Artist A"
+  },
+  {
+    "description": "should remove featured artist from suffix",
+    "funcParameter": "Artist A feat. Artist B",
+    "expectedValue": "Artist A"
   }
 ]
