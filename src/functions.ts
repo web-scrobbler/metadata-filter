@@ -12,6 +12,7 @@ import {
 	YOUTUBE_TRACK_FILTER_RULES,
 	VARIOUS_ARTISTS_FILTER_RULES,
 	FilterRule,
+	ADDITIONAL_ARTISTS_FILTER_RULES,
 } from './rules';
 
 const escapeHtmlEntityMap: Record<string, RegExp> = {
@@ -133,6 +134,17 @@ export function removeCleanExplicit(text: string): string {
  */
 export function removeFeature(text: string): string {
 	return filterWithFilterRules(text, FEATURE_FILTER_RULES);
+}
+
+/**
+ * Remove "&" and "x"-like strings from the text.
+ *
+ * @param text String to be filtered
+ *
+ * @return Filtered string
+ */
+export function removeAdditionalArtists(text: string): string {
+	return filterWithFilterRules(text, ADDITIONAL_ARTISTS_FILTER_RULES);
 }
 
 /**

@@ -1,0 +1,12 @@
+[
+  {
+    "description": "should x artist from suffix",
+    "funcParameter": "Artist A x Artist B",
+    "expectedValue": "Artist A"
+  },
+  {
+    "description": "should & artist from suffix",
+    "funcParameter": "Artist A & Artist B",
+    "expectedValue": "Artist A"
+  }
+]

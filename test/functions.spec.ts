@@ -19,6 +19,7 @@ import {
 	removeVersion,
 	removeParody,
 	removeFeature,
+	removeAdditionalArtists,
 	youtube,
 	fixVariousArtists,
 	replaceSmartQuotes,
@@ -39,6 +40,7 @@ const functionsToTest = {
 	'remove-version': removeVersion,
 	'remove-parody': removeParody,
 	'remove-feature': removeFeature,
+	'remove-additional-artists': removeAdditionalArtists,
 	'replace-smart-quotes': replaceSmartQuotes,
 	youtube: youtube,
 };
