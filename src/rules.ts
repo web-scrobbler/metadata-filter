@@ -7,94 +7,94 @@
  * function.
  */
 export interface FilterRule {
-	/**
-	 * String or pattern to replace.
-	 */
-	source: RegExp | string;
+    /**
+     * String or pattern to replace.
+     */
+    source: RegExp | string;
 
-	/**
-	 * Replacement string.
-	 */
-	target: string;
+    /**
+     * Replacement string.
+     */
+    target: string;
 }
 
 export const CLEAN_EXPLICIT_FILTER_RULES: FilterRule[] = [
-	// (Explicit) or [Explicit]
-	{ source: /\s[([]Explicit[)\]]/i, target: '' },
-	// (Clean) or [Clean]
-	{ source: /\s[([]Clean[)\]]/i, target: '' },
+    // (Explicit) or [Explicit]
+    { source: /\s[([]Explicit[)\]]/i, target: '' },
+    // (Clean) or [Clean]
+    { source: /\s[([]Clean[)\]]/i, target: '' },
 ];
 
 export const FEATURE_FILTER_RULES: FilterRule[] = [
-	// [Feat. Artist] or (Feat. Artist)
-	{ source: /\s[([]feat. .+[)\]]/i, target: '' },
-	{ source: /\s(feat. .+)/i, target: '' },
+    // [Feat. Artist] or (Feat. Artist)
+    { source: /\s[([]feat. .+[)\]]/i, target: '' },
+    { source: /\s(feat. .+)/i, target: '' },
 ];
 
 export const LIVE_FILTER_RULES: FilterRule[] = [
-	// Track - Live
-	// Track - Live at
-	{ source: /\s-\sLive(\s.+)?$/, target: '' },
-	// Track (Live)
-	{ source: /\s[([]Live[)\]]$/, target: '' },
+    // Track - Live
+    // Track - Live at
+    { source: /\s-\sLive(\s.+)?$/, target: '' },
+    // Track (Live)
+    { source: /\s[([]Live[)\]]$/, target: '' },
 ];
 
-export const NORMALIZE_FEATURE_FILTER_RULES = [
-	// [Feat. Artist] or (Feat. Artist) -> Feat. Artist
-	{ source: /\s[([](feat. .+)[)\]]/i, target: ' $1' },
+export const NORMALIZE_FEATURE_FILTER_RULES: FilterRule[] = [
+    // [Feat. Artist] or (Feat. Artist) -> Feat. Artist
+    { source: /\s[([](feat. .+)[)\]]/i, target: ' $1' },
 ];
 
 export const PARODY_FILTER_RULES: FilterRule[] = [
-	// Party In the CIA (Parody of "Party In The U.S.A." by Miley Cyrus)
-	{ source: /\s\(Parody of ".*" by .*\)$/, target: '' },
-	// White & Nerdy (Parody of "Ridin'" by Chamillionaire feat. Krayzie Bone)
-	{ source: /\s\(Parody of ".*" by .* feat\. .*\)$/, target: '' },
-	// The Saga Begins (Lyrical Adaption of "American Pie")
-	{ source: /\s\(Lyrical Adaption of ".*"\)$/, target: '' },
+    // Party In the CIA (Parody of "Party In The U.S.A." by Miley Cyrus)
+    { source: /\s\(Parody of ".*" by .*\)$/, target: '' },
+    // White & Nerdy (Parody of "Ridin'" by Chamillionaire feat. Krayzie Bone)
+    { source: /\s\(Parody of ".*" by .* feat\. .*\)$/, target: '' },
+    // The Saga Begins (Lyrical Adaption of "American Pie")
+    { source: /\s\(Lyrical Adaption of ".*"\)$/, target: '' },
 ];
 
 export const REISSUE_FILTER_RULES: FilterRule[] = [
-	// Album Title Re-issue
-	{ source: /\sRe-?issue$/i, target: '' },
-	// Album Title [Whatever Re-issue Whatever]
-	{ source: /\s\[.*?Re-?issue.*?\]/i, target: '' },
-	// Album Title (Whatever Re-issue Whatever)
-	{ source: /\s\(.*?Re-?issue.*?\)/i, target: '' },
+    // Album Title Re-issue
+    { source: /\sRe-?issue$/i, target: '' },
+    // Album Title [Whatever Re-issue Whatever]
+    { source: /\s\[.*?Re-?issue.*?\]/i, target: '' },
+    // Album Title (Whatever Re-issue Whatever)
+    { source: /\s\(.*?Re-?issue.*?\)/i, target: '' },
 ];
 
 /**
  * Filter rules to remove "Remastered..."-like strings from a text.
  */
 export const REMASTERED_FILTER_RULES: FilterRule[] = [
-	// Ticket To Ride - Live / Remastered
-	{ source: /Live\s\/\sRemastered/, target: 'Live' },
-	// Mothership (Remastered)
-	// Let It Be (Remastered 2009)
-	// How The West Was Won [Remastered]
-	// Ride the Lightning (Deluxe Remaster)
-	// ...And Justice For All (Remastered Deluxe Box Set)
-	{ source: /\s[([].*Re-?[Mm]aster(ed)?.*[)\]]$/, target: '' },
-	// Outside The Wall - 2011 - Remaster
-	// China Grove - 2006 Remaster
-	// Easy Living - 2003 Remastered
-	// Learning To Fly - 2001 Digital Remaster
-	// Red Right Hand - 2011 Remastered Version
-	{ source: /\s-\s\d{4}(\s-)?\s.*Re-?[Mm]aster(ed)?.*$/, target: '' },
-	// Here Comes The Sun - Remastered
-	// 1979 - Remastered 2012
-	// 1979 - Remastered Version
-	{ source: /\s-\sRe-?[Mm]aster(ed)?.*$/, target: '' },
-	// Wish You Were Here [Remastered] (Remastered Version)
-	{ source: /\s\[Remastered\]\s\(Remastered\sVersion\)$/, target: '' },
+    // Ticket To Ride - Live / Remastered
+    { source: /Live\s\/\sRemastered/, target: 'Live' },
+    // Mothership (Remastered)
+    // Let It Be (Remastered 2009)
+    // How The West Was Won [Remastered]
+    // Ride the Lightning (Deluxe Remaster)
+    // ...And Justice For All (Remastered Deluxe Box Set)
+    { source: /\s[([].*Re-?[Mm]aster(ed)?.*[)\]]$/, target: '' },
+    // Outside The Wall - 2011 - Remaster
+    // China Grove - 2006 Remaster
+    // Easy Living - 2003 Remastered
+    // Learning To Fly - 2001 Digital Remaster
+    // Red Right Hand - 2011 Remastered Version
+    { source: /\s-\s\d{4}(\s-)?\s.*Re-?[Mm]aster(ed)?.*$/, target: '' },
+    // Here Comes The Sun - Remastered
+    // 1979 - Remastered 2012
+    // 1979 - Remastered Version
+    { source: /\s-\sRe-?[Mm]aster(ed)?.*$/, target: '' },
+    // Wish You Were Here [Remastered] (Remastered Version)
+    { source: /\s\[Remastered\]\s\(Remastered\sVersion\)$/, target: '' },
 ];
 
 export const SUFFIX_FILTER_RULES: FilterRule[] = [
-	// "- X Remix" -> "(X Remix)" and similar
-	{
-		source: /-\s(.+?)\s((Re)?mix|edit|dub|mix|vip|version)$/i,
-		target: '($1 $2)',
-	},
-	{ source: /-\s(Remix|VIP|Instrumental)$/i, target: '($1)' },
+    // "- X Remix" -> "(X Remix)" and similar
+    {
+        source: /-\s(.+?)\s((Re)?mix|edit|dub|mix|vip|version)$/i,
+        target: '($1 $2)',
+    },
+    { source: /-\s(Remix|VIP|Instrumental)$/i, target: '($1)' },
 ];
 
 /**
@@ -102,14 +102,14 @@ export const SUFFIX_FILTER_RULES: FilterRule[] = [
  * `YOUTUBE_TRACK_FILTER_RULES` filter rules.
  */
 export const TRIM_SYMBOLS_FILTER_RULES: FilterRule[] = [
-	// Leftovers after e.g. (official video)
-	{ source: /\(+\s*\)+/, target: '' },
-	// trim starting white chars and dash
-	{ source: /^[/,:;~\s"-]+/, target: '' },
-	// trim trailing white chars and dash
-	{ source: /[/,:;~\s"-]+$/, target: '' },
-	// remove multiple spaces
-	{ source: /\u0020{1,}/, target: ' ' },
+    // Leftovers after e.g. (official video)
+    { source: /\(+\s*\)+/, target: '' },
+    // trim starting white chars and dash
+    { source: /^[/,:;~\s"-]+/, target: '' },
+    // trim trailing white chars and dash
+    { source: /[/,:;~\s"-]+$/, target: '' },
+    // remove multiple spaces
+    { source: /\u0020{1,}/, target: ' ' },
 ];
 
 /**
@@ -118,7 +118,7 @@ export const TRIM_SYMBOLS_FILTER_RULES: FilterRule[] = [
  * rejected.
  */
 export const VARIOUS_ARTISTS_FILTER_RULES: FilterRule[] = [
-	{ source: /(Various Artists).+/, target: '$1' },
+    { source: /(Various Artists).+/, target: '$1' },
 ];
 
 /**
@@ -126,110 +126,190 @@ export const VARIOUS_ARTISTS_FILTER_RULES: FilterRule[] = [
  * from a text.
  */
 export const VERSION_FILTER_RULES: FilterRule[] = [
-	// Love Will Come To You (Album Version)
-	{ source: /\s[([]Album Version[)\]]$/, target: '' },
-	// I Melt With You (Rerecorded)
-	// When I Need You [Re-Recorded]
-	{ source: /\s[([]Re-?recorded[)\]]$/, target: '' },
-	// Your Cheatin' Heart (Single Version)
-	{ source: /\s[([]Single Version[)\]]$/, target: '' },
-	// All Over Now (Edit)
-	{ source: /\s[([]Edit[)\]]$/, target: '' },
-	// (I Can't Get No) Satisfaction - Mono Version
-	{ source: /\s-\sMono Version$/, target: '' },
-	// Ruby Tuesday - Stereo Version
-	{ source: /\s-\sStereo Version$/, target: '' },
-	// Pure McCartney (Deluxe Edition)
-	{ source: /\s\(Deluxe Edition\)$/, target: '' },
-	// Ace of Spades (Expanded Edition)
-	// Overkill (Expanded Bonus Track Edition)
-	// On Parole (Expanded and Remastered)
-	{ source: /\s[([]Expanded.*[)\]]$/, target: '' },
-	// Sound of White Noise - Expanded Edition
-	{ source: /\s-\sExpanded Edition$/, target: '' },
-	// 6 Foot 7 Foot (Explicit Version)
-	{ source: /\s[([]Explicit Version[)\]]/i, target: '' },
-	// No Remorse (Bonus Track Edition)
-	{ source: /\s[([]Bonus Track Edition[)\]]/i, target: '' },
-	// Peace Sells...But Who's Buying (25th Anniversary)
-	// Persistence of Time (30th Anniversary Remaster)
-	{ source: /\s[([]\d+th\sAnniversary.*[)\]]/i, target: '' },
-	// 6 Foot 7 Foot - Original
-	{ source: /\s-\sOriginal$/i, target: '' },
-	// California Love - Original Version
-	// Personal Jesus - Original Single Version
-	// Prince of the Moment - Original 7" Version
-	// YMCA - Original Version 1978
-	{ source: /\s-\sOriginal.*Version(\s\d{4})?$/i, target: '' },
+    // Love Will Come To You (Album Version)
+    { source: /\s[([]Album Version[)\]]$/, target: '' },
+    // I Melt With You (Rerecorded)
+    // When I Need You [Re-Recorded]
+    { source: /\s[([]Re-?recorded[)\]]$/, target: '' },
+    // Your Cheatin' Heart (Single Version)
+    { source: /\s[([]Single Version[)\]]$/, target: '' },
+    // All Over Now (Edit)
+    { source: /\s[([]Edit[)\]]$/, target: '' },
+    // (I Can't Get No) Satisfaction - Mono Version
+    { source: /\s-\sMono Version$/, target: '' },
+    // Ruby Tuesday - Stereo Version
+    { source: /\s-\sStereo Version$/, target: '' },
+    // Pure McCartney (Deluxe Edition)
+    { source: /\s\(Deluxe Edition\)$/, target: '' },
+    // Ace of Spades (Expanded Edition)
+    // Overkill (Expanded Bonus Track Edition)
+    // On Parole (Expanded and Remastered)
+    { source: /\s[([]Expanded.*[)\]]$/, target: '' },
+    // Sound of White Noise - Expanded Edition
+    { source: /\s-\sExpanded Edition$/, target: '' },
+    // 6 Foot 7 Foot (Explicit Version)
+    { source: /\s[([]Explicit Version[)\]]/i, target: '' },
+    // No Remorse (Bonus Track Edition)
+    { source: /\s[([]Bonus Track Edition[)\]]/i, target: '' },
+    // Peace Sells...But Who's Buying (25th Anniversary)
+    // Persistence of Time (30th Anniversary Remaster)
+    { source: /\s[([]\d+th\sAnniversary.*[)\]]/i, target: '' },
+    // 6 Foot 7 Foot - Original
+    { source: /\s-\sOriginal$/i, target: '' },
+    // California Love - Original Version
+    // Personal Jesus - Original Single Version
+    // Prince of the Moment - Original 7" Version
+    // YMCA - Original Version 1978
+    { source: /\s-\sOriginal.*Version(\s\d{4})?$/i, target: '' },
 ];
 
 /**
  * Filter rules to remove YouTube suffixes and prefixes from a text.
  */
 export const YOUTUBE_TRACK_FILTER_RULES: FilterRule[] = [
-	// Trim whitespaces
-	{ source: /^\s+|\s+$/g, target: '' },
-	// **NEW**
-	{ source: /\*+\s?\S+\s?\*+$/, target: '' },
-	// [Whatever]
-	{ source: /\[[^\]]+\]/, target: '' },
-	// 【Whatever】
-	{ source: /【[^\]]+】/, target: '' },
-	// （Whatever）
-	{ source: /（[^\]]+）/, target: '' },
-	// (Whatever Version)
-	{ source: /\([^)]*version\)$/i, target: '' },
-	// Video extensions
-	{ source: /\.(avi|wmv|mpg|mpeg|flv)$/i, target: '' },
-	// (Lyrics Video)
-	{ source: /\(.*lyrics?\s*(video)?\)/i, target: '' },
-	// ((Official)? (Track)? Stream)
-	{ source: /\((of+icial\s*)?(track\s*)?stream\)/i, target: '' },
-	// ((Official)? (Music|HD)? Video|Audio)
-	{ source: /\((of+icial\s*)?((music|hd)\s*)?(video|audio)\)/i, target: '' },
-	// - (Official)? (Music)? Video|Audio
-	{ source: /-\s(of+icial\s*)?(music\s*)?(video|audio)$/i, target: '' },
-	// ((Whatever)? Album Track)
-	{ source: /\(.*Album\sTrack\)/i, target: '' },
-	// (Official)
-	{ source: /\(\s*of+icial\s*\)/i, target: '' },
-	// (1999)
-	{ source: /\(\s*[0-9]{4}\s*\)/i, target: '' },
-	// (HD) / (HQ)
-	{ source: /\(\s*(HD|HQ)\s*\)$/, target: '' },
-	// HD / HQ
-	{ source: /(HD|HQ)\s?$/, target: '' },
-	// Video Clip Officiel / Video Clip Official
-	{ source: /(vid[\u00E9e]o)?\s?clip\sof+ici[ae]l/i, target: '' },
-	// Offizielles
-	{ source: /of+iziel+es\s*video/i, target: '' },
-	// Video Clip
-	{ source: /vid[\u00E9e]o\s?clip/i, target: '' },
-	// Clip
-	{ source: /\sclip/i, target: '' },
-	// Full Album
-	{ source: /full\s*album/i, target: '' },
-	// (Live)
-	{ source: /\(live.*?\)$/i, target: '' },
-	// | Something
-	{ source: /\|.*$/i, target: '' },
-	// Artist - The new "Track title" featuring someone
-	{ source: /^(|.*\s)"(.{5,})"(\s.*|)$/, target: '$2' },
-	// 'Track title'
-	{ source: /^(|.*\s)'(.{5,})'(\s.*|)$/, target: '$2' },
-	// (*01/01/1999*)
-	{ source: /\(.*[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{2,4}.*\)/i, target: '' },
-	// Sub Español
-	{ source: /sub\s*español/i, target: '' },
-	// (Letra)
-	{ source: /\s\(Letra\)/i, target: '' },
-	// (En vivo)
-	{ source: /\s\(En\svivo\)/i, target: '' },
-	// Sub Español
-	{ source: /sub\s*español/i, target: '' },
+    // Trim whitespaces
+    { source: /^\s+|\s+$/g, target: '' },
+    // **NEW**
+    { source: /\*+\s?\S+\s?\*+$/, target: '' },
+    // [Whatever]
+    { source: /\[[^\]]+\]/, target: '' },
+    // 【Whatever】
+    { source: /【[^\]]+】/, target: '' },
+    // （Whatever）
+    { source: /（[^\]]+）/, target: '' },
+    // (Whatever Version)
+    { source: /\([^)]*version\)$/i, target: '' },
+    // Video extensions
+    { source: /\.(avi|wmv|mpg|mpeg|flv)$/i, target: '' },
+    // (Lyrics Video)
+    { source: /\(.*lyrics?\s*(video)?\)/i, target: '' },
+    // ((Official)? (Track)? Stream)
+    { source: /\((of+icial\s*)?(track\s*)?stream\)/i, target: '' },
+    // ((Official)? (Music|HD)? Video|Audio)
+    { source: /\((of+icial\s*)?((music|hd)\s*)?(video|audio)\)/i, target: '' },
+    // - (Official)? (Music)? Video|Audio
+    { source: /-\s(of+icial\s*)?(music\s*)?(video|audio)$/i, target: '' },
+    // ((Whatever)? Album Track)
+    { source: /\(.*Album\sTrack\)/i, target: '' },
+    // (Official)
+    { source: /\(\s*of+icial\s*\)/i, target: '' },
+    // (1999)
+    { source: /\(\s*[0-9]{4}\s*\)/i, target: '' },
+    // (HD) / (HQ)
+    { source: /\(\s*(HD|HQ)\s*\)$/, target: '' },
+    // HD / HQ
+    { source: /(HD|HQ)\s?$/, target: '' },
+    // Video Clip Officiel / Video Clip Official
+    { source: /(vid[\u00E9e]o)?\s?clip\sof+ici[ae]l/i, target: '' },
+    // Offizielles
+    { source: /of+iziel+es\s*video/i, target: '' },
+    // Video Clip
+    { source: /vid[\u00E9e]o\s?clip/i, target: '' },
+    // Clip
+    { source: /\sclip/i, target: '' },
+    // Full Album
+    { source: /full\s*album/i, target: '' },
+    // (Live)
+    { source: /\(live.*?\)$/i, target: '' },
+    // | Something
+    { source: /\|.*$/i, target: '' },
+    // Artist - The new "Track title" featuring someone
+    { source: /^(|.*\s)"(.{5,})"(\s.*|)$/, target: '$2' },
+    // 'Track title'
+    { source: /^(|.*\s)'(.{5,})'(\s.*|)$/, target: '$2' },
+    // (*01/01/1999*)
+    { source: /\(.*[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{2,4}.*\)/i, target: '' },
+    // Sub Español
+    { source: /sub\s*español/i, target: '' },
+    // (Letra)
+    { source: /\s\(Letra\)/i, target: '' },
+    // (En vivo)
+    { source: /\s\(En\svivo\)/i, target: '' },
+    // Sub Español
+    { source: /sub\s*español/i, target: '' },
 ];
 
 export const ADDITIONAL_ARTISTS_FILTER_RULES: FilterRule[] = [
-	{ source: /\s(& .+)/i, target: '' },
-	{ source: /\s(x .+)/i, target: '' },
+    { source: /\s(& .+)/i, target: '' },
+    { source: /\s(x .+)/i, target: '' },
+];
+
+/**
+ * Filter rules to remove "Acoustic" and similar strings from a text.
+ */
+export const ACOUSTIC_FILTER_RULES: FilterRule[] = [
+    // Track - Acoustic
+    { source: /\s-\sAcoustic$/, target: '' },
+    // Track (Acoustic)
+    { source: /\s[([]Acoustic[)\]]$/, target: '' },
+];
+
+/**
+ * Filter rules to remove "Demo" and similar strings from a text.
+ */
+export const DEMO_FILTER_RULES: FilterRule[] = [
+    // Track - Demo
+    { source: /\s-\sDemo$/, target: '' },
+    // Track (Demo)
+    { source: /\s[([]Demo[)\]]$/, target: '' },
+];
+
+/**
+ * Filter rules to remove "Instrumental" and similar strings from a text.
+ */
+export const INSTRUMENTAL_FILTER_RULES: FilterRule[] = [
+    // Track - Instrumental
+    { source: /\s-\sInstrumental$/, target: '' },
+    // Track (Instrumental)
+    { source: /\s[([]Instrumental[)\]]$/, target: '' },
+];
+
+/**
+ * Filter rules to remove "Radio Edit" and similar strings from a text.
+ */
+export const RADIO_EDIT_FILTER_RULES: FilterRule[] = [
+    // Track - Radio Edit
+    { source: /\s-\sRadio Edit$/, target: '' },
+    // Track (Radio Edit)
+    { source: /\s[([]Radio Edit[)\]]$/, target: '' },
+];
+
+/**
+ * Filter rules to remove "Deluxe Edition" and similar strings from a text.
+ */
+export const DELUXE_EDITION_FILTER_RULES: FilterRule[] = [
+    // Track (Deluxe Edition)
+    { source: /\s[([]Deluxe Edition[)\]]$/, target: '' },
+    // Track - Deluxe Edition
+    { source: /\s-\sDeluxe Edition$/, target: '' },
+];
+
+/**
+ * Filter rules to remove "Extended Version" and similar strings from a text.
+ */
+export const EXTENDED_VERSION_FILTER_RULES: FilterRule[] = [
+    // Track (Extended Version)
+    { source: /\s[([]Extended Version[)\]]$/, target: '' },
+    // Track - Extended Version
+    { source: /\s-\sExtended Version$/, target: '' },
+];
+
+/**
+ * Filter rules to remove "Remix" and similar strings from a text.
+ */
+export const REMIX_FILTER_RULES: FilterRule[] = [
+    // Track (Remix)
+    { source: /\s[([]Remix[)\]]$/, target: '' },
+    // Track - Remix
+    { source: /\s-\sRemix$/, target: '' },
+];
+
+/**
+ * Filter rules to remove "Cover" and similar strings from a text.
+ */
+export const COVER_FILTER_RULES: FilterRule[] = [
+    // Track (Cover)
+    { source: /\s[([]Cover[)\]]$/, target: '' },
+    // Track - Cover
+    { source: /\s-\sCover$/, target: '' },
 ];

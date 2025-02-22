@@ -37,7 +37,7 @@ object:
 ```html
 <!-- Assume you have `metadata-filter` module included with `script` tag -->
 <script lang="javascript">
-	MetadataFilter.removeRemastered(yourInput);
+ MetadataFilter.removeRemastered(yourInput);
 </script>
 ```
 
@@ -54,9 +54,9 @@ combined fields ("Artist - Song", "Artist - Album"), as in the third example bel
 console.log(MetadataFilter.removeRemastered('Jane Doe (Remastered)')); // Jane Doe
 console.log(MetadataFilter.removeVersion('Get Lucky (Album Version)')); // Get Lucky
 console.log(
-	MetadataFilter.youtube(
-		'Car Bomb - Scattered Sprites (Official Music Video)'
-	)
+ MetadataFilter.youtube(
+  'Car Bomb - Scattered Sprites (Official Music Video)'
+ )
 ); // Car Bomb - Scattered Sprites
 ```
 
@@ -73,16 +73,16 @@ fields.
 
 ```javascript
 const filterSet = {
-	track: [
-		MetadataFilter.removeRemastered,
-		MetadataFilter.fixTrackSuffix,
-		MetadataFilter.removeLive,
-	],
-	album: [
-		MetadataFilter.removeRemastered,
-		MetadataFilter.fixTrackSuffix,
-		MetadataFilter.removeLive,
-	],
+ track: [
+  MetadataFilter.removeRemastered,
+  MetadataFilter.fixTrackSuffix,
+  MetadataFilter.removeLive,
+ ],
+ album: [
+  MetadataFilter.removeRemastered,
+  MetadataFilter.fixTrackSuffix,
+  MetadataFilter.removeLive,
+ ],
 };
 ```
 
@@ -117,7 +117,7 @@ filter.extend(MetadataFilter.createAmazonFilter());
 // This would also work: filter.extend(MetadataFilter.createFilter(filterSet));
 
 console.log(
-	filter.filterField('track', 'Seasons in the Abyss (Album Version)')
+ filter.filterField('track', 'Seasons in the Abyss (Album Version)')
 ); // Seasons in the Abyss
 ```
 
@@ -134,7 +134,7 @@ Since these methods return a `MetadataFilter` instance, you can chain method cal
 
 ```javascript
 const filter = MetadataFilter.createFilter({ track: filterTrack }).append({
-	artist: filterArtist,
+ artist: filterArtist,
 });
 ```
 
@@ -162,7 +162,7 @@ const filter = MetadataFilter.createFilter({ track: filterTrack }).append({
 
 ## See also
 
--   [music-metadata-filter] - Python implementation of this module
+- [music-metadata-filter] - Python implementation of this module
 
 ## License
 

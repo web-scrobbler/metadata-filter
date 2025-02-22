@@ -1,25 +1,25 @@
 import {
-	CLEAN_EXPLICIT_FILTER_RULES,
-	FEATURE_FILTER_RULES,
-	LIVE_FILTER_RULES,
-	NORMALIZE_FEATURE_FILTER_RULES,
-	PARODY_FILTER_RULES,
-	REISSUE_FILTER_RULES,
-	REMASTERED_FILTER_RULES,
-	SUFFIX_FILTER_RULES,
-	TRIM_SYMBOLS_FILTER_RULES,
-	VERSION_FILTER_RULES,
-	YOUTUBE_TRACK_FILTER_RULES,
-	VARIOUS_ARTISTS_FILTER_RULES,
-	FilterRule,
-	ADDITIONAL_ARTISTS_FILTER_RULES,
+    CLEAN_EXPLICIT_FILTER_RULES,
+    FEATURE_FILTER_RULES,
+    LIVE_FILTER_RULES,
+    NORMALIZE_FEATURE_FILTER_RULES,
+    PARODY_FILTER_RULES,
+    REISSUE_FILTER_RULES,
+    REMASTERED_FILTER_RULES,
+    SUFFIX_FILTER_RULES,
+    TRIM_SYMBOLS_FILTER_RULES,
+    VERSION_FILTER_RULES,
+    YOUTUBE_TRACK_FILTER_RULES,
+    VARIOUS_ARTISTS_FILTER_RULES,
+    FilterRule,
+    ADDITIONAL_ARTISTS_FILTER_RULES,
 } from './rules';
 
 const escapeHtmlEntityMap: Record<string, RegExp> = {
-	'&': /&amp;/g,
-	'<': /&lt;/g,
-	'>': /&gt;/g,
-	'"': /&quot;/g,
+    '&': /&amp;/g,
+    '<': /&lt;/g,
+    '>': /&gt;/g,
+    '"': /&quot;/g,
 };
 
 /**
@@ -30,10 +30,10 @@ const escapeHtmlEntityMap: Record<string, RegExp> = {
  * @return Transformed string
  */
 export function albumArtistFromArtist(text: string): string {
-	if (text.includes(' feat. ')) {
-		return text.split(' feat. ')[0];
-	}
-	return text;
+    if (text.includes(' feat. ')) {
+        return text.split(' feat. ')[0];
+    }
+    return text;
 }
 
 /**
@@ -44,22 +44,22 @@ export function albumArtistFromArtist(text: string): string {
  * @return Decoded string
  */
 export function decodeHtmlEntities(text: string): string {
-	let filteredText = text;
+    let filteredText = text;
 
-	for (const target in escapeHtmlEntityMap) {
-		const source = escapeHtmlEntityMap[target];
-		filteredText = filteredText.replace(source, target);
-	}
+    for (const target in escapeHtmlEntityMap) {
+        const source = escapeHtmlEntityMap[target];
+        filteredText = filteredText.replace(source, target);
+    }
 
-	filteredText = filteredText.replace(/&#x([a-fA-f0-9]+);/g, (_, hex) => {
-		const dec = parseInt(hex, 16);
-		return String.fromCharCode(dec);
-	});
-	filteredText = filteredText.replace(/&#(\d+);/g, (_, dec) => {
-		return String.fromCharCode(dec);
-	});
+    filteredText = filteredText.replace(/&#x([a-fA-f0-9]+);/g, (_, hex) => {
+        const dec = parseInt(hex, 16);
+        return String.fromCharCode(dec);
+    });
+    filteredText = filteredText.replace(/&#(\d+);/g, (_, dec) => {
+        return String.fromCharCode(dec);
+    });
 
-	return filteredText;
+    return filteredText;
 }
 
 /**
@@ -71,25 +71,25 @@ export function decodeHtmlEntities(text: string): string {
  * @return Filtered string
  */
 export function filterWithFilterRules(
-	text: string,
-	filterRules: FilterRule[]
+    text: string,
+    filterRules: FilterRule[]
 ): string {
-	return filterRules.reduce((text, filterRule) => {
-		const { source, target } = filterRule;
+    return filterRules.reduce((text, filterRule) => {
+        const { source, target } = filterRule;
 
-		return text.replace(source, target);
-	}, text);
+        return text.replace(source, target);
+    }, text);
 }
 
 /**
- * Replace "Title - X Remix" suffix with "Title (X Remix) and similar".
+ * Replace "Title - X Remix" suffix with "Title (X Remix)" and similar.
  *
  * @param text String to be filtered
  *
  * @return Filtered string
  */
 export function fixTrackSuffix(text: string): string {
-	return filterWithFilterRules(text, SUFFIX_FILTER_RULES);
+    return filterWithFilterRules(text, SUFFIX_FILTER_RULES);
 }
 
 /**
@@ -100,7 +100,7 @@ export function fixTrackSuffix(text: string): string {
  * @return Filtered string
  */
 export function fixVariousArtists(text: string): string {
-	return filterWithFilterRules(text, VARIOUS_ARTISTS_FILTER_RULES);
+    return filterWithFilterRules(text, VARIOUS_ARTISTS_FILTER_RULES);
 }
 
 /**
@@ -111,7 +111,7 @@ export function fixVariousArtists(text: string): string {
  * @return Transformed string
  */
 export function normalizeFeature(text: string): string {
-	return filterWithFilterRules(text, NORMALIZE_FEATURE_FILTER_RULES);
+    return filterWithFilterRules(text, NORMALIZE_FEATURE_FILTER_RULES);
 }
 
 /**
@@ -122,7 +122,7 @@ export function normalizeFeature(text: string): string {
  * @return Filtered string
  */
 export function removeCleanExplicit(text: string): string {
-	return filterWithFilterRules(text, CLEAN_EXPLICIT_FILTER_RULES);
+    return filterWithFilterRules(text, CLEAN_EXPLICIT_FILTER_RULES);
 }
 
 /**
@@ -133,7 +133,7 @@ export function removeCleanExplicit(text: string): string {
  * @return Filtered string
  */
 export function removeFeature(text: string): string {
-	return filterWithFilterRules(text, FEATURE_FILTER_RULES);
+    return filterWithFilterRules(text, FEATURE_FILTER_RULES);
 }
 
 /**
@@ -144,7 +144,7 @@ export function removeFeature(text: string): string {
  * @return Filtered string
  */
 export function removeAdditionalArtists(text: string): string {
-	return filterWithFilterRules(text, ADDITIONAL_ARTISTS_FILTER_RULES);
+    return filterWithFilterRules(text, ADDITIONAL_ARTISTS_FILTER_RULES);
 }
 
 /**
@@ -155,21 +155,29 @@ export function removeAdditionalArtists(text: string): string {
  * @return Filtered string
  */
 export function removeLive(text: string): string {
-	return filterWithFilterRules(text, LIVE_FILTER_RULES);
+    return filterWithFilterRules(text, LIVE_FILTER_RULES);
 }
 
 /**
  * Remove "(Parody of "X" by Y)"-like strings from the text.
+ *
  * @param text String to be filtered
  *
  * @return Filtered string
  */
 export function removeParody(text: string): string {
-	return filterWithFilterRules(text, PARODY_FILTER_RULES);
+    return filterWithFilterRules(text, PARODY_FILTER_RULES);
 }
 
+/**
+ * Remove "Re-issue"-like strings from the text.
+ *
+ * @param text String to be filtered
+ *
+ * @return Filtered string
+ */
 export function removeReissue(text: string): string {
-	return filterWithFilterRules(text, REISSUE_FILTER_RULES);
+    return filterWithFilterRules(text, REISSUE_FILTER_RULES);
 }
 
 /**
@@ -180,18 +188,18 @@ export function removeReissue(text: string): string {
  * @return Filtered string
  */
 export function removeRemastered(text: string): string {
-	return filterWithFilterRules(text, REMASTERED_FILTER_RULES);
+    return filterWithFilterRules(text, REMASTERED_FILTER_RULES);
 }
 
 /**
- * Remove "(Single|Album|Mono version}"-like strings from the text.
+ * Remove "(Single|Album|Mono version)"-like strings from the text.
  *
  * @param text String to be filtered
  *
  * @return Filtered string
  */
 export function removeVersion(text: string): string {
-	return filterWithFilterRules(text, VERSION_FILTER_RULES);
+    return filterWithFilterRules(text, VERSION_FILTER_RULES);
 }
 
 /**
@@ -202,7 +210,7 @@ export function removeVersion(text: string): string {
  * @return Filtered string
  */
 export function removeZeroWidth(text: string): string {
-	return text.replace(/[\u200B-\u200D\uFEFF]/g, '');
+    return text.replace(/[\u200B-\u200D\uFEFF]/g, '');
 }
 
 /**
@@ -213,7 +221,7 @@ export function removeZeroWidth(text: string): string {
  * @return Filtered string
  */
 export function replaceNbsp(text: string): string {
-	return text.replace(/\u00a0/g, '\u0020');
+    return text.replace(/\u00a0/g, '\u0020');
 }
 
 /**
@@ -224,10 +232,10 @@ export function replaceNbsp(text: string): string {
  * @return Filtered string
  */
 export function youtube(text: string): string {
-	return filterWithFilterRules(text, [
-		...YOUTUBE_TRACK_FILTER_RULES,
-		...TRIM_SYMBOLS_FILTER_RULES,
-	]);
+    return filterWithFilterRules(text, [
+        ...YOUTUBE_TRACK_FILTER_RULES,
+        ...TRIM_SYMBOLS_FILTER_RULES,
+    ]);
 }
 
 /**
@@ -238,5 +246,5 @@ export function youtube(text: string): string {
  * @return Filtered string
  */
 export function replaceSmartQuotes(text: string): string {
-	return text.replace(/[\u2018\u2019]/g, "'").replace(/[\u201c\u201d]/g, '"');
+    return text.replace(/[\u2018\u2019]/g, "'").replace(/[\u201c\u201d]/g, '"');
 }

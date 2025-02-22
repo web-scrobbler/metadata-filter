@@ -1,17 +1,17 @@
 import { MetadataFilter } from './filter';
 import {
-	albumArtistFromArtist,
-	decodeHtmlEntities,
-	fixTrackSuffix,
-	normalizeFeature,
-	removeCleanExplicit,
-	removeFeature,
-	removeLive,
-	removeParody,
-	removeReissue,
-	removeRemastered,
-	removeVersion,
-	youtube,
+    albumArtistFromArtist,
+    decodeHtmlEntities,
+    fixTrackSuffix,
+    normalizeFeature,
+    removeCleanExplicit,
+    removeFeature,
+    removeLive,
+    removeParody,
+    removeReissue,
+    removeRemastered,
+    removeVersion,
+    youtube,
 } from './functions';
 
 /**
@@ -20,7 +20,7 @@ import {
  * @return Filter object
  */
 export function createYouTubeFilter(): MetadataFilter {
-	return new MetadataFilter({ track: youtube });
+    return new MetadataFilter({ track: youtube });
 }
 
 /**
@@ -29,10 +29,10 @@ export function createYouTubeFilter(): MetadataFilter {
  * @return Filter object
  */
 export function createRemasteredFilter(): MetadataFilter {
-	return new MetadataFilter({
-		track: removeRemastered,
-		album: removeRemastered,
-	});
+    return new MetadataFilter({
+        track: removeRemastered,
+        album: removeRemastered,
+    });
 }
 
 /**
@@ -41,16 +41,16 @@ export function createRemasteredFilter(): MetadataFilter {
  * @return Filter object
  */
 export function createSpotifyFilter(): MetadataFilter {
-	return new MetadataFilter({
-		track: [removeRemastered, removeParody, fixTrackSuffix, removeLive],
-		album: [
-			removeRemastered,
-			fixTrackSuffix,
-			removeLive,
-			removeReissue,
-			removeVersion,
-		],
-	});
+    return new MetadataFilter({
+        track: [removeRemastered, removeParody, fixTrackSuffix, removeLive],
+        album: [
+            removeRemastered,
+            fixTrackSuffix,
+            removeLive,
+            removeReissue,
+            removeVersion,
+        ],
+    });
 }
 
 /**
@@ -59,26 +59,26 @@ export function createSpotifyFilter(): MetadataFilter {
  * @return Filter object
  */
 export function createAmazonFilter(): MetadataFilter {
-	return new MetadataFilter({
-		artist: [normalizeFeature],
-		track: [
-			removeCleanExplicit,
-			removeFeature,
-			removeRemastered,
-			fixTrackSuffix,
-			removeVersion,
-			removeLive,
-		],
-		album: [
-			decodeHtmlEntities,
-			removeCleanExplicit,
-			removeRemastered,
-			fixTrackSuffix,
-			removeVersion,
-			removeLive,
-		],
-		albumArtist: [normalizeFeature, albumArtistFromArtist],
-	});
+    return new MetadataFilter({
+        artist: [normalizeFeature],
+        track: [
+            removeCleanExplicit,
+            removeFeature,
+            removeRemastered,
+            fixTrackSuffix,
+            removeVersion,
+            removeLive,
+        ],
+        album: [
+            decodeHtmlEntities,
+            removeCleanExplicit,
+            removeRemastered,
+            fixTrackSuffix,
+            removeVersion,
+            removeLive,
+        ],
+        albumArtist: [normalizeFeature, albumArtistFromArtist],
+    });
 }
 
 /**
@@ -87,8 +87,8 @@ export function createAmazonFilter(): MetadataFilter {
  * @return Filter object
  */
 export function createTidalFilter(): MetadataFilter {
-	return new MetadataFilter({
-		track: [removeRemastered, fixTrackSuffix, removeVersion, removeLive],
-		album: [removeRemastered, fixTrackSuffix, removeVersion, removeLive],
-	});
+    return new MetadataFilter({
+        track: [removeRemastered, fixTrackSuffix, removeVersion, removeLive],
+        album: [removeRemastered, fixTrackSuffix, removeVersion, removeLive],
+    });
 }
