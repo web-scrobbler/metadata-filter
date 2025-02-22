@@ -8,9 +8,11 @@ indent_style = tab
 insert_final_newline = true
 trim_trailing_whitespace = true
 
+# Markdown files should not trim trailing whitespace
 [*.md]
 trim_trailing_whitespace = false
 
+# JSON and YAML files should use 2 spaces for indentation
 [*.{json,yaml,yml}]
 indent_size = 2
 indent_style = space

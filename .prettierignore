@@ -1,7 +1,13 @@
-/.codacy-coverage/
-/coverage/
-/dist/
-/types/
+# Ignore coverage directories
+.codacy-coverage/
+coverage/
 
+# Ignore build output
+dist/
+
+# Ignore type definitions
+types/
+
+# Ignore package files
 package.json
 package-lock.json
