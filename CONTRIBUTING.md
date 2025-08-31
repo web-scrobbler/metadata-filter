@@ -4,19 +4,19 @@ First of all, thanks for taking the time to contribute to metadata-filter!
 
 ## Submitting issues
 
--   Ensure the bug was not already reported by searching on GitHub under issues.
--   If you're unable to find an open issue addressing the problem, open a new one.
+- Ensure the bug was not already reported by searching on GitHub under issues.
+- If you're unable to find an open issue addressing the problem, open a new one.
     Be sure to include a title and clear description, as much relevant information as possible.
 
 If you don't know how to report bugs effectively, please use [this article][report-bugs] as a guideline.
 
 ## Submitting pull requests
 
--   Fork the metadata-filter [git repository][repository].
--   Create a pull request against the [**master**][repository-master] branch.
--   Ensure the PR description **clearly** describes the problem and solution.
+- Fork the metadata-filter [git repository][repository].
+- Create a pull request against the [**master**][repository-master] branch.
+- Ensure the PR description **clearly** describes the problem and solution.
     Include the relevant issue number(s) if applicable.
--   Ensure CI tests pass.
+- Ensure CI tests pass.
 
 It's worth reading [how to write][commit-messages] good commit messages.
 
