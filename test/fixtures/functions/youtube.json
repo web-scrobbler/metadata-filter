@@ -320,6 +320,31 @@
     "expectedValue": "Track Title"
   },
   {
+    "description": "should remove '(Official Track Visualiser)' string",
+    "funcParameter": "Track Title (Official Track Visualiser)",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '(Official Visualiser)' string",
+    "funcParameter": "Track Title (Official Visualiser)",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '(Official Visualizer)' string",
+    "funcParameter": "Track Title (Official Visualiser)",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '(Visualiser)' string",
+    "funcParameter": "Track Title (Visualiser)",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '(Visualizer)' string",
+    "funcParameter": "Track Title (Visualizer)",
+    "expectedValue": "Track Title"
+  },
+  {
     "description": "should remove (live) suffix",
     "funcParameter": "Track Title (Live)",
     "expectedValue": "Track Title"

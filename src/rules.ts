@@ -185,6 +185,8 @@ export const YOUTUBE_TRACK_FILTER_RULES: FilterRule[] = [
 	{ source: /\(.*lyrics?\s*(video)?\)/i, target: '' },
 	// ((Official)? (Track)? Stream)
 	{ source: /\((of+icial\s*)?(track\s*)?stream\)/i, target: '' },
+	// ((Official)? (Track)? Visuali[sz]er)
+	{ source: /\((of+icial\s*)?(track\s*)?visuali[sz]er\)/i, target: '' },
 	// ((Official)? (Music|HD)? Video|Audio)
 	{ source: /\((of+icial\s*)?((music|hd)\s*)?(video|audio)\)/i, target: '' },
 	// - (Official)? (Music)? Video|Audio
