@@ -25,18 +25,23 @@
     "expectedValue": "Track Title"
   },
   {
-    "description": "should remove '(Re-recorded)' string",
-    "funcParameter": "Track Title (Rerecorded)",
+    "description": "should remove '(Re-Recorded)' string",
+    "funcParameter": "Track Title (Re-Recorded)",
     "expectedValue": "Track Title"
   },
   {
-    "description": "should remove '[Re-recorded]' string",
-    "funcParameter": "Track Title [Rerecorded]",
+    "description": "should remove '[Re-Recorded]' string",
+    "funcParameter": "Track Title [Re-Recorded]",
     "expectedValue": "Track Title"
   },
   {
     "description": "should remove '(Single Version)' string",
     "funcParameter": "Track Title (Single Version)",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '- Edit' string",
+    "funcParameter": "Track Title - Edit",
     "expectedValue": "Track Title"
   },
   {
@@ -142,6 +147,36 @@
   {
     "description": "should remove '- Original Version YYYY' suffix",
     "funcParameter": "Track Title - Original Version 1978",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '- Video Version' string",
+    "funcParameter": "Track Title - Video Version",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '(Video Version)' string",
+    "funcParameter": "Track Title (Video Version)",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '- From \"Movie Title\"' string",
+    "funcParameter": "Track Title - From \"Movie Title\"",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '- From \"Movie Title\" Soundtrack' string",
+    "funcParameter": "Track Title - From \"Movie Title\" Soundtrack",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '(From \"Movie Title\")' string",
+    "funcParameter": "Track Title (From \"Movie Title\")",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '(From \"Movie Title\" Soundtrack)' string",
+    "funcParameter": "Track Title (From \"Movie Title\" Soundtrack)",
     "expectedValue": "Track Title"
   }
 ]
