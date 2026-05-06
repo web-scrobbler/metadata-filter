@@ -84,7 +84,7 @@ export const REMASTERED_FILTER_RULES: FilterRule[] = [
 	// Here Comes The Sun - Remastered
 	// 1979 - Remastered 2012
 	// 1979 - Remastered Version
-	{ source: /\s-\sRe-?master(ed)?.*$/, target: '' },
+	{ source: /\s-\sRe-?master(ed)?.*$/i, target: '' },
 	// Wish You Were Here [Remastered] (Remastered Version)
 	{ source: /\s\[Remastered\]\s\(Remastered\sVersion\)$/i, target: '' },
 ];
