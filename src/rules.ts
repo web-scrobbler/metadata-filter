@@ -140,7 +140,7 @@ export const VERSION_FILTER_RULES: FilterRule[] = [
 	// (I Can't Get No) Satisfaction - Mono Version
 	{ source: /\s-\sMono Version$/i, target: '' },
 	// Ruby Tuesday - Stereo Version
-	{ source: /\s-\sStereo Version$/, target: '' },
+	{ source: /\s-\sStereo Version$/i, target: '' },
 	// Pure McCartney (Deluxe Edition)
 	{ source: /\s\(Deluxe Edition\)$/i, target: '' },
 	// Ace of Spades (Expanded Edition)
