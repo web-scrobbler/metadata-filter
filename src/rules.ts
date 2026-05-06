@@ -67,7 +67,8 @@ export const REISSUE_FILTER_RULES: FilterRule[] = [
  */
 export const REMASTERED_FILTER_RULES: FilterRule[] = [
 	// Ticket To Ride - Live / Remastered
-	{ source: /Live\s\/\sRemastered/, target: 'Live' },
+	// White Wedding - Pt. 1 / Remastered 2002
+	{ source: /\s\/\sRemastered[^)\]]*/, target: '' },
 	// Mothership (Remastered)
 	// Let It Be (Remastered 2009)
 	// How The West Was Won [Remastered]
@@ -130,11 +131,12 @@ export const VERSION_FILTER_RULES: FilterRule[] = [
 	{ source: /\s[([]Album Version[)\]]$/, target: '' },
 	// I Melt With You (Rerecorded)
 	// When I Need You [Re-Recorded]
-	{ source: /\s[([]Re-?recorded[)\]]$/, target: '' },
+	{ source: /\s[([]Re-?recorded[)\]]$/i, target: '' },
 	// Your Cheatin' Heart (Single Version)
 	{ source: /\s[([]Single Version[)\]]$/, target: '' },
+	// 1999 - Edit
 	// All Over Now (Edit)
-	{ source: /\s[([]Edit[)\]]$/, target: '' },
+	{ source: /\s[-([]\s?Edit[)\]]?/i, target: '' },
 	// (I Can't Get No) Satisfaction - Mono Version
 	{ source: /\s-\sMono Version$/, target: '' },
 	// Ruby Tuesday - Stereo Version
@@ -161,6 +163,18 @@ export const VERSION_FILTER_RULES: FilterRule[] = [
 	// Prince of the Moment - Original 7" Version
 	// YMCA - Original Version 1978
 	{ source: /\s-\sOriginal.*Version(\s\d{4})?$/i, target: '' },
+	// Summer Girl - Video Version
+	// Take on Me (Video Version)
+	{ source: /\s[-([]\s?Video Version[)\]]?/i, target: '' },
+	// Invisible Touch - Platinum Collection Version
+	// That's All (Platinum Collection Version)
+	{ source: /\s[-([]\s?Platinum Collection Version[)\]]?/i, target: '' },
+	// Danger Zone - From "Top Gun" Original Soundtrack
+	// Hungry Eyes - From "Dirty Dancing" Soundtrack
+	// If You Leave - From "Pretty In Pink"
+	// If You Leave (From "Pretty In Pink" Soundtrack)
+	// Pretty In Pink (From "Pretty in Pink")
+	{ source: /\s[-([]\s?From ".*".*[)\]]?/i, target: '' },
 ];
 
 /**
