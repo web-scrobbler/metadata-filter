@@ -34,9 +34,9 @@ export const FEATURE_FILTER_RULES: FilterRule[] = [
 export const LIVE_FILTER_RULES: FilterRule[] = [
 	// Track - Live
 	// Track - Live at
-	{ source: /\s-\sLive(\s.+)?$/, target: '' },
+	{ source: /\s-\sLive(\s.+)?$/i, target: '' },
 	// Track (Live)
-	{ source: /\s[([]Live[)\]]$/, target: '' },
+	{ source: /\s[([]Live[)\]]$/i, target: '' },
 ];
 
 export const NORMALIZE_FEATURE_FILTER_RULES = [
@@ -68,25 +68,25 @@ export const REISSUE_FILTER_RULES: FilterRule[] = [
 export const REMASTERED_FILTER_RULES: FilterRule[] = [
 	// Ticket To Ride - Live / Remastered
 	// White Wedding - Pt. 1 / Remastered 2002
-	{ source: /\s\/\sRemastered[^)\]]*/, target: '' },
+	{ source: /\s\/\sRemastered[^)\]]*/i, target: '' },
 	// Mothership (Remastered)
 	// Let It Be (Remastered 2009)
 	// How The West Was Won [Remastered]
 	// Ride the Lightning (Deluxe Remaster)
 	// ...And Justice For All (Remastered Deluxe Box Set)
-	{ source: /\s[([].*Re-?[Mm]aster(ed)?.*[)\]]$/, target: '' },
+	{ source: /\s[([].*Re-?master(ed)?.*[)\]]$/i, target: '' },
 	// Outside The Wall - 2011 - Remaster
 	// China Grove - 2006 Remaster
 	// Easy Living - 2003 Remastered
 	// Learning To Fly - 2001 Digital Remaster
 	// Red Right Hand - 2011 Remastered Version
-	{ source: /\s-\s\d{4}(\s-)?\s.*Re-?[Mm]aster(ed)?.*$/, target: '' },
+	{ source: /\s-\s\d{4}(\s-)?\s.*Re-?master(ed)?.*$/i, target: '' },
 	// Here Comes The Sun - Remastered
 	// 1979 - Remastered 2012
 	// 1979 - Remastered Version
-	{ source: /\s-\sRe-?[Mm]aster(ed)?.*$/, target: '' },
+	{ source: /\s-\sRe-?master(ed)?.*$/, target: '' },
 	// Wish You Were Here [Remastered] (Remastered Version)
-	{ source: /\s\[Remastered\]\s\(Remastered\sVersion\)$/, target: '' },
+	{ source: /\s\[Remastered\]\s\(Remastered\sVersion\)$/i, target: '' },
 ];
 
 export const SUFFIX_FILTER_RULES: FilterRule[] = [
@@ -128,27 +128,27 @@ export const VARIOUS_ARTISTS_FILTER_RULES: FilterRule[] = [
  */
 export const VERSION_FILTER_RULES: FilterRule[] = [
 	// Love Will Come To You (Album Version)
-	{ source: /\s[([]Album Version[)\]]$/, target: '' },
+	{ source: /\s[([]Album Version[)\]]$/i, target: '' },
 	// I Melt With You (Rerecorded)
 	// When I Need You [Re-Recorded]
 	{ source: /\s[([]Re-?recorded[)\]]$/i, target: '' },
 	// Your Cheatin' Heart (Single Version)
-	{ source: /\s[([]Single Version[)\]]$/, target: '' },
+	{ source: /\s[([]Single Version[)\]]$/i, target: '' },
 	// 1999 - Edit
 	// All Over Now (Edit)
 	{ source: /\s[-([]\s?Edit[)\]]?/i, target: '' },
 	// (I Can't Get No) Satisfaction - Mono Version
-	{ source: /\s-\sMono Version$/, target: '' },
+	{ source: /\s-\sMono Version$/i, target: '' },
 	// Ruby Tuesday - Stereo Version
 	{ source: /\s-\sStereo Version$/, target: '' },
 	// Pure McCartney (Deluxe Edition)
-	{ source: /\s\(Deluxe Edition\)$/, target: '' },
+	{ source: /\s\(Deluxe Edition\)$/i, target: '' },
 	// Ace of Spades (Expanded Edition)
 	// Overkill (Expanded Bonus Track Edition)
 	// On Parole (Expanded and Remastered)
-	{ source: /\s[([]Expanded.*[)\]]$/, target: '' },
+	{ source: /\s[([]Expanded.*[)\]]$/i, target: '' },
 	// Sound of White Noise - Expanded Edition
-	{ source: /\s-\sExpanded Edition$/, target: '' },
+	{ source: /\s-\sExpanded Edition$/i, target: '' },
 	// 6 Foot 7 Foot (Explicit Version)
 	{ source: /\s[([]Explicit Version[)\]]/i, target: '' },
 	// No Remorse (Bonus Track Edition)
