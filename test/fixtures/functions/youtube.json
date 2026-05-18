@@ -205,6 +205,21 @@
     "expectedValue": "Video Killed the Radio Star"
   },
   {
+    "description": "should remove '(Original Video)' string",
+    "funcParameter": "Track Title (Original Video)",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '(Original Song)' string",
+    "funcParameter": "Track Title (Original Song)",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '(Whatever Original Song)' string",
+    "funcParameter": "Track Title (Whatever Original Song)",
+    "expectedValue": "Track Title"
+  },
+  {
     "description": "should remove '(official)' string",
     "funcParameter": "Track Title (Official)",
     "expectedValue": "Track Title"
