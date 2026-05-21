@@ -19,10 +19,10 @@ export interface FilterRule {
 }
 
 export const CLEAN_EXPLICIT_FILTER_RULES: FilterRule[] = [
-	// (Explicit) or [Explicit]
-	{ source: /\s[([]Explicit[)\]]/i, target: '' },
-	// (Clean) or [Clean]
-	{ source: /\s[([]Clean[)\]]/i, target: '' },
+	// (Explicit) / (Explicit Version) or [Explicit] / [Explicit Version]
+	{ source: /\s[([]Explicit(\sVersion)?[)\]]/i, target: '' },
+	// (Clean) / (Clean Version) or [Clean] / [Clean Version]
+	{ source: /\s[([]Clean(\sVersion)?[)\]]/i, target: '' },
 ];
 
 export const FEATURE_FILTER_RULES: FilterRule[] = [
@@ -137,6 +137,7 @@ export const VERSION_FILTER_RULES: FilterRule[] = [
 	{ source: /\s[([]Re-?recorded[)\]]$/i, target: '' },
 	// Your Cheatin' Heart (Single Version)
 	{ source: /\s[([]Single Version[)\]]$/i, target: '' },
+	// Dammit (Growing Up) (Radio Edit)
 	// Swallowed [Radio Edit]
 	{ source: /\s[([]Radio Edit[)\]]$/i, target: '' },
 	// 1999 - Edit
