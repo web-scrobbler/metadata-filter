@@ -15,6 +15,16 @@
     "expectedValue": "Track Title"
   },
   {
+    "description": "should remove '(LP Version)' string",
+    "funcParameter": "Track Title (LP Version)",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '[LP Version]' string",
+    "funcParameter": "Track Title [LP Version]",
+    "expectedValue": "Track Title"
+  },
+  {
     "description": "should remove '(Rerecorded)' string",
     "funcParameter": "Track Title (Rerecorded)",
     "expectedValue": "Track Title"
@@ -37,6 +47,16 @@
   {
     "description": "should remove '(Single Version)' string",
     "funcParameter": "Track Title (Single Version)",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '(Radio Edit)' string",
+    "funcParameter": "Track Title (Radio Edit)",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '[Radio Edit]' string",
+    "funcParameter": "Track Title [Radio Edit]",
     "expectedValue": "Track Title"
   },
   {
