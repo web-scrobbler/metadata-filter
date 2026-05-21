@@ -130,11 +130,15 @@ export const VARIOUS_ARTISTS_FILTER_RULES: FilterRule[] = [
 export const VERSION_FILTER_RULES: FilterRule[] = [
 	// Love Will Come To You (Album Version)
 	{ source: /\s[([]Album Version[)\]]$/i, target: '' },
+	// Lithium (LP Version)
+	{ source: /\s[([]LP Version[)\]]$/i, target: '' },
 	// I Melt With You (Rerecorded)
 	// When I Need You [Re-Recorded]
 	{ source: /\s[([]Re-?recorded[)\]]$/i, target: '' },
 	// Your Cheatin' Heart (Single Version)
 	{ source: /\s[([]Single Version[)\]]$/i, target: '' },
+	// Swallowed [Radio Edit]
+	{ source: /\s[([]Radio Edit[)\]]$/i, target: '' },
 	// 1999 - Edit
 	// All Over Now (Edit)
 	{ source: /\s[-([]\s?Edit[)\]]?/i, target: '' },
