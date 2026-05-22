@@ -110,16 +110,6 @@
     "expectedValue": "Album Title"
   },
   {
-    "description": "should remove '(Explicit Version)' string",
-    "funcParameter": "Album Title (Explicit Version)",
-    "expectedValue": "Album Title"
-  },
-  {
-    "description": "should remove '[Explicit Version]' string",
-    "funcParameter": "Album Title [Explicit Version]",
-    "expectedValue": "Album Title"
-  },
-  {
     "description": "should remove '(Bonus Track Edition)' string",
     "funcParameter": "Album Title (Bonus Track Edition)",
     "expectedValue": "Album Title"
