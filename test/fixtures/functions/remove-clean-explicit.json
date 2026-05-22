@@ -5,8 +5,18 @@
     "expectedValue": "Track"
   },
   {
+    "description": "should remove [Explicit Version] suffix",
+    "funcParameter": "Track [Explicit Version]",
+    "expectedValue": "Track"
+  },
+  {
     "description": "should remove (Explicit) suffix",
     "funcParameter": "Track (Explicit)",
+    "expectedValue": "Track"
+  },
+  {
+    "description": "should remove (Explicit Version) suffix",
+    "funcParameter": "Track (Explicit Version)",
     "expectedValue": "Track"
   },
   {
@@ -15,8 +25,18 @@
     "expectedValue": "Track"
   },
   {
+    "description": "should remove [Clean Version] suffix",
+    "funcParameter": "Track [Clean Version]",
+    "expectedValue": "Track"
+  },
+  {
     "description": "should remove (Clean) suffix",
     "funcParameter": "Track (Clean)",
+    "expectedValue": "Track"
+  },
+  {
+    "description": "should remove (Clean Version) suffix",
+    "funcParameter": "Track (Clean Version)",
     "expectedValue": "Track"
   }
 ]
