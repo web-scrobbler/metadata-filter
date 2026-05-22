@@ -155,8 +155,6 @@ export const VERSION_FILTER_RULES: FilterRule[] = [
 	{ source: /\s[([]Expanded.*[)\]]$/i, target: '' },
 	// Sound of White Noise - Expanded Edition
 	{ source: /\s-\sExpanded Edition$/i, target: '' },
-	// 6 Foot 7 Foot (Explicit Version)
-	{ source: /\s[([]Explicit Version[)\]]/i, target: '' },
 	// No Remorse (Bonus Track Edition)
 	{ source: /\s[([]Bonus Track Edition[)\]]/i, target: '' },
 	// Peace Sells...But Who's Buying (25th Anniversary)
