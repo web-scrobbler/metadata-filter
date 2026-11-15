@@ -172,11 +172,11 @@ export const YOUTUBE_TRACK_FILTER_RULES: FilterRule[] = [
 	// **NEW**
 	{ source: /\*+\s?\S+\s?\*+$/, target: '' },
 	// [Whatever]
-	{ source: /\[[^\]]+\]/, target: '' },
+	{ source: /\[[^\]]+\]/g, target: '' },
 	// 【Whatever】
-	{ source: /【[^\]]+】/, target: '' },
+	{ source: /【[^】]+】/g, target: '' },
 	// （Whatever）
-	{ source: /（[^\]]+）/, target: '' },
+	{ source: /（[^）]+）/g, target: '' },
 	// (Whatever Version)
 	{ source: /\([^)]*version\)$/i, target: '' },
 	// Video extensions
