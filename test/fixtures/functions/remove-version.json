@@ -15,6 +15,16 @@
     "expectedValue": "Track Title"
   },
   {
+    "description": "should remove '(LP Version)' string",
+    "funcParameter": "Track Title (LP Version)",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '[LP Version]' string",
+    "funcParameter": "Track Title [LP Version]",
+    "expectedValue": "Track Title"
+  },
+  {
     "description": "should remove '(Rerecorded)' string",
     "funcParameter": "Track Title (Rerecorded)",
     "expectedValue": "Track Title"
@@ -25,18 +35,33 @@
     "expectedValue": "Track Title"
   },
   {
-    "description": "should remove '(Re-recorded)' string",
-    "funcParameter": "Track Title (Rerecorded)",
+    "description": "should remove '(Re-Recorded)' string",
+    "funcParameter": "Track Title (Re-Recorded)",
     "expectedValue": "Track Title"
   },
   {
-    "description": "should remove '[Re-recorded]' string",
-    "funcParameter": "Track Title [Rerecorded]",
+    "description": "should remove '[Re-Recorded]' string",
+    "funcParameter": "Track Title [Re-Recorded]",
     "expectedValue": "Track Title"
   },
   {
     "description": "should remove '(Single Version)' string",
     "funcParameter": "Track Title (Single Version)",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '(Radio Edit)' string",
+    "funcParameter": "Track Title (Radio Edit)",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '[Radio Edit]' string",
+    "funcParameter": "Track Title [Radio Edit]",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '- Edit' string",
+    "funcParameter": "Track Title - Edit",
     "expectedValue": "Track Title"
   },
   {
@@ -82,16 +107,6 @@
   {
     "description": "should remove '- Expanded Edition' string",
     "funcParameter": "Album Title - Expanded Edition",
-    "expectedValue": "Album Title"
-  },
-  {
-    "description": "should remove '(Explicit Version)' string",
-    "funcParameter": "Album Title (Explicit Version)",
-    "expectedValue": "Album Title"
-  },
-  {
-    "description": "should remove '[Explicit Version]' string",
-    "funcParameter": "Album Title [Explicit Version]",
     "expectedValue": "Album Title"
   },
   {
@@ -142,6 +157,46 @@
   {
     "description": "should remove '- Original Version YYYY' suffix",
     "funcParameter": "Track Title - Original Version 1978",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '- Video Version' string",
+    "funcParameter": "Track Title - Video Version",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '(Video Version)' string",
+    "funcParameter": "Track Title (Video Version)",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '- Platinum Collection Version' string",
+    "funcParameter": "Track Title - Platinum Collection Version",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '(Platinum Collection Version)' string",
+    "funcParameter": "Track Title (Platinum Collection Version)",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '- From \"Movie Title\"' string",
+    "funcParameter": "Track Title - From \"Movie Title\"",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '- From \"Movie Title\" Soundtrack' string",
+    "funcParameter": "Track Title - From \"Movie Title\" Soundtrack",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '(From \"Movie Title\")' string",
+    "funcParameter": "Track Title (From \"Movie Title\")",
+    "expectedValue": "Track Title"
+  },
+  {
+    "description": "should remove '(From \"Movie Title\" Soundtrack)' string",
+    "funcParameter": "Track Title (From \"Movie Title\" Soundtrack)",
     "expectedValue": "Track Title"
   }
 ]

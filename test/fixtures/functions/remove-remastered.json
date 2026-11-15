@@ -60,6 +60,11 @@
     "expectedValue": "Track Title"
   },
   {
+    "description": "should remove '- YYYY Digital Master' string",
+    "funcParameter": "Track Title - 2020 Digital Master",
+    "expectedValue": "Track Title"
+  },
+  {
     "description": "should remove '- YYYY Remastered Version' string",
     "funcParameter": "Track Title - 2011 Remastered Version",
     "expectedValue": "Track Title"
