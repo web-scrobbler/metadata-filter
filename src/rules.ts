@@ -174,7 +174,7 @@ export const YOUTUBE_TRACK_FILTER_RULES: FilterRule[] = [
 	// [Whatever]
 	{ source: /\[[^\]]+\]/, target: '' },
 	// 【Whatever】
-	{ source: /【[^\]]+】/, target: '' },
+	{ source: /【[^】]+】/, target: '' },
 	// （Whatever）
 	{ source: /（[^\]]+）/, target: '' },
 	// (Whatever Version)
