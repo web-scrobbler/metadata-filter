@@ -172,12 +172,12 @@ Licensed under the [MIT License](LICENSE.md).
 
 [workflow-badge]: https://img.shields.io/github/actions/workflow/status/web-scrobbler/metadata-filter/test.yml
 [npm-badge]: https://img.shields.io/npm/v/@web-scrobbler/metadata-filter
-[codacy-badge]: https://img.shields.io/codacy/grade/100b50dc21664ce6bc591c28b73d6892
-[coverage-badge]: https://img.shields.io/codacy/coverage/100b50dc21664ce6bc591c28b73d6892
+[coverage-badge]: https://img.shields.io/codacy/coverage/8cd120ae6a3a4c18bbdfe5fdb12b2579
+[codacy-badge]: https://app.codacy.com/project/badge/Grade/8cd120ae6a3a4c18bbdfe5fdb12b2579
 
 <!-- Related pages -->
 
-[codacy]: https://app.codacy.com/gh/web-scrobbler/metadata-filter/dashboard
+[codacy]: https://app.codacy.com/gh/web-scrobbler/metadata-filter/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade
 [npm]: https://www.npmjs.com/package/@web-scrobbler/metadata-filter
 [workflow]: https://github.com/web-scrobbler/metadata-filter/actions/workflows/test.yml
 
