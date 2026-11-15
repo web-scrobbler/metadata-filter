@@ -189,6 +189,8 @@ export const YOUTUBE_TRACK_FILTER_RULES: FilterRule[] = [
 	{ source: /\((of+icial\s*)?((music|hd)\s*)?(video|audio)\)/i, target: '' },
 	// - (Official)? (Music)? Video|Audio
 	{ source: /-\s(of+icial\s*)?(music\s*)?(video|audio)$/i, target: '' },
+	// ((Whatever)? (Original) Video|Song)
+	{ source: /\(.*?original\s*(video|song)\)/i, target: '' },
 	// ((Whatever)? Album Track)
 	{ source: /\(.*Album\sTrack\)/i, target: '' },
 	// (Official)
