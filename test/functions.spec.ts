@@ -42,7 +42,7 @@ const functionsToTest = {
 	'remove-feature': removeFeature,
 	'remove-additional-artists': removeAdditionalArtists,
 	'replace-smart-quotes': replaceSmartQuotes,
-	youtube: youtube,
+	youtube,
 };
 
 const requiredFixtureProperties: ReadonlyArray<keyof FilterFunctionFixture> = [
@@ -53,7 +53,7 @@ const requiredFixtureProperties: ReadonlyArray<keyof FilterFunctionFixture> = [
 
 for (const [fixtureId, func] of Object.entries(functionsToTest)) {
 	const fixtures = loadFixtureFile<FilterFunctionFixture>(
-		`functions/${fixtureId}`
+		`functions/${fixtureId}`,
 	);
 	validateFixtures(fixtureId, fixtures, requiredFixtureProperties);
 

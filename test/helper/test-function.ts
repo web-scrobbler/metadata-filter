@@ -34,7 +34,7 @@ export interface FilterFunctionFixture {
  */
 export function describeAndTestFilterFunction(
 	filterFunction: FilterFunction,
-	fixtures: FilterFunctionFixture[]
+	fixtures: FilterFunctionFixture[],
 ): void {
 	const functionName = filterFunction.name;
 

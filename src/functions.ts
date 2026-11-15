@@ -72,7 +72,7 @@ export function decodeHtmlEntities(text: string): string {
  */
 export function filterWithFilterRules(
 	text: string,
-	filterRules: FilterRule[]
+	filterRules: FilterRule[],
 ): string {
 	return filterRules.reduce((text, filterRule) => {
 		const { source, target } = filterRule;

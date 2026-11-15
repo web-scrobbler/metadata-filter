@@ -7,12 +7,12 @@ import { createSpyFilterFunction, dummyFn } from './helper/dummy-function';
 describe('Test `canFilterField` method', () => {
 	it('should return true for supported field', () => {
 		const filter = createFilter({ foo: dummyFn });
-		expect(filter.canFilterField('foo')).to.be.true;
+		expect(filter.canFilterField('foo')).to.equal(true);
 	});
 
 	it('should return false for unsupported field', () => {
 		const filter = createFilter({ foo: dummyFn });
-		expect(filter.canFilterField('bar')).to.be.false;
+		expect(filter.canFilterField('bar')).to.equal(false);
 	});
 });
 
@@ -20,7 +20,7 @@ describe('Test `getFields` method', () => {
 	it('should return an empty array when no fields available', () => {
 		const filterFields = createFilter({}).getFields();
 
-		expect(filterFields).to.be.an('array').that.is.empty;
+		expect(filterFields).to.be.an('array').with.lengthOf(0);
 	});
 
 	it('should return a list of fields', () => {
@@ -59,25 +59,25 @@ describe('Test `append` method', () => {
 
 	it('should throw error if filter set is not specified', () => {
 		const baseFilter = createFilter({ foo: dummyFn });
-		// @ts-expect-error
+		// @ts-expect-error intentionally passing null to test runtime validation
 		expect(() => baseFilter.append(null)).to.throw(
-			'No filter set is specified!'
+			'No filter set is specified!',
 		);
 	});
 
 	it('should throw error if filter set is not an object', () => {
 		const baseFilter = createFilter({ foo: dummyFn });
-		// @ts-expect-error
+		// @ts-expect-error intentionally passing a number to test runtime validation
 		expect(() => baseFilter.append(2)).to.throw(
-			"Invalid filter set: expected 'object', got 'number'"
+			"Invalid filter set: expected 'object', got 'number'",
 		);
 	});
 
 	it('should throw error if filter set is invalid', () => {
 		const baseFilter = createFilter({ foo: dummyFn });
-		// @ts-expect-error
+		// @ts-expect-error intentionally passing an invalid filter to test runtime validation
 		expect(() => baseFilter.append({ foo: 2 })).to.throw(
-			"Invalid filter function: expected 'function', got 'number'"
+			"Invalid filter function: expected 'function', got 'number'",
 		);
 	});
 });
@@ -107,17 +107,17 @@ describe('Test `extend` method', () => {
 
 	it('should throw error if filter is nullable', () => {
 		const baseFilter = createFilter({ foo: dummyFn });
-		// @ts-expect-error
+		// @ts-expect-error intentionally passing null to test runtime validation
 		expect(() => baseFilter.extend(null)).to.throw(
-			'No filter is specified!'
+			'No filter is specified!',
 		);
 	});
 
 	it('should throw error if filter is invalid', () => {
 		const baseFilter = createFilter({ foo: dummyFn });
-		// @ts-expect-error
+		// @ts-expect-error intentionally passing a number to test runtime validation
 		expect(() => baseFilter.extend(2)).to.throw(
-			"Invalid filter: expected 'MetadataFilter', got 'number'"
+			"Invalid filter: expected 'MetadataFilter', got 'number'",
 		);
 	});
 });
@@ -147,7 +147,7 @@ describe('Test `filterField` method', () => {
 		const filter = createFilter({ artist: fn1 });
 
 		const input = null;
-		// @ts-expect-error
+		// @ts-expect-error intentionally passing null input to test runtime behavior
 		const actual = filter.filterField('artist', input);
 
 		expect(actual).to.be.equal(input);
@@ -158,30 +158,30 @@ describe('Test `filterField` method', () => {
 		const filter = createFilter({ foo: (text) => text });
 
 		expect(() => filter.filterField('bar', 'Field value')).to.throw(
-			'Invalid filter field: bar'
+			'Invalid filter field: bar',
 		);
 	});
 });
 
 describe('Test `createFilter` function', () => {
 	it('should throw error if the filter set is not specified', () => {
-		// @ts-expect-error
+		// @ts-expect-error intentionally passing null to test runtime validation
 		expect(() => createFilter(null)).to.throw(
-			'No filter set is specified!'
+			'No filter set is specified!',
 		);
 	});
 
 	it('should throw error if the filter set is invalid', () => {
-		// @ts-expect-error
+		// @ts-expect-error intentionally passing an invalid filter to test runtime validation
 		expect(() => createFilter({ foo: 1 })).to.throw(
-			"Invalid filter function: expected 'function', got 'number'"
+			"Invalid filter function: expected 'function', got 'number'",
 		);
 	});
 
 	it('should throw error if the filter set as an array is invalid', () => {
-		// @ts-expect-error
+		// @ts-expect-error intentionally passing an invalid filter to test runtime validation
 		expect(() => createFilter({ foo: [1, 2] })).to.throw(
-			"Invalid filter function: expected 'function', got 'number'"
+			"Invalid filter function: expected 'function', got 'number'",
 		);
 	});
 });
@@ -204,42 +204,42 @@ describe('Test `createFilterSetForFields` function', () => {
 	const fn2 = dummyFn;
 
 	it('should throw error when received invalid argument', () => {
-		// @ts-expect-error
+		// @ts-expect-error intentionally passing null fields to test runtime validation
 		expect(() => createFilterSetForFields(null, fn1)).to.throw(
-			"Invalid 'fields' argument: expected 'string[]', got 'object'"
+			"Invalid 'fields' argument: expected 'string[]', got 'object'",
 		);
 	});
 
 	it('should throw error when received empty fields array', () => {
 		expect(() => createFilterSetForFields([], fn1)).to.throw(
-			"Invalid 'fields' argument: received an empty array"
+			"Invalid 'fields' argument: received an empty array",
 		);
 	});
 
 	it('should throw error when received invalid filter function', () => {
-		// @ts-expect-error
+		// @ts-expect-error intentionally passing a number filter to test runtime validation
 		expect(() => createFilterSetForFields(['foo'], 2)).to.throw(
-			"Invalid filter function: expected 'function', got 'number'"
+			"Invalid filter function: expected 'function', got 'number'",
 		);
 	});
 
 	it('should throw error when received array of invalid filter function', () => {
-		// @ts-expect-error
+		// @ts-expect-error intentionally passing an invalid filter to test runtime validation
 		expect(() => createFilterSetForFields(['foo'], [2, 3])).to.throw(
-			"Invalid filter function: expected 'function', got 'number'"
+			"Invalid filter function: expected 'function', got 'number'",
 		);
 	});
 
 	it('should throw error when received array of invalid fields', () => {
-		// @ts-expect-error
+		// @ts-expect-error intentionally passing a non-string field to test runtime validation
 		expect(() => createFilterSetForFields(['foo', 2], fn1)).to.throw(
-			"Invalid field: expected 'string', got 'number'"
+			"Invalid field: expected 'string', got 'number'",
 		);
 	});
 
 	it('should throw error when received array with empty field', () => {
 		expect(() => createFilterSetForFields(['foo', ''], fn1)).to.throw(
-			"Invalid field: expected 'string', got an empty string"
+			"Invalid field: expected 'string', got an empty string",
 		);
 	});
 
@@ -257,7 +257,7 @@ describe('Test `createFilterSetForFields` function', () => {
 	it('should create filter set with multiple filter functions', () => {
 		const filterSet = createFilterSetForFields(
 			['foo', 'bar', 'baz'],
-			[fn1, fn2]
+			[fn1, fn2],
 		);
 		const expectedResult = {
 			foo: [fn1, fn2],

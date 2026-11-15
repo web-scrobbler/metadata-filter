@@ -10,7 +10,7 @@
 export function validateFixtures<T>(
 	fixtureId: string,
 	fixtures: ReadonlyArray<T>,
-	requiredProperties: ReadonlyArray<keyof T>
+	requiredProperties: ReadonlyArray<keyof T>,
 ): void {
 	for (const fixture of fixtures) {
 		for (const property of requiredProperties) {
@@ -18,7 +18,7 @@ export function validateFixtures<T>(
 				throw new Error(
 					`Missing ${
 						property as string
-					} in test case for '${fixtureId}'`
+					} in test case for '${fixtureId}'`,
 				);
 			}
 		}

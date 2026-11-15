@@ -15,7 +15,7 @@ function filterWith(
 	const filter = this._obj as unknown;
 	if (!(filter instanceof MetadataFilter)) {
 		throw new Error(
-			"'filterWith' method must be used for MetadataFilter objects"
+			"'filterWith' method must be used for MetadataFilter objects",
 		);
 	}
 
