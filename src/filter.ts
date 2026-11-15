@@ -31,7 +31,7 @@ export function createFilter(filterSet: FilterSet): MetadataFilter {
  */
 export function createFilterSetForFields(
 	fields: string[],
-	filterFn: FilterFunction | FilterFunction[]
+	filterFn: FilterFunction | FilterFunction[],
 ): FilterSet {
 	assertFieldsAreValid(fields);
 	assertFilterSetFiltersAreValid(filterFn);
@@ -114,7 +114,7 @@ export class MetadataFilter {
 
 		if (!(filter instanceof MetadataFilter)) {
 			throw new TypeError(
-				`Invalid filter: expected 'MetadataFilter', got '${typeof filter}'`
+				`Invalid filter: expected 'MetadataFilter', got '${typeof filter}'`,
 			);
 		}
 
@@ -166,7 +166,7 @@ export class MetadataFilter {
 	 * @return Array of filter functions
 	 */
 	private wrapFiltersIntoArray(
-		filters: FilterFunction | FilterFunction[]
+		filters: FilterFunction | FilterFunction[],
 	): FilterFunction[] {
 		if (Array.isArray(filters)) {
 			return filters;

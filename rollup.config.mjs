@@ -1,8 +1,10 @@
 import banner from 'rollup-plugin-banner2';
 import typescript from 'rollup-plugin-typescript2';
-import { terser } from 'rollup-plugin-terser';
+import terser from '@rollup/plugin-terser';
 
-import { name, version } from './package.json';
+import pkg from './package.json' with { type: 'json' };
+
+const { name, version } = pkg;
 
 const bannerText = `/*
  * ${name} v${version}
@@ -20,9 +22,9 @@ function output(distFileName, format) {
 
 	return {
 		file: `dist/${distFileName}.js`,
-		format: format,
+		format,
 		name: 'MetadataFilter',
-		plugins: plugins,
+		plugins,
 	};
 }
 

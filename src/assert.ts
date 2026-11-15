@@ -10,7 +10,7 @@ import type { FilterSet, FilterFunction } from './filter';
 export function assertFieldsAreValid(fields: string[]): void {
 	if (!Array.isArray(fields)) {
 		throw new TypeError(
-			`Invalid 'fields' argument: expected 'string[]', got '${typeof fields}'`
+			`Invalid 'fields' argument: expected 'string[]', got '${typeof fields}'`,
 		);
 	}
 
@@ -21,13 +21,13 @@ export function assertFieldsAreValid(fields: string[]): void {
 	for (const field of fields) {
 		if (typeof field !== 'string') {
 			throw new TypeError(
-				`Invalid field: expected 'string', got '${typeof field}'`
+				`Invalid field: expected 'string', got '${typeof field}'`,
 			);
 		}
 
 		if (!field) {
 			throw new TypeError(
-				"Invalid field: expected 'string', got an empty string"
+				"Invalid field: expected 'string', got an empty string",
 			);
 		}
 	}
@@ -47,7 +47,7 @@ export function assertFilterSetIsValid(filterSet: FilterSet): void {
 
 	if (typeof filterSet !== 'object') {
 		throw new TypeError(
-			`Invalid filter set: expected 'object', got '${typeof filterSet}'`
+			`Invalid filter set: expected 'object', got '${typeof filterSet}'`,
 		);
 	}
 
@@ -64,7 +64,7 @@ export function assertFilterSetIsValid(filterSet: FilterSet): void {
  * @throws Throw an error if the assertion is failed
  */
 export function assertFilterSetFiltersAreValid(
-	filterFn: FilterFunction | FilterFunction[]
+	filterFn: FilterFunction | FilterFunction[],
 ): void {
 	if (Array.isArray(filterFn)) {
 		assertArrayOfFilterFunctionsIsValid(filterFn);
@@ -81,7 +81,7 @@ export function assertFilterSetFiltersAreValid(
  * @throws Throw an error if the assertion is failed
  */
 function assertArrayOfFilterFunctionsIsValid(
-	filterFnArr: FilterFunction[]
+	filterFnArr: FilterFunction[],
 ): void {
 	filterFnArr.forEach(assertFilterFunctionIsValid);
 }
@@ -96,7 +96,7 @@ function assertArrayOfFilterFunctionsIsValid(
 function assertFilterFunctionIsValid(filterFn: FilterFunction): void {
 	if (typeof filterFn !== 'function') {
 		throw new TypeError(
-			`Invalid filter function: expected 'function', got '${typeof filterFn}'`
+			`Invalid filter function: expected 'function', got '${typeof filterFn}'`,
 		);
 	}
 }

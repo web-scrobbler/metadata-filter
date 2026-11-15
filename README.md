@@ -55,8 +55,8 @@ console.log(MetadataFilter.removeRemastered('Jane Doe (Remastered)')); // Jane D
 console.log(MetadataFilter.removeVersion('Get Lucky (Album Version)')); // Get Lucky
 console.log(
 	MetadataFilter.youtube(
-		'Car Bomb - Scattered Sprites (Official Music Video)'
-	)
+		'Car Bomb - Scattered Sprites (Official Music Video)',
+	),
 ); // Car Bomb - Scattered Sprites
 ```
 
@@ -117,7 +117,7 @@ filter.extend(MetadataFilter.createAmazonFilter());
 // This would also work: filter.extend(MetadataFilter.createFilter(filterSet));
 
 console.log(
-	filter.filterField('track', 'Seasons in the Abyss (Album Version)')
+	filter.filterField('track', 'Seasons in the Abyss (Album Version)'),
 ); // Seasons in the Abyss
 ```
 
@@ -162,7 +162,7 @@ const filter = MetadataFilter.createFilter({ track: filterTrack }).append({
 
 ## See also
 
--   [music-metadata-filter] - Python implementation of this module
+- [music-metadata-filter] - Python implementation of this module
 
 ## License
 

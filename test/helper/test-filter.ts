@@ -41,16 +41,12 @@ export interface FilterFixture {
 export function describeAndTestFilter(
 	filterName: string,
 	filter: MetadataFilter,
-	fixtures: FilterFixture[]
+	fixtures: FilterFixture[],
 ): void {
 	describe(`Test ${filterName} filter`, () => {
 		for (const fixture of fixtures) {
-			const {
-				description,
-				fieldName,
-				fieldValue,
-				expectedValue,
-			} = fixture;
+			const { description, fieldName, fieldValue, expectedValue } =
+				fixture;
 
 			it(description, () => {
 				const actual = filter.filterField(fieldName, fieldValue);
